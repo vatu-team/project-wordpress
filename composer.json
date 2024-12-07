@@ -18,7 +18,8 @@
     },
     "require": {
         "php": "^8.3",
-        "composer/installers": "^2.3.0"
+        "composer/installers": "^2.3.0",
+        "cweagans/composer-patches": "^1.7"
     },
     "require-dev": {
         "captainhook/captainhook": "^5.24",
@@ -34,7 +35,8 @@
         "allow-plugins": {
             "captainhook/hook-installer": true,
             "composer/installers": true,
-            "ergebnis/composer-normalize": true
+            "ergebnis/composer-normalize": true,
+            "cweagans/composer-patches": true
         },
         "optimize-autoloader": true,
         "preferred-install": "dist",
@@ -44,7 +46,8 @@
         "normalize": {
             "indent-size": 4,
             "indent-style": "space"
-        }
+        },
+        "patches-file": "patches/composer.patches.json"
     },
     "scripts": {
         "post-create-project-cmd": [
