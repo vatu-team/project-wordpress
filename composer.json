@@ -10,38 +10,51 @@
             "email": "info@vatu.dev",
             "homepage": "https://vatu.dev",
             "role": "Agency"
-          }
+        }
     ],
     "homepage": "https://github.com/vatu-team/project-wordpress",
     "support": {
         "issues": "https://github.com/vatu-team/project-wordpress/issues"
-      },
+    },
     "require": {
-        "php": "~8.3",
+        "php": "^8.3",
         "composer/installers": "^2.3.0"
     },
     "require-dev": {
         "captainhook/captainhook": "^5.24",
-        "captainhook/hook-installer": "^1.0"
+        "captainhook/hook-installer": "^1.0",
+        "ergebnis/composer-normalize": "^2.45"
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {}
-      },
+    },
     "config": {
         "allow-plugins": {
             "captainhook/hook-installer": true,
-            "composer/installers": true
+            "composer/installers": true,
+            "ergebnis/composer-normalize": true
         },
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true
     },
-    "extra": {},
+    "extra": {
+        "normalize": {
+            "indent-size": 4,
+            "indent-style": "space"
+        }
+    },
     "scripts": {
         "post-create-project-cmd": [
             "@php --version"
+        ],
+        "fix": [
+            "@composer fix:normalize"
+        ],
+        "fix:normalize": [
+            "@composer normalize"
         ]
     },
     "scripts-descriptions": {}
