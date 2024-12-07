@@ -40,6 +40,8 @@ error_log
 
 # Development
 
+/captainhook.config.json
+
 # Applications
 
 ## Composer
