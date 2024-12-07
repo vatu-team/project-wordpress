@@ -53,6 +53,16 @@
         "post-create-project-cmd": [
             "@php --version"
         ],
+        "post-install-cmd": [
+            "@composer run tools"
+        ],
+            "post-update-cmd": [
+            "@composer run tools"
+        ],
+        "tools": [
+            "@composer install --working-dir=tools",
+            "@composer run post-install-cmd --working-dir=tools"
+        ],
         "fix": [
             "@composer fix:normalize"
         ],

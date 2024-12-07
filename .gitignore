@@ -41,6 +41,7 @@ error_log
 # Development
 
 /captainhook.config.json
+/tools/vendor/*
 
 # Applications
 
