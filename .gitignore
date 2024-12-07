@@ -66,3 +66,9 @@ auth.json
 ### Themes
 /public/app/themes/*
 !/public/app/themes/index.php
+
+## Plugins
+/public/app/plugins/*
+!/public/app/plugins/index.php
+/public/app/mu-plugins/*
+!/public/app/mu-plugins/site-config.php

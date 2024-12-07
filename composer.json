@@ -28,6 +28,16 @@
         "captainhook/captainhook": "^5.24",
         "captainhook/hook-installer": "^1.0",
         "ergebnis/composer-normalize": "^2.45",
+        "wpackagist-plugin/duplicate-post": "^4.5",
+        "wpackagist-plugin/log-deprecated-notices": "^0.4.1",
+        "wpackagist-plugin/query-monitor": "^3.17",
+        "wpackagist-plugin/rewrite-rules-inspector": "^1.4",
+        "wpackagist-plugin/rewrite-testing": "^0.1.1",
+        "wpackagist-plugin/transients-manager": "^2.0",
+        "wpackagist-plugin/user-switching": "^1.9",
+        "wpackagist-plugin/wordpress-beta-tester": "^3.6",
+        "wpackagist-plugin/wordpress-importer": "^0.8.3",
+        "wpackagist-plugin/wp-crontrol": "^1.17",
         "wpackagist-theme/twentytwentyfive": "^1.0"
     },
     "repositories": [
