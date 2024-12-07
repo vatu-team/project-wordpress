@@ -19,13 +19,23 @@
     "require": {
         "php": "^8.3",
         "composer/installers": "^2.3.0",
-        "cweagans/composer-patches": "^1.7"
+        "cweagans/composer-patches": "^1.7",
+        "johnpbloch/wordpress": "^6.7",
+        "roots/wp-config": "^1.0",
+        "vlucas/phpdotenv": "^5.6"
     },
     "require-dev": {
         "captainhook/captainhook": "^5.24",
         "captainhook/hook-installer": "^1.0",
-        "ergebnis/composer-normalize": "^2.45"
+        "ergebnis/composer-normalize": "^2.45",
+        "wpackagist-theme/twentytwentyfive": "^1.0"
     },
+    "repositories": [
+        {
+          "type": "composer",
+          "url": "https://wpackagist.org"
+        }
+    ],
     "minimum-stability": "stable",
     "prefer-stable": true,
     "autoload": {
@@ -35,19 +45,32 @@
         "allow-plugins": {
             "captainhook/hook-installer": true,
             "composer/installers": true,
+            "cweagans/composer-patches": true,
             "ergebnis/composer-normalize": true,
-            "cweagans/composer-patches": true
+            "johnpbloch/wordpress-core-installer": true
         },
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true
     },
     "extra": {
+        "installer-paths": {
+            "public/app/mu-plugins/{$name}/": [
+              "type:wordpress-muplugin"
+            ],
+            "public/app/plugins/{$name}/": [
+              "type:wordpress-plugin"
+            ],
+            "public/app/themes/{$name}/": [
+              "type:wordpress-theme"
+            ]
+        },
         "normalize": {
             "indent-size": 4,
             "indent-style": "space"
         },
-        "patches-file": "patches/composer.patches.json"
+        "patches-file": "patches/composer.patches.json",
+        "wordpress-install-dir": "public/wp"
     },
     "scripts": {
         "post-create-project-cmd": [

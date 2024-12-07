@@ -1,7 +1,7 @@
 <?php
 
 /**
- * WordPress bootstrap file.
+ * Index File.
  *
  * @package   Vatu\Wordpress\Core
  * @author    Vatu <hello@vatu.dev>
@@ -10,5 +10,4 @@
  * @copyright 2022-2024 Vatu Ltd.
  */
 
-define( constant_name: 'WP_USE_THEMES', value: true );
-require __DIR__ . '/wp/wp-blog-header.php';
+// Allows blank line after the file comment.

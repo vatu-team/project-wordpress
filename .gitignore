@@ -43,8 +43,26 @@ error_log
 /captainhook.config.json
 /tools/vendor/*
 
+# Server
+.env
+.env.*
+*.env
+!/.env.example
+*.log
+
 # Applications
 
 ## Composer
 auth.json
 /vendor
+
+## Config
+/config/environments/local.php
+
+## WordPress
+
+/public/wp/*
+
+### Themes
+/public/app/themes/*
+!/public/app/themes/index.php
