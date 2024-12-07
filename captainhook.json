@@ -8,8 +8,15 @@
         "actions": []
     },
     "pre-commit": {
-        "enabled": false,
-        "actions": []
+        "enabled": true,
+        "actions": [
+            {
+                "action": "composer run test:security"
+            },
+            {
+                "action": "composer run test:lint"
+            }
+        ]
     },
     "prepare-commit-msg": {
         "enabled": false,

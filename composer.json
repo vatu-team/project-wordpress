@@ -32,8 +32,8 @@
     },
     "repositories": [
         {
-          "type": "composer",
-          "url": "https://wpackagist.org"
+            "type": "composer",
+            "url": "https://wpackagist.org"
         }
     ],
     "minimum-stability": "stable",
@@ -56,13 +56,13 @@
     "extra": {
         "installer-paths": {
             "public/app/mu-plugins/{$name}/": [
-              "type:wordpress-muplugin"
+                "type:wordpress-muplugin"
             ],
             "public/app/plugins/{$name}/": [
-              "type:wordpress-plugin"
+                "type:wordpress-plugin"
             ],
             "public/app/themes/{$name}/": [
-              "type:wordpress-theme"
+                "type:wordpress-theme"
             ]
         },
         "normalize": {
@@ -73,24 +73,47 @@
         "wordpress-install-dir": "public/wp"
     },
     "scripts": {
-        "post-create-project-cmd": [
-            "@php --version"
-        ],
         "post-install-cmd": [
             "@composer run tools"
         ],
-            "post-update-cmd": [
+        "post-update-cmd": [
             "@composer run tools"
+        ],
+        "post-create-project-cmd": [
+            "@php --version"
+        ],
+        "fix": [
+            "@composer fix:normalize",
+            "@composer fix:standards"
+        ],
+        "fix:normalize": [
+            "@composer normalize"
+        ],
+        "fix:standards": [
+            "./tools/vendor/bin/phpcbf"
+        ],
+        "test": [
+            "@composer test:security",
+            "@composer test:lint"
+        ],
+        "test:lint": [
+            "@composer validate --ansi --strict",
+            "@composer test:lint:syntax",
+            "@composer test:lint:standards"
+        ],
+        "test:lint:standards": [
+            "./tools/vendor/bin/phpcs -n"
+        ],
+        "test:lint:syntax": [
+            "./tools/vendor/bin/parallel-lint --exclude */vendor ./config",
+            "./tools/vendor/bin/parallel-lint --exclude */vendor ./public/app/mu-plugins/site-config.php"
+        ],
+        "test:security": [
+            "composer audit --ansi"
         ],
         "tools": [
             "@composer install --working-dir=tools",
             "@composer run post-install-cmd --working-dir=tools"
-        ],
-        "fix": [
-            "@composer fix:normalize"
-        ],
-        "fix:normalize": [
-            "@composer normalize"
         ]
     },
     "scripts-descriptions": {}

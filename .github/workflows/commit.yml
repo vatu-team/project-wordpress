@@ -1,0 +1,174 @@
+---
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+# Vatu:    Commit
+# Version: 2.0.0
+# Author:  Michael Bragg <mike@vatu.dev>
+
+name: 'Commit'
+
+on:
+  workflow_dispatch:
+  push:
+
+concurrency:
+  group: ${{ github.workflow }}--${{ github.ref_name || github.head_ref }}
+  cancel-in-progress: true
+
+env:
+  COMPOSER_ALLOW_SUPERUSER: "1" # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
+
+jobs:
+
+  php-security:
+    name: 'PHP Security Analysis'
+    runs-on: 'ubuntu-latest'
+
+    strategy:
+      fail-fast: true
+      max-parallel: 1
+      matrix:
+        php-version:
+          - '8.3'
+
+    steps:
+
+      - name: 'Check out the repository.'
+        uses: 'actions/checkout@v4.2.2'
+
+      - name: 'Set up PHP environment.'
+        uses: 'shivammathur/setup-php@2.31.1'
+        with:
+          coverage: 'none'
+          ini-values: "memory_limit=-1"
+          tools: 'composer'
+          ini-file: none
+          php-version: "${{ matrix.php-version }}"
+        env:
+          COMPOSER_TOKEN: ${{ secrets.github-token }}
+
+      - name: 'Validate Composer file.'
+        run: |
+          composer validate --ansi
+
+      - name: 'Get Composer Cache Directory.'
+        id: 'composer-cache'
+        run: |
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: 'Sets up Caching.'
+        uses: 'actions/cache@v4.2.0'
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-composer-build-
+
+      - name: 'Install dependencies.'
+        run: |
+          composer install --no-interaction --prefer-dist
+
+      - name: 'Logs debug information.'
+        run: |
+          php --version
+          composer --version
+
+      - name: 'Run security test.'
+        run: |
+          composer test:security
+
+  php-lint:
+    name: 'PHP Lint'
+    runs-on: 'ubuntu-latest'
+
+    strategy:
+      fail-fast: true
+      max-parallel: 1
+      matrix:
+        php-version:
+          - '8.3'
+
+    steps:
+
+      - name: 'Check out the repository.'
+        uses: 'actions/checkout@v4.2.2'
+
+      - name: 'Set up PHP environment.'
+        uses: 'shivammathur/setup-php@2.31.1'
+        with:
+          coverage: 'xdebug'
+          ini-values: "memory_limit=-1"
+          tools: 'composer'
+          ini-file: none
+          php-version: "${{ matrix.php-version }}"
+        env:
+          COMPOSER_TOKEN: ${{ secrets.github-token }}
+
+      - name: 'Validate Composer file.'
+        run: |
+          composer validate --ansi
+
+      - name: 'Get Composer Cache Directory.'
+        id: 'composer-cache'
+        run: |
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: 'Sets up Caching.'
+        uses: 'actions/cache@v4.2.0'
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-composer-tools-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-composer-tools-
+
+      - name: 'Install dependencies.'
+        run: |
+          composer install --working-dir=tools --no-interaction --prefer-dist
+
+      - name: 'Logs debug information.'
+        run: |
+          php --version
+          composer --version
+          php ./tools/vendor/bin/parallel-lint --version
+          php ./tools/vendor/bin/phpcs --version
+
+      - name: 'Run PHP Lint tests.'
+        run: |
+          composer test:lint
+
+  acceptance:
+    name: 'Acceptance'
+    runs-on: 'ubuntu-latest'
+    needs:
+     - 'php-security'
+     - 'php-lint'
+    steps:
+
+      - name: 'Skip'
+        run: |
+          echo "Skipped"
+
+  notify-failure:
+    name: "Notify on failure."
+    if: ${{ failure() }}
+    runs-on: 'self-hosted'
+    steps:
+      - name: "Failure notification."
+        id: 'slack'
+        uses: 'slackapi/slack-github-action@v2.0.0'
+        with:
+          channel-id: 'failed-updates'
+          payload: |
+            {
+              "text": "${{ github.workflow }} workflow failed for ${{ github.event.repository.name }}",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "${{ github.workflow }} workflow failed for ${{ github.event.repository.name }}.\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View>"
+                  }
+                }
+              ]
+            }
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
