@@ -1,0 +1,3 @@
+# Browsers supported by this project.
+# @link https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25zIG9yID4gMC41JSBhbmQgbm90IGllIDw9IDExLCBub3QgZGVhZA%3D%3D
+last 2 versions or > 0.5% and not ie <= 11, not dead

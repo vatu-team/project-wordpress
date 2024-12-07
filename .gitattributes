@@ -1,0 +1,13 @@
+# Exclude files from GitHub's language statistics
+# https://github.com/github/linguist#using-gitattributes
+
+/.bin	linguist-vendored
+/.browserlistrc	linguist-vendored
+/.github	linguist-vendored
+/.git-blame-ignore	linguist-vendored
+/.gitattributes	linguist-vendored
+/.gitignore	linguist-vendored
+/.vscode	linguist-vendored
+/vendor	linguist-vendored
+
+/composer.json	linguist-vendored

@@ -1,0 +1,44 @@
+{
+    "name": "vatu/project-wordpress",
+    "description": "Starter WordPress project from Vatu.",
+    "license": "proprietary",
+    "type": "project",
+    "readme": "https://github.com/vatu-team/project-wordpress/blob/main/readme.md",
+    "authors": [
+        {
+            "name": "Vatu",
+            "email": "info@vatu.dev",
+            "homepage": "https://vatu.dev",
+            "role": "Agency"
+          }
+    ],
+    "homepage": "https://github.com/vatu-team/project-wordpress",
+    "support": {
+        "issues": "https://github.com/vatu-team/project-wordpress/issues"
+      },
+    "require": {
+        "php": "~8.3",
+        "composer/installers": "^2.3.0"
+    },
+    "require-dev": {},
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {}
+      },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        },
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {},
+    "scripts": {
+        "post-create-project-cmd": [
+            "@php --version"
+        ]
+    },
+    "scripts-descriptions": {}
+}
