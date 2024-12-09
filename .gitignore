@@ -67,7 +67,7 @@ auth.json
 /public/app/themes/*
 !/public/app/themes/index.php
 
-## Plugins
+### Plugins
 /public/app/plugins/*
 !/public/app/plugins/index.php
 /public/app/mu-plugins/*
