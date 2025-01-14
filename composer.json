@@ -26,6 +26,7 @@
         "vlucas/phpdotenv": "^5.6",
         "wpackagist-plugin/better-passwords": "^1.8",
         "wpackagist-plugin/disable-emojis": "^1.7",
+        "wpackagist-plugin/safe-svg": "^2.3",
         "wpackagist-plugin/two-factor": "^0.11.0",
         "wpackagist-plugin/wordpress-seo": "^24.2"
     },
