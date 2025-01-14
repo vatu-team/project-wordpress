@@ -23,7 +23,8 @@
         "johnpbloch/wordpress": "^6.7",
         "roots/wp-config": "^1.0",
         "vlucas/phpdotenv": "^5.6",
-        "wpackagist-plugin/better-passwords": "^1.8"
+        "wpackagist-plugin/better-passwords": "^1.8",
+        "wpackagist-plugin/disable-emojis": "^1.7"
     },
     "require-dev": {
         "captainhook/captainhook": "^5.24",
