@@ -21,7 +21,7 @@ jobs:
 
   php-security:
     name: 'PHP Security Analysis'
-    runs-on: 'ubuntu-latest'
+    runs-on: 'ubuntu-24.04'
 
     strategy:
       fail-fast: true
@@ -78,7 +78,7 @@ jobs:
 
   php-lint:
     name: 'PHP Lint'
-    runs-on: 'ubuntu-latest'
+    runs-on: 'ubuntu-24.04'
 
     strategy:
       fail-fast: true
@@ -137,7 +137,7 @@ jobs:
 
   acceptance:
     name: 'Acceptance'
-    runs-on: 'ubuntu-latest'
+    runs-on: 'ubuntu-24.04'
     needs:
      - 'php-security'
      - 'php-lint'
