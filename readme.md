@@ -13,13 +13,13 @@ Befoer creating your WordPress Project, make sure that your local machine has PH
 With PHP and Composer installed on your local machine run, substituting `{project-name}` for your new projects name.
 
 ```sh
-composer create-project vatu/project-wordpress {project-name}
+composer create-project vatu/project-wordpress {project-name} -s dev
 ```
 
 It can also be create using docker.
 
 ```sh
-docker run --rm --interactive --tty --volume $PWD:/app composer create-project vatu/project-wordpress {project_name}
+docker run --rm --interactive --tty --volume $PWD:/app composer create-project vatu/project-wordpress {project_name} -s dev
 ```
 
 ### Renaming the Project
