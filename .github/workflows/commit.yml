@@ -150,7 +150,7 @@ jobs:
   notify-failure:
     name: "Notify on failure."
     if: ${{ failure() }}
-    runs-on: 'self-hosted'
+    runs-on: 'ubuntu-24.04'
     steps:
       - name: "Failure notification."
         id: 'slack'
