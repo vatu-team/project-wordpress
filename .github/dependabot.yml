@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=https://json.schemastore.org/dependabot-2.0.json
+
+version: 2
+
+# registries:
+#   vatu:
+#     type: composer-repository
+#     url: satispress.vatu.dev
+#     username: ${{ secrets.COMPOSER_VATU_USERNAME }}
+#     password: ${{ secrets.COMPOSER_VATU_KEY }}
+
+updates:
+
+  # Project Dependencies.
+  - package-ecosystem: "composer"
+    directory: "/"
+    registries: "*"
+    schedule:
+      interval: daily
+      time: "01:05"
+      timezone: "Europe/London"
+    open-pull-requests-limit: 1
+    versioning-strategy: increase
+    commit-message:
+      prefix: "Upgraded"
+      prefix-development: "Upgraded"
+
+  # Project Workflows
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "04:05"
+      timezone: "Europe/London"
+    open-pull-requests-limit: 1
+    commit-message:
+      prefix: "Upgraded"
+      prefix-development: "Upgraded"
+
+  # Project Tools.
+
+  - package-ecosystem: composer
+    directory: "/tools"
+    registries: "*"
+    schedule:
+      interval: daily
+      time: "01:25"
+      timezone: "Europe/London"
+    open-pull-requests-limit: 1
+    versioning-strategy: increase
+    commit-message:
+      prefix: "Upgraded"
+      prefix-development: "Upgraded"
+
+  # NPM.
+  - package-ecosystem: "npm"
+    directory: "/"
+    registries: "*"
+    schedule:
+      interval: daily
+      time: "01:25"
+      timezone: "Europe/London"
+    open-pull-requests-limit: 1
+    versioning-strategy: increase
+    commit-message:
+      prefix: "Upgraded"
+      prefix-development: "Upgraded"

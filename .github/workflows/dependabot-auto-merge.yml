@@ -1,0 +1,32 @@
+---
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+# Workflow: Dependabot Auto Merge
+# Version:  1.1.0
+# Author:   Michael Bragg <mike@vatu.dev>
+
+name: "Dependabot Auto Merge"
+
+on:
+  workflow_run:
+    workflows: ["Commit"]
+    types:
+      - completed
+    branches:
+      - 'dependabot/**'
+
+jobs:
+
+  auto-merge:
+
+    # Conditions for running workflow (project-specific).
+    if: >
+      github.actor == 'dependabot[bot]' &&
+      github.event.workflow_run.conclusion == 'success'
+    name: "Auto Merge"
+    uses: vatu-team/workflows/.github/workflows/auto-merge-pr.yml@1.14.0
+    with:
+      runs-on: 'ubuntu-24.04'
+    secrets:
+      BOT_ID: ${{ secrets.VATU_BOT_ID }}
+      BOT_KEY: ${{ secrets.VATU_BOT_KEY }}
+      SLACK_TOKEN: ${{ secrets.SLACK_DEPENDABOT_TOKEN }}
