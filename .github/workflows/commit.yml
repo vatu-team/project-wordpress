@@ -300,7 +300,7 @@ jobs:
 
   notify-failure:
     name: "Notify on failure."
-    if: ${{ always() && contains(needs.*.result, 'failure') }}
+    if: ${{ failure() }}
     runs-on: 'ubuntu-24.04'
     steps:
       - name: "Failure notification."
@@ -310,7 +310,7 @@ jobs:
           method: chat.postMessage
           token: ${{ secrets.SLACK_TOKEN }}
           payload: |
-            channel: 'together-trust'
+            channel: 'updates-failed'
             text: "${{ github.workflow }} workflow failed for ${{ github.event.repository.name }}"
             blocks:
               - type: "section"
