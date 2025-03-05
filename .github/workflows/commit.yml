@@ -214,7 +214,7 @@ jobs:
           composer run test:analysis
 
   php-compatibility:
-    name: 'Compatiblity Tests'
+    name: 'PHP Compatiblity'
     needs:
       - 'php-security'
       - 'php-lint'
