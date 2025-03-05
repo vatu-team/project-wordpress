@@ -111,7 +111,8 @@
         ],
         "test": [
             "@composer test:security",
-            "@composer test:lint"
+            "@composer test:lint",
+            "@composer test:unit"
         ],
         "test:lint": [
             "@composer validate --ansi --strict",
@@ -127,6 +128,9 @@
         ],
         "test:security": [
             "composer audit --ansi"
+        ],
+        "test:unit": [
+            "./tools/vendor/bin/phpunit -c ./phpunit.dist.xml --testsuite unit"
         ],
         "tools": [
             "@composer install --working-dir=tools",

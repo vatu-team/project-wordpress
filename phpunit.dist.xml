@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
+				 bootstrap="tests/php/bootstrap.php"
+				 cacheDirectory=".phpunit.cache"
+				 cacheResult="false"
+				 colors="true"
+				 executionOrder="depends,defects"
+				 beStrictAboutOutputDuringTests="true"
+				 displayDetailsOnTestsThatTriggerWarnings="true"
+				 failOnRisky="true"
+				 failOnWarning="true"
+				 >
+
+	<php>
+		<env name="WP_ENV" value="testing"/>
+		<env name="WP_ENVIRONMENT_TYPE" value="testing"/>
+		<env name="WORDPRESS_TABLE_PREFIX" value="wp_"/>
+	</php>
+
+	<testsuites>
+
+		<testsuite name="unit">
+			<directory suffix="Test.php">tests/php/Unit</directory>
+			<!-- Include bespoke Unit Test directories. -->
+		</testsuite>
+
+		<testsuite name="integration">
+			<directory suffix="Test.php">tests/php/Integration/</directory>
+			<!-- Include bespoke Integration Test directories. -->
+		</testsuite>
+
+	</testsuites>
+
+</phpunit>
