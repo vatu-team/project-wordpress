@@ -7,7 +7,7 @@
  * @author    Vatu <hello@vatu.dev>
  * @link      https://vatu.dev/
  * @license   GNU General Public License v3.0
- * @copyright 2023-2024 Vatu Limited.
+ * @copyright 2023-2025 Vatu Limited.
  *
  * Your base production configuration goes in this file. Environment-specific
  * overrides go in their respective config/environments/{WP_ENVIRONMENT_TYPE}.php file.
@@ -108,9 +108,9 @@ Config::define( key: 'NONCE_SALT', value: getenv( name: 'NONCE_SALT' ) );
 Config::define( key: 'AUTOMATIC_UPDATER_DISABLED', value: true );
 Config::define( key: 'DISABLE_WP_CRON', value: getenv( name: 'DISABLE_WP_CRON' ) ?: false );
 // Disable the plugin and theme file editor in the admin.
-Config::define( key: 'DISALLOW_FILE_EDIT', value: true );
+Config::define( key: 'DISALLOW_FILE_EDIT', value: getenv( name: 'DISALLOW_FILE_EDIT' ) ?: true );
 // Disable plugin and theme updates and installation from the admin.
-Config::define( key: 'DISALLOW_FILE_MODS', value: true );
+Config::define( key: 'DISALLOW_FILE_MODS', value: getenv( name: 'DISALLOW_FILE_MODS' ) ?: true );
 // Limit the number of post revisions that WordPress stores (true (default WP): store every revision).
 Config::define( key: 'WP_POST_REVISIONS', value: getenv( 'WP_POST_REVISIONS' ) ?: true );
 Config::define( key: 'WP_DEFAULT_THEME', value: getenv( 'WP_DEFAULT_THEME' ) ?: null );
