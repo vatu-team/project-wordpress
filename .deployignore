@@ -1,0 +1,90 @@
+# System
+
+error_log
+.DS_Store
+
+# Development
+
+## Docker
+/.docker/*
+
+## Tools
+
+/.bin
+!/.bin/post-deploy.sh
+/patches
+/shared
+/tests
+/tools
+.allowed-licenses
+.browserlistrc
+.editorconfig
+.gitattributes
+.github
+.git-blame-ignore-revs
+.phive
+captainhook.json
+LocalValetDriver.php
+phpcs.xml
+phpcs.xml.dist
+phpcs.dist.xml
+phpmd.xml
+phpmd.xml.dist
+phpmd.dist.xml
+phpstan.neon
+phpstan.neon.dist
+phpstan.dist.neon
+phpunit.xml
+phpunit.xml.dist
+phpunit.dist.xml
+readme.md
+readme.txt
+!/readme.txt
+readme-template.md
+
+## NodeJS
+node_modules/*
+cypress/*
+package.json
+package-lock.json
+cypress.json
+/webpack.config.js
+/*.webpack.config.js
+
+# Server
+.env
+.env.*
+*.env
+example.env
+*.log
+
+# Applications
+
+## Composer
+auth.json
+composer.json
+composer.lock
+
+## Config
+/config/environments/local.php
+
+## WordPress
+/public/app/cache/*
+/public/app/languages/*
+!/public/app/languages/index.php
+/public/app/upgrade
+/public/app/uploads/*
+/public/app/wflogs/*
+/public/app/advanced-cache.php
+/public/db.php
+/public/app/object-cache.php
+/public/wp/wp-content/akismet/
+/pubilc/wp/wp-content/hello.php
+/public/wp/wp-content/themes/
+
+## Theme
+
+## Plugins
+
+## WPCLI
+wp-cli.local.yml
