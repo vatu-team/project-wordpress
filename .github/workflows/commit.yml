@@ -139,8 +139,11 @@ jobs:
         run: |
           composer test:lint
 
-  php-unit:
-    name: 'PHP Unit Tests'
+  php-analysis:
+    name: 'PHP Analysis'
+    needs:
+      - 'php-security'
+      - 'php-lint'
     runs-on: 'ubuntu-24.04'
 
     strategy:
@@ -166,9 +169,82 @@ jobs:
         env:
           COMPOSER_TOKEN: ${{ secrets.github-token }}
 
-      - name: "Add Composer config."
+      - name: 'Validate Composer file.'
         run: |
-          composer config http-basic.satispress.vatu.dev ${{ secrets.COMPOSER_VATU_USERNAME }} ${{ secrets.COMPOSER_VATU_KEY }}
+          composer validate --working-dir=tools --ansi --strict
+          composer validate --ansi --strict
+
+      - name: 'Get Composer Cache Directory.'
+        id: 'composer-cache'
+        run: |
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: 'Sets up Dev Tool Caching.'
+        uses: 'actions/cache@v4.2.2'
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-composer-tools-${{ hashFiles('tools/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-composer-tools-
+
+      - name: 'Sets up Project Caching.'
+        uses: 'actions/cache@v4.2.2'
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-composer-tools-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-composer-build-
+
+      - name: "Build site."
+        run: |
+          composer install --no-interaction --prefer-dist --no-scripts --no-dev
+
+      - name: 'Install dependencies.'
+        run: |
+          composer install --working-dir=tools --no-interaction --prefer-dist
+
+      - name: 'Logs debug information.'
+        run: |
+          php --version
+          composer --version
+          php ./tools/vendor/bin/phpstan --version
+
+      - name: 'Run PHP Analysis tests.'
+        run: |
+          composer run test:analysis
+
+  php-unit:
+    name: 'PHP Unit Tests'
+    runs-on: 'ubuntu-24.04'
+    needs:
+      - 'php-analysis'
+
+    strategy:
+      fail-fast: true
+      max-parallel: 1
+      matrix:
+        php-version:
+          - '8.3'
+
+    steps:
+
+      - name: 'Check out the repository.'
+        uses: 'actions/checkout@v4.2.2'
+
+      - name: 'Set up PHP environment.'
+        uses: 'shivammathur/setup-php@2.32.0'
+        with:
+          coverage: 'xdebug'
+          ini-values: "memory_limit=-1"
+          tools: 'composer'
+          ini-file: none
+          php-version: "${{ matrix.php-version }}"
+        env:
+          COMPOSER_TOKEN: ${{ secrets.github-token }}
+
+      # - name: "Add Composer config."
+      #   run: |
+      #     composer config http-basic.satispress.vatu.dev ${{ secrets.COMPOSER_VATU_USERNAME }} ${{ secrets.COMPOSER_VATU_KEY }}
 
       - name: 'Validate Composer file.'
         run: |
@@ -215,8 +291,7 @@ jobs:
     name: 'Acceptance'
     runs-on: 'ubuntu-24.04'
     needs:
-     - 'php-security'
-     - 'php-lint'
+     - 'php-unit'
     steps:
 
       - name: 'Skip'
