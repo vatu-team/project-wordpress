@@ -346,7 +346,7 @@ jobs:
       - name: 'Run PHP Unit tests.'
         run: |
           composer dump-autoload --dev
-          composer run test-phpunit
+          composer run test:unit
 
   acceptance:
     name: 'Acceptance'
