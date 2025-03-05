@@ -111,7 +111,8 @@
         "test": [
             "@composer test:security",
             "@composer test:lint",
-            "@composer test:unit"
+            "@composer test:unit",
+            "@composer test:analysis"
         ],
         "test:lint": [
             "@composer validate --ansi --strict",
@@ -130,6 +131,9 @@
         ],
         "test:unit": [
             "./tools/vendor/bin/phpunit -c ./phpunit.dist.xml --testsuite unit"
+        ],
+        "test:analysis": [
+            "./tools/vendor/bin/phpstan analyse -c ./phpstan.dist.neon --memory-limit 4G"
         ],
         "tools": [
             "@composer install --working-dir=tools",

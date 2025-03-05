@@ -56,6 +56,9 @@ error_log
 auth.json
 /vendor
 
+## Testing
+/phpstan.neon
+
 ## Config
 /config/environments/local.php
 
