@@ -152,7 +152,7 @@ if ( file_exists( filename: $env_config ) ) {
 Config::define( key: 'WP_ALLOW_MULTISITE', value: getenv( name: 'WP_ALLOW_MULTISITE' ) ?: false );
 // Config::define( key: 'MULTISITE', value: getenv( name: 'MULTISITE' ) ?: false );
 
-if ( getenv( name: 'MULTISITE' ) === true ) {
+if ( getenv( name: 'MULTISITE' ) === 'true' ) {
 	Config::define( key: 'SUBDOMAIN_INSTALL', value: true );
 	Config::define( key: 'DOMAIN_CURRENT_SITE', value: getenv( name: 'WP_DOMAIN_CURRENT_SITE' ) );
 	Config::define( key: 'PATH_CURRENT_SITE', value: '/' );
