@@ -1,8 +1,8 @@
 ---
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-# Vatu:    Commit
-# Version: 2.0.0
-# Author:  Michael Bragg <mike@vatu.dev>
+# Workflow: Commit
+# Version:  2.0.0
+# Author:   Michael Bragg <mike@vatu.dev>
 
 name: 'Commit'
 
@@ -36,7 +36,7 @@ jobs:
         uses: 'actions/checkout@v4.2.2'
 
       - name: 'Set up PHP environment.'
-        uses: 'shivammathur/setup-php@2.31.1'
+        uses: 'shivammathur/setup-php@2.32.0'
         with:
           coverage: 'none'
           ini-values: "memory_limit=-1"
@@ -45,6 +45,10 @@ jobs:
           php-version: "${{ matrix.php-version }}"
         env:
           COMPOSER_TOKEN: ${{ secrets.github-token }}
+
+      # - name: "Add Composer config."
+      #   run: |
+      #     composer config http-basic.satispress.vatu.dev ${{ secrets.COMPOSER_VATU_USERNAME }} ${{ secrets.COMPOSER_VATU_KEY }}
 
       - name: 'Validate Composer file.'
         run: |
@@ -56,7 +60,7 @@ jobs:
           echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
       - name: 'Sets up Caching.'
-        uses: 'actions/cache@v4.2.0'
+        uses: 'actions/cache@v4.2.2'
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-php-composer-build-${{ hashFiles('composer.lock') }}
@@ -93,7 +97,7 @@ jobs:
         uses: 'actions/checkout@v4.2.2'
 
       - name: 'Set up PHP environment.'
-        uses: 'shivammathur/setup-php@2.31.1'
+        uses: 'shivammathur/setup-php@2.32.0'
         with:
           coverage: 'xdebug'
           ini-values: "memory_limit=-1"
@@ -135,6 +139,78 @@ jobs:
         run: |
           composer test:lint
 
+  php-unit:
+    name: 'PHP Unit Tests'
+    runs-on: 'ubuntu-24.04'
+
+    strategy:
+      fail-fast: true
+      max-parallel: 1
+      matrix:
+        php-version:
+          - '8.3'
+
+    steps:
+
+      - name: 'Check out the repository.'
+        uses: 'actions/checkout@v4.2.2'
+
+      - name: 'Set up PHP environment.'
+        uses: 'shivammathur/setup-php@2.32.0'
+        with:
+          coverage: 'xdebug'
+          ini-values: "memory_limit=-1"
+          tools: 'composer'
+          ini-file: none
+          php-version: "${{ matrix.php-version }}"
+        env:
+          COMPOSER_TOKEN: ${{ secrets.github-token }}
+
+      - name: "Add Composer config."
+        run: |
+          composer config http-basic.satispress.vatu.dev ${{ secrets.COMPOSER_VATU_USERNAME }} ${{ secrets.COMPOSER_VATU_KEY }}
+
+      - name: 'Validate Composer file.'
+        run: |
+          composer validate --working-dir=tools --ansi --strict
+          composer validate --ansi --strict
+
+      - name: 'Get Composer Cache Directory.'
+        id: 'composer-cache'
+        run: |
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: 'Sets up Dev Tool Caching.'
+        uses: 'actions/cache@v4.2.0'
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-composer-tools-${{ hashFiles('tools/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-composer-tools-
+
+      - name: 'Sets up Project Caching.'
+        uses: 'actions/cache@v4.2.0'
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-composer-tools-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-composer-build-
+
+      - name: 'Install dependencies.'
+        run: |
+          composer install --no-interaction --prefer-dist --optimize-autoloader
+
+      - name: 'Logs debug information.'
+        run: |
+          php --version
+          composer --version
+          php ./tools/vendor/bin/phpunit --version
+
+      - name: 'Run PHP Unit tests.'
+        run: |
+          composer dump-autoload --dev
+          composer run test-phpunit
+
   acceptance:
     name: 'Acceptance'
     runs-on: 'ubuntu-24.04'
@@ -149,26 +225,20 @@ jobs:
 
   notify-failure:
     name: "Notify on failure."
-    if: ${{ failure() }}
-    runs-on: 'self-hosted'
+    if: ${{ always() && contains(needs.*.result, 'failure') }}
+    runs-on: 'ubuntu-24.04'
     steps:
       - name: "Failure notification."
         id: 'slack'
         uses: 'slackapi/slack-github-action@v2.0.0'
         with:
-          channel-id: 'failed-updates'
+          method: chat.postMessage
+          token: ${{ secrets.SLACK_TOKEN }}
           payload: |
-            {
-              "text": "${{ github.workflow }} workflow failed for ${{ github.event.repository.name }}",
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "${{ github.workflow }} workflow failed for ${{ github.event.repository.name }}.\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View>"
-                  }
-                }
-              ]
-            }
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+            channel: 'together-trust'
+            text: "${{ github.workflow }} workflow failed for ${{ github.event.repository.name }}"
+            blocks:
+              - type: "section"
+                text:
+                  type: "mrkdwn"
+                  text: "${{ github.workflow }} workflow failed for ${{ github.event.repository.name }}.\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View>"
