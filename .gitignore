@@ -47,7 +47,7 @@ error_log
 .env
 .env.*
 *.env
-!/.env.example
+!/example.env
 *.log
 
 # Applications
