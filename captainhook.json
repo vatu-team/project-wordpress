@@ -40,8 +40,24 @@
         "actions": []
     },
     "post-checkout": {
-        "enabled": false,
-        "actions": []
+        "enabled": true,
+        "actions": [
+            {
+                "action": "composer run test:security"
+            },
+            {
+                "action": "composer run test:lint"
+            },
+            {
+                "action": "composer run test:analysis"
+            },
+            {
+                "action": "composer run test:compatibility"
+            },
+            {
+                "action": "composer run test:unit"
+            }
+        ]
     },
     "post-rewrite": {
         "enabled": false,
