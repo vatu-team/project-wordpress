@@ -20,6 +20,9 @@
                 "action": "composer run test:analysis"
             },
             {
+                "action": "composer run test:compatibility"
+            },
+            {
                 "action": "composer run test:unit"
             }
         ]

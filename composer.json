@@ -111,8 +111,9 @@
         "test": [
             "@composer test:security",
             "@composer test:lint",
-            "@composer test:unit",
-            "@composer test:analysis"
+            "@composer test:analysis",
+            "@composer test:compatibility",
+            "@composer test:unit"
         ],
         "test:lint": [
             "@composer validate --ansi --strict",
@@ -134,6 +135,9 @@
         ],
         "test:analysis": [
             "./tools/vendor/bin/phpstan analyse -c ./phpstan.dist.neon --memory-limit 4G"
+        ],
+        "test:compatibility": [
+            "./tools/vendor/bin/phpcs --colors --report-width=120 --standard=PHPCompatibility --extensions=php --ignore=vendor/* --ignore=tools/* ./config ./public/app/mu-plugins/site-config.php"
         ],
         "tools": [
             "@composer install --working-dir=tools",
