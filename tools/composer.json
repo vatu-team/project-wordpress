@@ -23,7 +23,7 @@
       "php-stubs/wp-cli-stubs": "^2.11",
       "phpcompatibility/phpcompatibility-wp": "^2.1.6",
       "wptrt/wpthemereview": "^0.2.1",
-      "yoast/phpunit-polyfills": "^3.1.1",
+      "yoast/phpunit-polyfills": "^4.0.0",
       "szepeviktor/phpstan-wordpress": "^2.0.1",
         "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
         "phpstan/extension-installer": "^1.4.3",
