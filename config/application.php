@@ -82,7 +82,7 @@ $table_prefix = getenv( name: 'DB_PREFIX' ) ?: 'wp_';
 
 if ( getenv( name: 'DATABASE_URL' ) ) {
 	// phpcs:ignore WordPress.WP.AlternativeFunctions.parse_url_parse_url
-	$dsn = (object) parse_url( url: getenv( name: 'DATABASE_URL' ) );
+	$dsn = (object) parse_url( url: strval( value: getenv( name: 'DATABASE_URL' ) ) );
 
 	Config::define( key: 'DB_NAME', value: substr( string: $dsn->path, offset: 1 ) );
 	Config::define( key: 'DB_USER', value: $dsn->user );
