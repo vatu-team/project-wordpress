@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e00a7675cb31381a7428450766895235",
+    "content-hash": "bc449610544958558b284dbd6081993c",
     "packages": [
         {
             "name": "composer/installers",
@@ -2890,15 +2890,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-beta-tester",
-            "version": "3.6.2",
+            "version": "3.6.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-beta-tester/",
-                "reference": "tags/3.6.2"
+                "reference": "tags/3.6.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-beta-tester.3.6.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-beta-tester.3.6.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
