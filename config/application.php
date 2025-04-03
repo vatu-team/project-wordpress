@@ -181,6 +181,12 @@ Config::define(
 	value: getenv( name: 'GOOGLE_TAG_MANAGER_CONTAINER_ID' ) ?: null
 );
 
+/**
+ * FluentSMTP
+*/
+Config::define( key: 'FLUENTMAIL_MAILGUN_API_KEY', value: getenv( name: 'FLUENTMAIL_MAILGUN_API_KEY' ) ?: null );
+Config::define( key: 'FLUENTMAIL_MAILGUN_DOMAIN', value: getenv( name: 'FLUENTMAIL_MAILGUN_DOMAIN' ) ?: null );
+
 Config::apply();
 
 /**
