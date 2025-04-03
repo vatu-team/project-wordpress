@@ -176,10 +176,13 @@ Config::define( key: 'S3_UPLOADS_OBJECT_ACL', value: getenv( name: 'S3_UPLOADS_O
 /**
  * Google Tag Manager
  */
-Config::define(
-	key: 'GOOGLE_TAG_MANAGER_CONTAINER_ID',
-	value: getenv( name: 'GOOGLE_TAG_MANAGER_CONTAINER_ID' ) ?: null
-);
+Config::define( key: 'GOOGLE_TAG_MANAGER_CONTAINER_ID', value: getenv( 'GOOGLE_TAG_MANAGER_CONTAINER_ID' ) ?: null );
+
+/**
+ * Redis (Runcloud)
+*/
+Config::define( key: 'RCWP_REDIS_PASSWORD', value: getenv( name: 'RCWP_REDIS_PASSWORD' ) ?: null );
+Config::define( key: 'RCWP_REDIS_DOMAIN', value: getenv( name: 'RCWP_REDIS_DOMAIN' ) ?: null );
 
 Config::apply();
 
