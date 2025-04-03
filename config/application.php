@@ -154,7 +154,7 @@ Config::define( key: 'WP_ALLOW_MULTISITE', value: getenv( name: 'WP_ALLOW_MULTIS
 
 if ( getenv( name: 'MULTISITE' ) === 'true' ) {
 	Config::define( key: 'MULTISITE', value: getenv( name: 'MULTISITE' ) );
-	Config::define( key: 'SUBDOMAIN_INSTALL', value: true );
+	Config::define( key: 'SUBDOMAIN_INSTALL', value: getenv( name: 'SUBDOMAIN_INSTALL' ) );
 	Config::define( key: 'DOMAIN_CURRENT_SITE', value: getenv( name: 'WP_DOMAIN_CURRENT_SITE' ) );
 	Config::define( key: 'PATH_CURRENT_SITE', value: '/' );
 	Config::define( key: 'SITE_ID_CURRENT_SITE', value: 1 );
