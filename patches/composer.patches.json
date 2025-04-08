@@ -1,3 +1,7 @@
 {
-    "patches": {}
+    "patches": {
+        "humanmade/s3-uploads": {
+            "Fix Stub Lint Error": "patches/humanmade/s3-uploads/imagick.php.patch"
+        }
+    }
 }

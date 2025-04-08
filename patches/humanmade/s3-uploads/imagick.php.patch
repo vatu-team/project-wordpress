@@ -1,0 +1,21 @@
+--- web/app/plugins/s3-uploads/psalm/stubs/imagick.php	2023-05-04 08:22:25.000000000 +0000
++++ web/app/plugins/s3-uploads/psalm/stubs/imagick-patch.php	2024-03-05 10:15:21.759790170 +0000
+@@ -1,11 +1,13 @@
+ <?php
+
+-/**
+- * @method Imagick clone() (PECL imagick 2.0.0)<br/>Makes an exact copy of the Imagick object
+- * @link https://php.net/manual/en/class.imagick.php
+- */
+-class Imagick implements Iterator, Countable {
++namespace {
++	/**
++	 * @method Imagick clone() (PECL imagick 2.0.0)<br/>Makes an exact copy of the Imagick object
++	 * @link https://php.net/manual/en/class.imagick.php
++	 */
++	class Imagick implements Iterator, Countable {
+
++	}
+ }
+
+ namespace WP_CLI {
