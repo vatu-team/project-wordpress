@@ -44,6 +44,6 @@
     "scripts": {
     },
     "require-dev": {
-        "ergebnis/composer-normalize": "^2.45"
+        "ergebnis/composer-normalize": "^2.46"
     }
 }
