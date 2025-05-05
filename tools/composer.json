@@ -19,7 +19,7 @@
       "php-parallel-lint/php-parallel-lint": "^1.4",
       "brain/monkey": "^2.6.2",
       "globtec/phpadr": "^2.0.2",
-      "php-stubs/wordpress-stubs": "^6.7.2",
+      "php-stubs/wordpress-stubs": "^6.8.1",
       "php-stubs/wp-cli-stubs": "^2.11",
       "phpcompatibility/phpcompatibility-wp": "^2.1.6",
       "wptrt/wpthemereview": "^0.2.1",
