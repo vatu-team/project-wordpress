@@ -102,6 +102,7 @@ try {
 
 	updateComposerConfig( config: $config );
 	renameFiles();
+	exec( 'ls -la' ); // Added debug command.
 	deleteFiles();
 
 } catch ( \Exception $exception ) {
