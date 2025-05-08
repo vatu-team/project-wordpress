@@ -64,7 +64,7 @@ function deleteFiles(): void {
 
 	$files_to_delete = [
 		'readme.md.bk',
-		'bin/pos-create-project-cmd',
+		'bin/post-create-project-cmd',
 	];
 
 	foreach( $files_to_delete as $file ) {
