@@ -63,7 +63,8 @@
             "composer/installers": true,
             "cweagans/composer-patches": true,
             "ergebnis/composer-normalize": true,
-            "johnpbloch/wordpress-core-installer": true
+            "johnpbloch/wordpress-core-installer": true,
+            "captainhook/hook-installer": true
         },
         "optimize-autoloader": true,
         "preferred-install": "dist",

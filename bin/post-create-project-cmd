@@ -34,7 +34,6 @@ function updateComposerConfig( array $config ): void
 		"composer config name '{$config['project_vendor']}/{$config['project_name']}'",
 		"composer config description '{$config['project_description']}'",
 		"composer config homepage '{$config['project_homepage']}'",
-		"composer config allow-plugins.captainhook/hook-installer true --no-plugins --no-interaction",
 		"composer require captainhook/hook-installer --dev  --no-interaction ",
 	];
 
