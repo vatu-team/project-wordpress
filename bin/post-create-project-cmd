@@ -30,8 +30,11 @@ function ask( string $question, bool $required = false, string $answer = '' ): s
 
 function updateComposerConfig( array $config ): void
 {
+	$vendor = strtolower( $config['project_vendor'] );
+	$name   = strtolower( $config['project_name'] );
+
 	$command_list = [
-		"composer config name '{$config['project_vendor']}/{$config['project_name']}'",
+		"composer config name '{$vendor}/{$name}'",
 		"composer config description '{$config['project_description']}'",
 		"composer require captainhook/hook-installer --dev  --no-interaction ",
 	];
@@ -96,7 +99,7 @@ function deleteFile( string $filename ): bool
 
 try {
 
-	exec( 'git init' ); // Init git so we can install Captain Hook.
+	exec( 'git init --initial-branch=main' ); // Init git so we can install Captain Hook.
 	$config['project_vendor'] = ask( question: "Choose a Vendor. Eg, Vatu", required: true );
 	$config['project_name']   = ask( question: "Choose a Project Name. Eg, Website", required: true );
 
