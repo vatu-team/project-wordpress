@@ -96,6 +96,7 @@ function deleteFile( string $filename ): bool
 
 try {
 
+	exec( 'git init' ); // Init git so we can install Captain Hook.
 	$config['project_vendor'] = ask( question: "Choose a Vendor. Eg, Vatu", required: true );
 	$config['project_name']   = ask( question: "Choose a Project Name. Eg, Website", required: true );
 
