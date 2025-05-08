@@ -6,7 +6,7 @@ Starter WordPress project from Vatu.
 
 ### Installing PHP, Node
 
-Befoer creating your WordPress Project, make sure that your local machine has PHP, Composer, and Node installed.
+Before creating your WordPress Project, make sure that your local machine has Git, PHP, Composer, and Node installed.
 
 ### Create a Project
 
@@ -25,7 +25,6 @@ docker run --rm --interactive --tty --volume $PWD:/app composer create-project v
 ### Renaming the Project
 
 1. Change the project name references in `readme.md`
-1. Change the project name references in `composer.json`
 1. Change the project name references in `package.json`
 
 ### Initial Configuration
