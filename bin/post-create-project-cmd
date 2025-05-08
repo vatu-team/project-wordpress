@@ -44,33 +44,33 @@ function updateComposerConfig( array $config ): void
 }
 
 function renameFiles(): void {
-	global $project_root;
+	global $script_root;
 
 	$files_to_rename = [
 		'readme.md' => 'readme.md.bk',
 		'readme-template.md' => 'readme.md',
 	];
 
-	if ( file_exists( filename: "{$project_root}/readme-template.md" ) ) {
+	if ( file_exists( filename: "{$script_root}/readme-template.md" ) ) {
 		foreach( $files_to_rename as $old => $new ) {
 			rename(
-				from: "{$project_root}/{$old}",
-				to: "{$project_root}/{$new}"
+				from: "{$script_root}/{$old}",
+				to: "{$script_root}/{$new}"
 			);
 		}
 	}
 }
 
 function deleteFiles(): void {
-	global $project_root;
+	global $script_root;
 
 	$files_to_delete = [
 		'readme.md.bk',
-		'bin/pos-crete-project-cmd',
+		'bin/pos-create-project-cmd',
 	];
 
 	foreach( $files_to_delete as $file ) {
-		deleteFile( filename: "{$project_root}/{$file}" );
+		deleteFile( filename: "{$script_root}/{$file}" );
 	}
 }
 
