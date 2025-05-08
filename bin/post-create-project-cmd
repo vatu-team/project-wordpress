@@ -35,6 +35,7 @@ function updateComposerConfig( array $config ): void
 		"composer config description '{$config['project_description']}'",
 		"composer config homepage '{$config['project_homepage']}'",
 		"composer config --no-interaction allow-plugins.captinhook/hook-installer true",
+		"composer require captainhook/hook-installer --dev",
 	];
 
 	foreach ( $command_list as $command ) {
