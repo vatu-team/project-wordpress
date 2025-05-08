@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "397e78f54ba4483fb21878afdb673c2e",
+    "content-hash": "f90c751279c84482b696332589c880c8",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -1931,53 +1931,6 @@
             "time": "2025-03-30T17:23:19+00:00"
         },
         {
-            "name": "captainhook/hook-installer",
-            "version": "1.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/captainhook-git/hook-installer.git",
-                "reference": "fb3c45f6204b08baba999f4ffc4ae707bf684e8b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/captainhook-git/hook-installer/zipball/fb3c45f6204b08baba999f4ffc4ae707bf684e8b",
-                "reference": "fb3c45f6204b08baba999f4ffc4ae707bf684e8b",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.1|^2.0",
-                "php": ">=8.0"
-            },
-            "require-dev": {
-                "composer/composer": "*"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "CaptainHook\\HookInstaller\\ComposerPlugin"
-            },
-            "autoload": {
-                "psr-4": {
-                    "CaptainHook\\HookInstaller\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian Feldmann",
-                    "email": "sf@sebastian-feldmann.info"
-                }
-            ],
-            "description": "Composer Plugin that makes everyone activate the CaptainHook git hooks locally",
-            "support": {
-                "issues": "https://github.com/captainhook-git/hook-installer/issues",
-                "source": "https://github.com/captainhook-git/hook-installer/tree/1.0.4"
-            },
-            "time": "2025-04-08T07:12:26+00:00"
-        },
-        {
             "name": "captainhook/secrets",
             "version": "0.9.6",
             "source": {
@@ -3663,12 +3616,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "~8.3"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }
