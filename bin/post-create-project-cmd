@@ -33,9 +33,9 @@ function updateComposerConfig( array $config ): void
 	$command_list = [
 		"composer config name '{$config['project_vendor']}/{$config['project_name']}'",
 		"composer config description '{$config['project_description']}'",
-		"composer config homepage '{$config['project_homepage']}'",
+		// "composer config homepage '{$config['project_homepage']}'",
 		"composer config --no-interaction allow-plugins.captinhook/hook-installer true",
-		"composer require captainhook/hook-installer --dev",
+		"composer require captainhook/hook-installer --dev  --no-interaction ",
 	];
 
 	foreach ( $command_list as $command ) {
@@ -100,7 +100,7 @@ try {
 
 	$config['project_vendor'] = ask( question: "Choose a Vendor. Eg, Vatu", required: true );
 	$config['project_name']   = ask( question: "Choose a Project Name. Eg, Website", required: true );
-	$config['project_homepage'] = ask( question: "Enter a project URL. Eg, https://www.example.test" );
+	// $config['project_homepage'] = ask( question: "Enter a project URL. Eg, https://www.example.test" );
 	// $config['project_repo'] = ask( question: "Enter the Git repository URL. Eg, https://github.com/vatu-team/example" );
 
 	updateComposerConfig( config: $config );
