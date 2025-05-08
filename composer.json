@@ -96,7 +96,7 @@
             "@composer run tools"
         ],
         "post-create-project-cmd": [
-            "@php --version"
+            "bin/post-create-project-cmd"
         ],
         "fix": [
             "@composer fix:normalize",
