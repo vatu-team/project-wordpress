@@ -21,7 +21,7 @@
       "globtec/phpadr": "^2.0.2",
       "php-stubs/wordpress-stubs": "^6.8.1",
       "php-stubs/wp-cli-stubs": "^2.11",
-      "phpcompatibility/phpcompatibility-wp": "^2.1.6",
+      "phpcompatibility/phpcompatibility-wp": "^2.1.7",
       "wptrt/wpthemereview": "^0.2.1",
       "yoast/phpunit-polyfills": "^4.0.0",
       "szepeviktor/phpstan-wordpress": "^2.0.1",
