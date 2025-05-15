@@ -109,12 +109,12 @@ You should never push code to built branches. All code should be pushed to the c
 
 To contribute to this project:
 
-- Create a branch off `main` eg, `feature/feature-name`, `hotfix/broken-part`, or `{issue-number}-{name-of-feature}`
-- Push code to this branch once is becomes usable. Checking against our Coding Standards `composer run test`. Pushing often giving other chance to review and run QA tests against your new code. Rebasing from `main` will let you check you code works against production code
-- When finished or requiring feedback, test your code on staging, pushing it to a branch prefixed with `staging/` to deploy to this projects staging server
-- Any fixes should be applied to the origin branch and merged into your staging branch
-- Once ready to be signed-off, create a pull request from your original branch in to `main`, assign a review and message the appropriate developer or channel. Detailing any changes that need to be made to the database/CMS
-- With sign-off and passings tests, rebase and merge your branch into `main`
+- Create a branch off `main`, eg, `feature/feature-name`, `hotfix/broken-part`, or `{issue-number}-{name-of-feature}`
+- Push code to this branch once it becomes usable. Checking against our Tests, `composer run test`. Pushing often allows others to review and run QA tests against your new code. Rebasing from `main` will let you check that your code works against the production code
+- When finished or requiring feedback, test your code on staging, creating a Pull Request (PR) onto the `develop` branch and merge via Merge Commit
+- Any fixes should be applied to the original branch and merged into our `develop` branch as per step three
+- Once ready to be signed off, create a PR from your original branch into `main`, request a review and message the appropriate developer or channel. Detailing any instructions for testing and changes that need to be made to the database/config
+- With your review approved and all tests passing, your PR can be squashed and merged into the `main` branch, keeping a tidy commit history
 
 ## Reporting Issues
 
