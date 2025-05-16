@@ -24,7 +24,7 @@
       "phpcompatibility/phpcompatibility-wp": "^2.1.7",
       "wptrt/wpthemereview": "^0.2.1",
       "yoast/phpunit-polyfills": "^4.0.0",
-      "szepeviktor/phpstan-wordpress": "^2.0.1",
+      "szepeviktor/phpstan-wordpress": "^2.0.2",
         "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
         "phpstan/extension-installer": "^1.4.3",
         "phpstan/phpstan": "^2.1.15",
