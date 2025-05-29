@@ -33,6 +33,7 @@
     },
     "config": {
       "allow-plugins": {
+            "composer/installers": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "ergebnis/composer-normalize": true,
             "phpstan/extension-installer": true
@@ -44,6 +45,10 @@
     "scripts": {
     },
     "require-dev": {
+        "phpcompatibility/php-compatibility": "dev-develop as 9.99.99",
+        "vatu/dev-tools": "dev-trunk as 2.0.0",
+        "php-stubs/wp-cli-stubs": "^2.11",
+        "php-stubs/wordpress-stubs": "^6.8",
         "ergebnis/composer-normalize": "^2.47"
     }
 }
