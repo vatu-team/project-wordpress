@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.342.23",
+            "version": "3.343.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "a5e9ba23ffecf1f71d8cfb177ef5cb3fbe2ecf05"
+                "reference": "5308e15ca92655906d04d5945613ab9046b4f79f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a5e9ba23ffecf1f71d8cfb177ef5cb3fbe2ecf05",
-                "reference": "a5e9ba23ffecf1f71d8cfb177ef5cb3fbe2ecf05",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5308e15ca92655906d04d5945613ab9046b4f79f",
+                "reference": "5308e15ca92655906d04d5945613ab9046b4f79f",
                 "shasum": ""
             },
             "require": {
@@ -153,9 +153,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.342.23"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.343.24"
             },
-            "time": "2025-04-08T18:35:41+00:00"
+            "time": "2025-06-03T18:04:18+00:00"
         },
         {
             "name": "composer/installers",
@@ -740,16 +740,16 @@
         },
         {
             "name": "humanmade/s3-uploads",
-            "version": "3.0.7",
+            "version": "3.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/S3-Uploads.git",
-                "reference": "b65f2c73ca8b248232407bbe0db93e6b728ed0ee"
+                "reference": "4089f71d0b60d0c2995f4d15acddced41f3d3de4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/S3-Uploads/zipball/b65f2c73ca8b248232407bbe0db93e6b728ed0ee",
-                "reference": "b65f2c73ca8b248232407bbe0db93e6b728ed0ee",
+                "url": "https://api.github.com/repos/humanmade/S3-Uploads/zipball/4089f71d0b60d0c2995f4d15acddced41f3d3de4",
+                "reference": "4089f71d0b60d0c2995f4d15acddced41f3d3de4",
                 "shasum": ""
             },
             "require": {
@@ -787,7 +787,7 @@
                 "issues": "https://github.com/humanmade/s3-uploads/issues",
                 "source": "https://github.com/humanmade/s3-uploads"
             },
-            "time": "2023-05-04T08:22:25+00:00"
+            "time": "2025-06-03T19:21:21+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
