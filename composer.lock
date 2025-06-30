@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5192b4b26e660cb2a4006d4f0ca1d812",
+    "content-hash": "36ef69e5fb883fc481bb546ed6e363c3",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -1829,15 +1829,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-robots-txt",
-            "version": "1.3.4",
+            "version": "1.3.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-robots-txt/",
-                "reference": "tags/1.3.4"
+                "reference": "tags/1.3.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-robots-txt.1.3.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-robots-txt.1.3.5.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
