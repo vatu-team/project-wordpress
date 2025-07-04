@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d5a7eff50afc8964c7dcc553229f3131",
+    "content-hash": "7b9d7cc2b6b5af0bfb6679e8e6df0021",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -1793,15 +1793,15 @@
         },
         {
             "name": "wpackagist-plugin/two-factor",
-            "version": "0.13.0",
+            "version": "0.14.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/two-factor/",
-                "reference": "tags/0.13.0"
+                "reference": "tags/0.14.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/two-factor.0.13.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/two-factor.0.14.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
