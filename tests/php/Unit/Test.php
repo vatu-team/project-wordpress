@@ -12,12 +12,18 @@
 
 declare(strict_types=1);
 
-namespace Vatu\Wordpress\Tests;
+namespace Vatu\Wordpress\Tests\Unit;
 
+use PHPUnit\Framework\Attributes\CoversNothing;
+use Vatu\Wordpress\Tests\TestCase;
+
+#[CoversNothing]
 class Test extends TestCase
 {
-	#[CoversNothing]
-	public function testSuiteIsRunning(): void
+	/**
+	 * Test Suite is running.
+	 */
+	public function testIsRun(): void
 	{
 		self::assertTrue( true );
 	}
