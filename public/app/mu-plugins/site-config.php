@@ -89,7 +89,67 @@ add_filter(
  */
 function vatu_content_security_policy_header(): void
 {
-	header( header: "Content-Security-Policy: default-src https: data: 'unsafe-inline'; upgrade-insecure-requests" );
+		$csp_header = [
+			'default-src'               => [
+				"'self'",
+				'blob:',
+				'data:',
+				'https:',
+				"'unsafe-inline'",
+			],
+			'script-src'                => [
+				"'self'",
+				"'unsafe-inline'",
+				"'unsafe-eval'",
+				'blob:',
+				'data:',
+			],
+			'style-src'                 => [
+				"'self'",
+				"'unsafe-inline'",
+				'blob:',
+				'data:',
+			],
+			'img-src'                   => [
+				"'self'",
+				'data:',
+			],
+			'manifest-src'              => [
+				"'self'",
+			],
+			'media-src'                 => [
+				"'self'",
+			],
+			'child-src'                 => [
+				"'self'",
+			],
+			'worker-src'                => [
+				"'self'",
+				'blob:',
+				'data:',
+			],
+			'object-src'                => [
+				"'none'",
+			],
+			'frame-src'                 => [
+				"'self'",
+			],
+			'connect-src'               => [
+				"'self'",
+			],
+			'frame-ancestors'           => [
+				"'self'",
+			],
+			'upgrade-insecure-requests' => [],
+		];
+
+		$header = 'Content-Security-Policy:';
+
+		foreach ( $csp_header as $type => $value ) {
+			$header .= ' ' . $type . ' ' . implode( ' ', $value ) . ';';
+		}
+
+		header( $header );
 }
 
 add_action(
