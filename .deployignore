@@ -86,5 +86,9 @@ composer.lock
 
 ## Plugins
 
+### Runcloud Hub
+/public/app/plugins/runcloud-hub/
+/public/app/rcwp-redis-config.php
+
 ## WPCLI
 wp-cli.local.yml
