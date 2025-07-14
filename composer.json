@@ -42,7 +42,7 @@
         "wpackagist-plugin/rewrite-testing": "^0.1.1",
         "wpackagist-plugin/transients-manager": "^2.0.7",
         "wpackagist-plugin/user-switching": "^1.9.2",
-        "wpackagist-plugin/wordpress-beta-tester": "^3.6.3",
+        "wpackagist-plugin/wordpress-beta-tester": "^3.6.4",
         "wpackagist-plugin/wordpress-importer": "^0.8.4",
         "wpackagist-plugin/wp-crontrol": "^1.19",
         "wpackagist-theme/twentytwentyfive": "^1.2"
