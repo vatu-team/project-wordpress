@@ -103,6 +103,13 @@ function vatu_content_security_policy_header(): void
 				"'unsafe-eval'",
 				'blob:',
 				'data:',
+				'*.gravatar.com',
+				'*.google.com',
+				'*.google.co.uk',
+				'*.googleapis.com',
+				'*.google-analytics.com',
+				'*.googletagmanager.com',
+				'*.gstatic.com',
 			],
 			'style-src'                 => [
 				"'self'",
@@ -113,6 +120,7 @@ function vatu_content_security_policy_header(): void
 			'img-src'                   => [
 				"'self'",
 				'data:',
+				'*.gravatar.com',
 			],
 			'manifest-src'              => [
 				"'self'",
@@ -133,9 +141,11 @@ function vatu_content_security_policy_header(): void
 			],
 			'frame-src'                 => [
 				"'self'",
+				'*.google.com',
 			],
 			'connect-src'               => [
 				"'self'",
+				'*.google.com',
 			],
 			'frame-ancestors'           => [
 				"'self'",
