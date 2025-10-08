@@ -190,3 +190,22 @@ add_action(
 	priority: 10,
 	accepted_args: 0
 );
+
+/**
+ * Fixes: AWS SDK looking for shared config files which do not exist in our environment.
+ *
+ * @param array<string,mixed> $params
+ * @return array<string,mixed>
+ */
+function vatu_remove_aws_shared_config_lookup( array $params ): array
+{
+	$params['use_aws_shared_config_files'] = false;
+	return $params;
+}
+
+add_filter(
+	hook_name: 's3_uploads_s3_client_params',
+	callback: 'vatu_remove_aws_shared_config_lookup',
+	priority: 10,
+	accepted_args: 1
+);
