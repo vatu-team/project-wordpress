@@ -46,9 +46,9 @@ jobs:
         env:
           COMPOSER_TOKEN: ${{ secrets.github-token }}
 
-      # - name: "Add Composer config."
-      #   run: |
-      #     composer config http-basic.satispress.vatu.dev ${{ secrets.COMPOSER_VATU_USERNAME }} ${{ secrets.COMPOSER_VATU_KEY }}
+      - name: "Add Composer config."
+        run: |
+          composer config http-basic.satispress.vatu.dev ${{ secrets.COMPOSER_VATU_USERNAME }} ${{ secrets.COMPOSER_VATU_KEY }}
 
       - name: 'Validate Composer file.'
         run: |
