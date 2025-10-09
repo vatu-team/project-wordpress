@@ -90,57 +90,95 @@ add_filter(
 function vatu_content_security_policy_header(): void
 {
 		$csp_header = [
-			'default-src'               => [
-				"'self'",
-				'blob:',
-				'data:',
-				'https:',
-				"'unsafe-inline'",
-			],
-			'script-src'                => [
-				"'self'",
-				"'unsafe-inline'",
-				"'unsafe-eval'",
-				'blob:',
-				'data:',
-			],
-			'style-src'                 => [
-				"'self'",
-				"'unsafe-inline'",
-				'blob:',
-				'data:',
-			],
-			'img-src'                   => [
-				"'self'",
-				'data:',
-			],
-			'manifest-src'              => [
-				"'self'",
-			],
-			'media-src'                 => [
-				"'self'",
-			],
-			'child-src'                 => [
-				"'self'",
-			],
-			'worker-src'                => [
-				"'self'",
-				'blob:',
-				'data:',
-			],
-			'object-src'                => [
-				"'none'",
-			],
-			'frame-src'                 => [
-				"'self'",
-			],
-			'connect-src'               => [
-				"'self'",
-			],
-			'frame-ancestors'           => [
-				"'self'",
-			],
-			'upgrade-insecure-requests' => [],
+			'default-src'               => apply_filters(
+				'site-config.csp.default-src',
+				[
+					"'self'",
+					'blob:',
+					'https:',
+					"'unsafe-inline'",
+				]
+			),
+			'script-src'                => apply_filters(
+				'site-config.csp.script-src',
+				[
+					"'self'",
+					"'unsafe-inline'",
+					"'unsafe-eval'",
+					'blob:',
+					'data:',
+				]
+			),
+			'style-src'                 => apply_filters(
+				'site-config.csp.style-src',
+				[
+					"'self'",
+					"'unsafe-inline'",
+					'blob:',
+					'data:',
+				]
+			),
+			'img-src'                   => apply_filters(
+				'site-config.csp.img-src',
+				[
+					"'self'",
+					'data:',
+				]
+			),
+			'manifest-src'              => apply_filters(
+				'site-config.csp.manifest-src',
+				[
+					"'self'",
+				]
+			),
+			'media-src'                 => apply_filters(
+				'site-config.csp.media-src',
+				[
+					"'self'",
+				]
+			),
+			'child-src'                 => apply_filters(
+				'site-config.csp.child-src',
+				[
+					"'self'",
+				]
+			),
+			'worker-src'                => apply_filters(
+				'site-config.csp.worker-src',
+				[
+					"'self'",
+					'blob:',
+					'data:',
+				]
+			),
+			'object-src'                => apply_filters(
+				'site-config.csp.object-src',
+				[
+					"'none'",
+				]
+			),
+			'frame-src'                 => apply_filters(
+				'site-config.csp.frame-src',
+				[
+					"'self'",
+				]
+			),
+			'connect-src'               => apply_filters(
+				'site-config.csp.connect-src',
+				[
+					"'self'",
+				]
+			),
+			'frame-ancestors'           => apply_filters(
+				'site-config.csp.frame-ancestors',
+				[
+					"'self'",
+				]
+			),
+			'upgrade-insecure-requests' => apply_filters(
+				'site-config.csp.upgrade-insecure-requests',
+				[]
+			),
 		];
 
 		$header = 'Content-Security-Policy:';
