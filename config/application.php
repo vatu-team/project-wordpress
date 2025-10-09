@@ -145,12 +145,6 @@ if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_P
 	$_SERVER['HTTPS'] = 'on';
 }
 
-$env_config = __DIR__ . '/environments/' . WP_ENVIRONMENT_TYPE . '.php';
-
-if ( file_exists( filename: $env_config ) ) {
-	require_once $env_config;
-}
-
 /**
  * Multisite
  */
@@ -191,6 +185,16 @@ Config::define(
 */
 Config::define( key: 'FLUENTMAIL_MAILGUN_API_KEY', value: getenv( name: 'FLUENTMAIL_MAILGUN_API_KEY' ) ?: null );
 Config::define( key: 'FLUENTMAIL_MAILGUN_DOMAIN', value: getenv( name: 'FLUENTMAIL_MAILGUN_DOMAIN' ) ?: null );
+
+/**
+ * @var string $env
+ */
+$env = WP_ENVIRONMENT_TYPE;
+$env_config = "{$root_dir}/config/environments/{$env}.php";
+
+if ( file_exists( filename: $env_config ) ) {
+	require_once $env_config;
+}
 
 Config::apply();
 
