@@ -8,7 +8,7 @@
         "php-stubs/wp-cli-stubs": "^2.12.0",
         "phpcompatibility/php-compatibility": "dev-develop as 9.99.99",
         "phpcompatibility/phpcompatibility-wp": "^2.1.7",
-        "vatu/dev-tools": "dev-trunk as 2.0.0",
+        "vatu/dev-tools": "^2.0.0",
         "wp-coding-standards/wpcs": "^2.3",
         "wptrt/wpthemereview": "^0.2.1"
     },
