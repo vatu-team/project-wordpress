@@ -161,6 +161,26 @@ if ( getenv( name: 'MULTISITE' ) === 'true' ) {
 	Config::define( key: 'COOKIE_DOMAIN', value: getenv( name: 'COOKIE_DOMAIN' ) ?: null );
 }
 
+/**
+ * Runcloud
+ */
+Config::define(
+	key: 'RCWP_REDIS_DOMAIN',
+	value: getenv( name: 'RCWP_REDIS_DOMAIN' ) ?: null
+);
+
+/**
+ * @var string $rcwp_redis_password
+ */
+$rcwp_redis_password = is_string( getenv( name: 'RCWP_REDIS_PASSWORD' ) ) ? getenv( name: 'RCWP_REDIS_PASSWORD' ) : '';
+
+if ( $rcwp_redis_password !== '' ) {
+	Config::define(
+		key: 'RCWP_REDIS_PASSWORD',
+		value: explode( ',', $rcwp_redis_password )
+	);
+}
+
 /*
  * S3 Uploads
  */
