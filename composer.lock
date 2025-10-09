@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e79736e01e3976a4247dfba64eccc22",
+    "content-hash": "704469a1ea26fbc74e964be6e4b60ecb",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -3536,15 +3536,15 @@
         },
         {
             "name": "wpackagist-plugin/user-switching",
-            "version": "1.9.2",
+            "version": "1.10.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/user-switching/",
-                "reference": "tags/1.9.2"
+                "reference": "tags/1.10.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/user-switching.1.9.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/user-switching.1.10.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
