@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a7127d1321712ad9e82ee3238a1c8995",
+    "content-hash": "7e79736e01e3976a4247dfba64eccc22",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -1775,15 +1775,15 @@
         },
         {
             "name": "wpackagist-plugin/safe-svg",
-            "version": "2.3.1",
+            "version": "2.4.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/safe-svg/",
-                "reference": "tags/2.3.1"
+                "reference": "tags/2.4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/safe-svg.2.3.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/safe-svg.2.4.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
