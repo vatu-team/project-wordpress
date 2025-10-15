@@ -124,7 +124,7 @@ Config::define( key: 'WP_DEFAULT_THEME', value: getenv( 'WP_DEFAULT_THEME' ) ?: 
  * Debugging Settings
  */
 Config::define( key: 'WP_DEBUG', value: getenv( name: 'WP_DEBUG' ) ?: false );
-Config::define( key: 'WP_DEBUG_DISPLAY', value: getenv( name: 'WP_DEBUG' ) ?: false );
+Config::define( key: 'WP_DEBUG_DISPLAY', value: getenv( name: 'WP_DEBUG_DISPLAY' ) ?: false );
 Config::define( key: 'WP_DEBUG_LOG', value: getenv( name: 'WP_DEBUG_LOG' ) ?: false );
 Config::define( key: 'SCRIPT_DEBUG', value: false );
 ini_set( option: 'display_errors', value: '0' );
@@ -209,7 +209,7 @@ Config::define( key: 'FLUENTMAIL_MAILGUN_DOMAIN', value: getenv( name: 'FLUENTMA
 /**
  * @var string $env
  */
-$env = WP_ENVIRONMENT_TYPE;
+$env        = WP_ENVIRONMENT_TYPE;
 $env_config = "{$root_dir}/config/environments/{$env}.php";
 
 if ( file_exists( filename: $env_config ) ) {
