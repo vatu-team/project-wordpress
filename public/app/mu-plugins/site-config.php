@@ -37,6 +37,13 @@ if (
  */
 add_filter( hook_name: 'xmlrpc_enabled', callback: '__return_false' );
 
+function vatu_remove_wordpress_generator_version(): string
+{
+	return '';
+}
+
+add_filter( hook_name: 'the_generator', callback: 'vatu_remove_wordpress_generator_version' );
+
 /**
  * Disable current theme validation
  *
