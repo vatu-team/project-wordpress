@@ -17,7 +17,7 @@
         "issues": "https://github.com/vatu-team/project-wordpress/issues"
     },
     "require": {
-        "php": "~8.3",
+        "php": "^8.3",
         "composer/installers": "^2.3.0",
         "cweagans/composer-patches": "^1.7.3",
         "humanmade/s3-uploads": "^3.0",
@@ -55,16 +55,13 @@
     ],
     "minimum-stability": "stable",
     "prefer-stable": true,
-    "autoload": {
-        "psr-4": {}
-    },
     "config": {
         "allow-plugins": {
+            "captainhook/hook-installer": true,
             "composer/installers": true,
             "cweagans/composer-patches": true,
             "ergebnis/composer-normalize": true,
-            "johnpbloch/wordpress-core-installer": true,
-            "captainhook/hook-installer": true
+            "johnpbloch/wordpress-core-installer": true
         },
         "optimize-autoloader": true,
         "preferred-install": "dist",
@@ -116,6 +113,12 @@
             "@composer test:compatibility",
             "@composer test:unit"
         ],
+        "test:analysis": [
+            "./tools/vendor/bin/phpstan analyse -c ./phpstan.dist.neon --memory-limit 4G"
+        ],
+        "test:compatibility": [
+            "./tools/vendor/bin/phpcs --colors --report-width=120 --standard=PHPCompatibility --extensions=php --ignore=vendor/* --ignore=tools/* ./config ./public/app/mu-plugins/site-config.php"
+        ],
         "test:lint": [
             "@composer validate --ansi --strict",
             "@composer test:lint:syntax",
@@ -134,16 +137,9 @@
         "test:unit": [
             "./tools/vendor/bin/phpunit -c ./phpunit.dist.xml --testsuite unit"
         ],
-        "test:analysis": [
-            "./tools/vendor/bin/phpstan analyse -c ./phpstan.dist.neon --memory-limit 4G"
-        ],
-        "test:compatibility": [
-            "./tools/vendor/bin/phpcs --colors --report-width=120 --standard=PHPCompatibility --extensions=php --ignore=vendor/* --ignore=tools/* ./config ./public/app/mu-plugins/site-config.php"
-        ],
         "tools": [
             "@composer install --working-dir=tools",
             "@composer run post-install-cmd --working-dir=tools"
         ]
-    },
-    "scripts-descriptions": {}
+    }
 }
