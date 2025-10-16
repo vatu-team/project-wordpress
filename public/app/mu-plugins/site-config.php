@@ -31,6 +31,13 @@ if (
 }
 
 /**
+ * Disable XML-RPC
+ *
+ * XML-RPC is not used in our environment and is a common attack vector.
+ */
+add_filter( hook_name: 'xmlrpc_enabled', callback: '__return_false' );
+
+/**
  * Disable current theme validation
  *
  * By default, WordPress falls back to a default theme if it can't find
