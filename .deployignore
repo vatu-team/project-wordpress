@@ -78,6 +78,7 @@ composer.lock
 /public/app/advanced-cache.php
 /public/db.php
 /public/app/object-cache.php
+/public/wp/readme.html
 /public/wp/wp-content/akismet/
 /public/wp/wp-content/hello.php
 /public/wp/wp-content/themes/
