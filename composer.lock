@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.356.35",
+            "version": "3.357.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "09f1e434cbeed5b916f572369b9f09389b13a5c0"
+                "reference": "0325c653b022aedb38f397cf559ab4d0f7967901"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/09f1e434cbeed5b916f572369b9f09389b13a5c0",
-                "reference": "09f1e434cbeed5b916f572369b9f09389b13a5c0",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0325c653b022aedb38f397cf559ab4d0f7967901",
+                "reference": "0325c653b022aedb38f397cf559ab4d0f7967901",
                 "shasum": ""
             },
             "require": {
@@ -153,9 +153,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.356.35"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.357.0"
             },
-            "time": "2025-10-08T18:06:42+00:00"
+            "time": "2025-10-22T19:43:07+00:00"
         },
         {
             "name": "composer/installers",
@@ -740,16 +740,16 @@
         },
         {
             "name": "humanmade/s3-uploads",
-            "version": "3.0.10",
+            "version": "3.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/S3-Uploads.git",
-                "reference": "e84c535c3eeba3a28c8e37bc804abdaf4c9b0985"
+                "reference": "237aef88fa15c3c7ac43b48d8cdf6e0d500326d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/S3-Uploads/zipball/e84c535c3eeba3a28c8e37bc804abdaf4c9b0985",
-                "reference": "e84c535c3eeba3a28c8e37bc804abdaf4c9b0985",
+                "url": "https://api.github.com/repos/humanmade/S3-Uploads/zipball/237aef88fa15c3c7ac43b48d8cdf6e0d500326d4",
+                "reference": "237aef88fa15c3c7ac43b48d8cdf6e0d500326d4",
                 "shasum": ""
             },
             "require": {
@@ -774,9 +774,8 @@
             ],
             "authors": [
                 {
-                    "name": "Human Made Limited",
-                    "email": "support@humanmade.co.uk",
-                    "homepage": "http://hmn.md/"
+                    "name": "Human Made",
+                    "homepage": "https://humanmade.com/"
                 }
             ],
             "description": "WordPress plugin to store uploads on S3",
@@ -788,7 +787,7 @@
                 "issues": "https://github.com/humanmade/s3-uploads/issues",
                 "source": "https://github.com/humanmade/s3-uploads"
             },
-            "time": "2025-08-07T19:49:16+00:00"
+            "time": "2025-10-22T14:49:30+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
