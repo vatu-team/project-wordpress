@@ -19,7 +19,7 @@
     "require": {
         "php": "^8.3",
         "composer/installers": "^2.3.0",
-        "cweagans/composer-patches": "^1.7.3",
+        "cweagans/composer-patches": "^2.0.0",
         "humanmade/s3-uploads": "^3.0",
         "johnpbloch/wordpress": "^6.8.3",
         "roots/wp-config": "^1.0",
