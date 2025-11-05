@@ -64,6 +64,7 @@ example.env
 auth.json
 composer.json
 composer.lock
+patches.lock.json
 
 ## Config
 /config/environments/local.php
