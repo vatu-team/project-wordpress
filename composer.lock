@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "86261cf9be2dd8a07ef4059cb7c0b68d",
+    "content-hash": "8cf96a7fe948960031e22994ab567d8e",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -3689,15 +3689,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-importer",
-            "version": "0.9.4",
+            "version": "0.9.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-importer/",
-                "reference": "tags/0.9.4"
+                "reference": "tags/0.9.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-importer.0.9.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-importer.0.9.5.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
