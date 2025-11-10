@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8cf96a7fe948960031e22994ab567d8e",
+    "content-hash": "9956dee3f2c84c7fe71d7a147151e440",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -3671,15 +3671,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-beta-tester",
-            "version": "3.6.5",
+            "version": "4.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-beta-tester/",
-                "reference": "tags/3.6.5"
+                "reference": "tags/4.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-beta-tester.3.6.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-beta-tester.4.0.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
