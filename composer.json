@@ -45,7 +45,7 @@
         "wpackagist-plugin/wordpress-beta-tester": "^4.0.0",
         "wpackagist-plugin/wordpress-importer": "^0.9.5",
         "wpackagist-plugin/wp-crontrol": "^1.19",
-        "wpackagist-theme/twentytwentyfive": "^1.3"
+        "wpackagist-theme/twentytwentyfive": "^1.4"
     },
     "repositories": [
         {
