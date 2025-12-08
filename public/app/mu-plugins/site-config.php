@@ -121,6 +121,9 @@ function vatu_content_security_policy_header(): void
 					"'unsafe-eval'",
 					'blob:',
 					'data:',
+					'https://www.googletagmanager.com',
+					'https://tagmanager.google.com',
+					'https://*.googletagmanager.com',
 				]
 			),
 			'style-src'                 => apply_filters(
@@ -130,6 +133,9 @@ function vatu_content_security_policy_header(): void
 					"'unsafe-inline'",
 					'blob:',
 					'data:',
+					'https://googletagmanager.com',
+					'https://tagmanager.google.com',
+					'https://fonts.googleapis.com',
 				]
 			),
 			'img-src'                   => apply_filters(
@@ -137,6 +143,13 @@ function vatu_content_security_policy_header(): void
 				[
 					"'self'",
 					'data:',
+					'www.googletagmanager.com',
+					'https://googletagmanager.com',
+					'https://ssl.gstatic.com',
+					'https://www.gstatic.com',
+					'https://*.google-analytics.com',
+					'https://*.googletagmanager.com',
+					'https://s.w.org',
 				]
 			),
 			'manifest-src'              => apply_filters(
@@ -181,6 +194,11 @@ function vatu_content_security_policy_header(): void
 				'site-config.csp.connect-src',
 				[
 					"'self'",
+					'www.googletagmanager.com',
+					'www.google.com',
+					'https://*.google-analytics.com',
+					'https://*.analytics.google.com',
+					'https://*.googletagmanager.com',
 				]
 			),
 			'frame-ancestors'           => apply_filters(
