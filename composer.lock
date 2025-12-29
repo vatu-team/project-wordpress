@@ -1914,15 +1914,15 @@
         },
         {
             "name": "wpackagist-plugin/fluent-smtp",
-            "version": "2.2.92",
+            "version": "2.2.95",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/fluent-smtp/",
-                "reference": "tags/2.2.92"
+                "reference": "tags/2.2.95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/fluent-smtp.2.2.92.zip"
+                "url": "https://downloads.wordpress.org/plugin/fluent-smtp.2.2.95.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
