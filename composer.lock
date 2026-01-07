@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7af54fec6b8abf129c1210e1bd8d503b",
+    "content-hash": "af9d8dc993762505703e50c471a6624b",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -3604,15 +3604,15 @@
         },
         {
             "name": "wpackagist-plugin/rewrite-rules-inspector",
-            "version": "1.5.1",
+            "version": "1.6.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/rewrite-rules-inspector/",
-                "reference": "tags/1.5.1"
+                "reference": "tags/1.6.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/rewrite-rules-inspector.1.5.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/rewrite-rules-inspector.1.6.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"

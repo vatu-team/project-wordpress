@@ -38,7 +38,7 @@
         "wpackagist-plugin/duplicate-post": "^4.5",
         "wpackagist-plugin/log-deprecated-notices": "^0.4.1",
         "wpackagist-plugin/query-monitor": "^3.20",
-        "wpackagist-plugin/rewrite-rules-inspector": "^1.5",
+        "wpackagist-plugin/rewrite-rules-inspector": "^1.6",
         "wpackagist-plugin/rewrite-testing": "^0.1.1",
         "wpackagist-plugin/transients-manager": "^2.0.7",
         "wpackagist-plugin/user-switching": "^1.11.1",
