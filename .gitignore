@@ -63,8 +63,15 @@ auth.json
 /config/environments/local.php
 
 ## WordPress
-
+/public/app/cache/*
+/public/app/languages/*
+/public/app/upgrade
+/public/app/uploads/*
 /public/wp/*
+/public/.htaccess
+/public/app/advanced-cache.php
+/public/app/db.php
+/public/app/object-cache.php
 
 ### Themes
 /public/app/themes/*
@@ -75,3 +82,11 @@ auth.json
 !/public/app/plugins/index.php
 /public/app/mu-plugins/*
 !/public/app/mu-plugins/site-config.php
+
+## MU Plugins
+/public/app/mu-plugins/*
+!/public/app/mu-plugins/index.php
+!/public/app/mu-plugins/site-config.php
+
+## WPCLI
+wp-cli.local.yml
