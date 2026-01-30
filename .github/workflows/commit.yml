@@ -60,7 +60,7 @@ jobs:
           echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
       - name: 'Sets up Caching.'
-        uses: 'actions/cache@v5.0.2'
+        uses: 'actions/cache@v5.0.3'
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-php-composer-build-${{ hashFiles('composer.lock') }}
@@ -117,7 +117,7 @@ jobs:
           echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
       - name: 'Sets up Caching.'
-        uses: 'actions/cache@v5.0.2'
+        uses: 'actions/cache@v5.0.3'
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-php-composer-tools-${{ hashFiles('composer.lock') }}
@@ -180,7 +180,7 @@ jobs:
           echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
       - name: 'Sets up Dev Tool Caching.'
-        uses: 'actions/cache@v5.0.2'
+        uses: 'actions/cache@v5.0.3'
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-php-composer-tools-${{ hashFiles('tools/composer.lock') }}
@@ -188,7 +188,7 @@ jobs:
             ${{ runner.os }}-php-composer-tools-
 
       - name: 'Sets up Project Caching.'
-        uses: 'actions/cache@v5.0.2'
+        uses: 'actions/cache@v5.0.3'
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-php-composer-tools-${{ hashFiles('composer.lock') }}
@@ -258,7 +258,7 @@ jobs:
           echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
       - name: "Sets up Caching."
-        uses: "actions/cache@v5.0.2"
+        uses: "actions/cache@v5.0.3"
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-php-composer-tools-${{ hashFiles('tools/composer.lock') }}
@@ -318,7 +318,7 @@ jobs:
           echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
       - name: 'Sets up Dev Tool Caching.'
-        uses: 'actions/cache@v5.0.2'
+        uses: 'actions/cache@v5.0.3'
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-php-composer-tools-${{ hashFiles('tools/composer.lock') }}
@@ -326,7 +326,7 @@ jobs:
             ${{ runner.os }}-php-composer-tools-
 
       - name: 'Sets up Project Caching.'
-        uses: 'actions/cache@v5.0.2'
+        uses: 'actions/cache@v5.0.3'
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-php-composer-tools-${{ hashFiles('composer.lock') }}
