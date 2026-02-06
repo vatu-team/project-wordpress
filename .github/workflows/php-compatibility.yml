@@ -31,7 +31,7 @@ jobs:
   php-compatibility:
 
     name: 'PHP Compatibility'
-    uses: 'vatu-team/workflows/.github/workflows/php-compatibility.yml@1.14.0'
+    uses: 'vatu-team/workflows/.github/workflows/php-compatibility.yml@1.15.1'
     with:
       runs-on: 'ubuntu-24.04'
       branch: ${{ inputs.branch }}
