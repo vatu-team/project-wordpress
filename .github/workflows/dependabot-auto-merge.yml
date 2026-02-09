@@ -23,7 +23,7 @@ jobs:
       github.actor == 'dependabot[bot]' &&
       github.event.workflow_run.conclusion == 'success'
     name: "Auto Merge"
-    uses: vatu-team/workflows/.github/workflows/auto-merge-pr.yml@1.14.0
+    uses: vatu-team/workflows/.github/workflows/auto-merge-pr.yml@1.15.1
     with:
       runs-on: 'ubuntu-24.04'
     secrets:
