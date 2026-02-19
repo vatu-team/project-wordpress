@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ee38caad08530a85fd019ac076b4a35",
+    "content-hash": "1cb65525ca88707bb056aceb87d0c686",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -1968,15 +1968,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "26.9",
+            "version": "27.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/26.9"
+                "reference": "tags/27.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.26.9.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.27.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
