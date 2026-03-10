@@ -35,7 +35,7 @@
     "require-dev": {
         "captainhook/captainhook": "^5.28.5",
         "ergebnis/composer-normalize": "*",
-        "wpackagist-plugin/duplicate-post": "^4.5",
+        "wpackagist-plugin/duplicate-post": "^4.6",
         "wpackagist-plugin/log-deprecated-notices": "^0.4.1",
         "wpackagist-plugin/query-monitor": "^3.20",
         "wpackagist-plugin/rewrite-rules-inspector": "^1.6",
