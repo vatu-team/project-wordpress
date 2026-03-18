@@ -29,7 +29,7 @@
         "wpackagist-plugin/fluent-smtp": "^2.2",
         "wpackagist-plugin/safe-svg": "^2.4.0",
         "wpackagist-plugin/two-factor": "^0.15.0",
-        "wpackagist-plugin/wordpress-seo": "^27.1",
+        "wpackagist-plugin/wordpress-seo": "^27.2",
         "wpackagist-plugin/wp-robots-txt": "^1.3.5"
     },
     "require-dev": {
