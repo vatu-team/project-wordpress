@@ -61,6 +61,7 @@ example.env
 # Applications
 
 ## Composer
+/patches
 auth.json
 composer.json
 composer.lock

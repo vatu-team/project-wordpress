@@ -1,0 +1,183 @@
+# Vatu Deploy
+# Version: 1.0.2
+# Author: Michael Bragg <mike@vatu.dev>
+
+name: "Build"
+
+# All branches push to a `{current_branch_name}--built` branch.
+# This new branch can be connected to a Git deployment process.
+# To add extra deployment branches, add a new starting point to the allow branches.
+
+on:
+  workflow_run:
+    workflows:
+      - 'Commit'
+    types:
+      - completed
+    branches:
+      - main
+      - develop
+      - uat
+
+env:
+  COMPOSER_ALLOW_SUPERUSER: "1" # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
+
+jobs:
+  # Deploy code to production.
+  #
+  # Performs the following steps:
+  # - Get current branch name.
+  # - Checks out the repository.
+  # - Sets up PHP with Composer.
+  # - Logs debug information.
+  # - Add Composer config.
+  # - Install Composer dependencies with development dependencies. || Install Composer dependencies with no dev option.
+  # - Setup NodeJS.
+  # - Logs debug information.
+  # - Install Node dependencies.
+  # - Compile Theme.
+  # - Check built branch exists.
+  # - Checkout copy of repository. && Creating a *--built branch. || Using existing *--built branch.
+  # - Rsync files to build directory.
+  # - Remove `.gitignore` file.
+  # - Setup deploy ignore files.
+  # - Push build to deployment branch.
+
+  build:
+
+    if: >
+      github.event.workflow_run.conclusion == 'success'
+
+    name: "Build"
+    runs-on: 'ubuntu-24.04'
+    steps:
+
+      - name: 'Generate GitHub token from GitHub App (Bot)'
+        uses: 'actions/create-github-app-token@v3.0.0'
+        id: app-token
+        with:
+          app-id: "${{ secrets.VATU_BOT_ID }}"
+          private-key: "${{ secrets.VATU_BOT_KEY }}"
+          owner: ${{ github.repository_owner }}
+
+      - name: 'Checks out the repository.'
+        uses: 'actions/checkout@v6.0.2'
+
+      - name: 'Get current branch name.'
+        run : |
+          echo "branch_name=${{ github.event.workflow_run.head_branch }}" >> $GITHUB_ENV
+
+      - name: "Sets up PHP with Composer."
+        uses: "shivammathur/setup-php@2.37.0"
+        with:
+          php-version: '8.4'
+          coverage: "none"
+          tools: composer
+          ini-values: "memory_limit=-1"
+          ini-file: none
+        env:
+          COMPOSER_TOKEN: ${{ steps.app-token.outputs.token }}
+
+      - name: "Logs debug information."
+        run: |
+          php --version
+          composer --version
+          echo Current Branch: ${{ env.branch_name }}
+
+      - name: "Add Composer config."
+        run: |
+          composer config http-basic.satispress.vatu.dev ${{ secrets.COMPOSER_VATU_USERNAME }} ${{ secrets.COMPOSER_VATU_KEY }}
+
+      - name: "Install Composer dependencies with development dependencies."
+        if: ${{ env.branch_name != 'main' }}
+        run: |
+          composer install --no-interaction --prefer-dist --no-suggest --no-scripts
+          composer dump-autoload --optimize
+
+      - name: "Install Composer dependencies with no dev option."
+        if: ${{ env.branch_name == 'main' }}
+        run: |
+          composer install --no-dev --no-interaction --prefer-dist --no-suggest --no-scripts
+          composer dump-autoload --optimize --no-dev
+
+      - name: "Setup NodeJS."
+        uses: "actions/setup-node@v6.3.0"
+        with:
+          node-version: '24'
+          cache: 'npm'
+        env:
+          NODE_AUTH_TOKEN: ${{ steps.app-token.outputs.token }}
+
+      - name: "Logs debug information."
+        run: |
+          node --version
+          npm --version
+
+      - name: "Install Node Modules."
+        run: |
+          npm install
+
+      - name: "Compile Theme."
+        run: |
+          npm run build
+
+      - name: "Check built branch exists."
+        run: |
+          echo "ls_remote=$( git ls-remote --heads "https://${{ secrets.VATU_GITHUB_TOKEN }}:x-oauth-basic@github.com/${GITHUB_REPOSITORY}.git" ${{ env.branch_name }}--built | wc -l )" >> $GITHUB_ENV
+
+      - name: "Checkout copy of repository."
+        uses: "actions/checkout@v6.0.2"
+        with:
+          path: ./built
+        if: ${{ env.ls_remote == 0 }}
+
+      - name: "Creating a `--built` branch."
+        if: ${{ env.ls_remote == 0 }}
+        run: |
+          cd ${GITHUB_WORKSPACE}/built/
+          git checkout --orphan "${{ env.branch_name }}--built"
+          git rm --cached -r .
+
+      - name: "Using existing `--built` branch."
+        uses: "actions/checkout@v6.0.2"
+        with:
+          ref: ${{ env.branch_name }}--built
+          path: ./built
+        if: ${{ env.ls_remote == 1 }}
+
+      - name: "Rsync files to build directory."
+        run: |
+          rsync -azrm --inplace --delete --exclude={'.git','built/'} --exclude-from=.deployignore "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/built/"
+
+      - name: "Remove `.gitignore` file."
+        run: |
+          rm ${GITHUB_WORKSPACE}/built/.gitignore
+
+      - name: "Setup deploy ignore files."
+        run: mv ${GITHUB_WORKSPACE}/built/.deployignore ${GITHUB_WORKSPACE}/built/.gitignore
+
+      - name: "Push build to deployment branch."
+        run: |
+          cd ${GITHUB_WORKSPACE}/built/
+          git config --global user.name '${{ github.event.pusher.name || github.actor }}'
+          git config --global user.email '${{ github.event.pusher.email || 'team@vatu.dev' }}'
+          git add -A
+          MESSAGE=$( printf 'Build changes from %s\n\n%s' "${GITHUB_SHA}" "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" )
+          git commit --author="${{ github.event.pusher.name || github.actor }} <${{ github.event.pusher.email || 'team@vatu.dev' }}>" -m "${MESSAGE}"
+          git push origin ${{ env.branch_name }}--built
+
+      - name: "Failure notification."
+        if: ${{ always() && contains(needs.*.result, 'failure') }}
+        id: 'slack'
+        uses: 'slackapi/slack-github-action@v3.0.1'
+        with:
+          method: chat.postMessage
+          token: ${{ secrets.SLACK_TOKEN }}
+          payload: |
+            channel: "${{ secrets.SLACK_CHANNEL }}"
+            text: "${{ github.workflow }} workflow failed for ${{ github.event.repository.name }}"
+            blocks:
+              - type: "section"
+                text:
+                  type: "mrkdwn"
+                  text: "${{ github.workflow }} workflow failed for ${{ github.event.repository.name }}.\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View>"
