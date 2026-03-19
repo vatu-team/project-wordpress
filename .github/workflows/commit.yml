@@ -396,6 +396,7 @@ jobs:
     needs:
      - php-security
      - php-lint
+     - node-lint
      - php-analysis
      - php-compatibility
      - php-unit
@@ -410,7 +411,7 @@ jobs:
           method: chat.postMessage
           token: ${{ secrets.SLACK_TOKEN }}
           payload: |
-            channel: 'the-escape'
+            channel: "${{ secrets.SLACK_CHANNEL }}"
             text: "${{ github.workflow }} workflow failed for ${{ github.event.repository.name }}"
             blocks:
               - type: "section"
