@@ -10,8 +10,7 @@ error_log
 
 ## Tools
 
-/.bin
-!/.bin/post-deploy.sh
+/.bin/post-create-project-cmd
 /patches
 /shared
 /tests
@@ -73,7 +72,6 @@ patches.lock.json
 ## WordPress
 /public/app/cache/*
 /public/app/languages/*
-!/public/app/languages/index.php
 /public/app/upgrade
 /public/app/uploads/*
 /public/app/wflogs/*
