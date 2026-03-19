@@ -139,6 +139,43 @@ jobs:
         run: |
           composer test:lint
 
+  node-lint:
+    name: 'Node Lint'
+    runs-on: 'ubuntu-24.04'
+
+    strategy:
+      fail-fast: true
+      max-parallel: 1
+      matrix:
+        node-version:
+          - '24'
+
+    steps:
+
+      - name: 'Check out the repository.'
+        uses: 'actions/checkout@v6.0.2'
+
+      - name: "Setup NodeJS environment"
+        uses: "actions/setup-node@v6.3.0"
+        with:
+          node-version: '${{ matrix.node-version }}'
+          cache: 'npm'
+        env:
+          NODE_AUTH_TOKEN: ${{ steps.app-token.outputs.token }}
+
+      - name: "Logs debug information."
+        run: |
+          node --version
+          npm --version
+
+      - name: "Install Node Modules."
+        run: |
+          npm install
+
+      - name: "Compile Theme."
+        run: |
+          npm run build
+
   php-analysis:
     name: 'PHP Analysis'
     needs:
