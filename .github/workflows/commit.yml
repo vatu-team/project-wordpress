@@ -255,7 +255,6 @@ jobs:
     needs:
       - 'php-security'
       - 'php-lint'
-    continue-on-error: ${{ matrix.experimental }}
     runs-on: 'ubuntu-24.04'
 
     strategy:
@@ -394,7 +393,14 @@ jobs:
 
   notify-failure:
     name: "Notify on failure."
-    if: ${{ failure() }}
+    needs:
+     - php-security
+     - php-lint
+     - php-analysis
+     - php-compatibility
+     - php-unit
+     - acceptance
+    if: ${{ always() && contains(needs.*.result, 'failure') }}
     runs-on: 'ubuntu-24.04'
     steps:
       - name: "Failure notification."
@@ -404,7 +410,7 @@ jobs:
           method: chat.postMessage
           token: ${{ secrets.SLACK_TOKEN }}
           payload: |
-            channel: 'updates-failed'
+            channel: 'the-escape'
             text: "${{ github.workflow }} workflow failed for ${{ github.event.repository.name }}"
             blocks:
               - type: "section"
