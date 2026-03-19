@@ -17,10 +17,10 @@ on:
         default: 'main'
 
       php-version:
-        description: "Array of Version(s) of PHP to test against. Eg, `['8.3','8.4']`"
+        description: "Array of Version(s) of PHP to test against. Eg, `['8.4','8.5']`"
         required: false
         type: string
-        default: "['8.3','8.4']"
+        default: "['8.4','8.5']"
 
 concurrency:
   group: ${{ github.workflow }}--${{ github.head_ref || github.ref_name }}

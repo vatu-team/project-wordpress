@@ -28,7 +28,7 @@ jobs:
       max-parallel: 1
       matrix:
         php-version:
-          - '8.3'
+          - '8.4'
 
     steps:
 
@@ -89,7 +89,7 @@ jobs:
       max-parallel: 1
       matrix:
         php-version:
-          - '8.3'
+          - '8.4'
 
     steps:
 
@@ -151,7 +151,7 @@ jobs:
       max-parallel: 1
       matrix:
         php-version:
-          - '8.3'
+          - '8.4'
 
     steps:
 
@@ -225,11 +225,7 @@ jobs:
       fail-fast: false
       matrix:
         php-version:
-          - '8.3'
-        experimental: [false]
-        # include:
-        #   - php-version: '8.4'
-        #     experimental: true
+          - '8.4'
 
     steps:
 
@@ -285,7 +281,7 @@ jobs:
       max-parallel: 1
       matrix:
         php-version:
-          - '8.3'
+          - '8.4'
 
     steps:
 
