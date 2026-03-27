@@ -190,6 +190,7 @@ function vatu_content_security_policy_header(): void
 				[
 					"'self'",
 					'https://challenges.cloudflare.com',
+					'https://www.google.com/maps/',
 				]
 			),
 			'connect-src'               => apply_filters(
