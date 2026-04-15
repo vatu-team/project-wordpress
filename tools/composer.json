@@ -13,7 +13,7 @@
         "wptrt/wpthemereview": "^0.2.1"
     },
     "require-dev": {
-        "ergebnis/composer-normalize": "^2.50"
+        "ergebnis/composer-normalize": "^2.51"
     },
     "repositories": [
         {
