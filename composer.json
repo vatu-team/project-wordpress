@@ -34,7 +34,7 @@
     },
     "require-dev": {
         "captainhook/captainhook": "^5.29.2",
-        "ergebnis/composer-normalize": "^2.50.0",
+        "ergebnis/composer-normalize": "^2.51.0",
         "wpackagist-plugin/duplicate-post": "^4.6.0",
         "wpackagist-plugin/log-deprecated-notices": "^0.4.1",
         "wpackagist-plugin/query-monitor": "^4.0.6",
