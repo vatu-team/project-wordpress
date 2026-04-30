@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d57f3f6add0fe521e50d4b9c4d7de319",
+    "content-hash": "a9d3a896f5fdcda1a781223431131bb1",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.378.1",
+            "version": "3.379.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "c7a07701703e95c888a24959d5ea426c3d374240"
+                "reference": "aaa9aab5d077018dbc9af63338b2c5aa44a5add3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c7a07701703e95c888a24959d5ea426c3d374240",
-                "reference": "c7a07701703e95c888a24959d5ea426c3d374240",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/aaa9aab5d077018dbc9af63338b2c5aa44a5add3",
+                "reference": "aaa9aab5d077018dbc9af63338b2c5aa44a5add3",
                 "shasum": ""
             },
             "require": {
@@ -153,9 +153,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.378.1"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.379.9"
             },
-            "time": "2026-04-09T18:16:50+00:00"
+            "time": "2026-04-29T18:07:13+00:00"
         },
         {
             "name": "composer/installers",
@@ -1545,16 +1545,16 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.33.0",
+            "version": "v1.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "a3cc8b044a6ea513310cbd48ef7333b384945638"
+                "reference": "141046a8f9477948ff284fa65be2095baafb94f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/a3cc8b044a6ea513310cbd48ef7333b384945638",
-                "reference": "a3cc8b044a6ea513310cbd48ef7333b384945638",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/141046a8f9477948ff284fa65be2095baafb94f2",
+                "reference": "141046a8f9477948ff284fa65be2095baafb94f2",
                 "shasum": ""
             },
             "require": {
@@ -1604,7 +1604,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.33.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.37.0"
             },
             "funding": [
                 {
@@ -1624,20 +1624,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-09T11:45:10+00:00"
+            "time": "2026-04-10T16:19:22+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.33.0",
+            "version": "v1.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "6d857f4d76bd4b343eac26d6b539585d2bc56493"
+                "reference": "6a21eb99c6973357967f6ce3708cd55a6bec6315"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/6d857f4d76bd4b343eac26d6b539585d2bc56493",
-                "reference": "6d857f4d76bd4b343eac26d6b539585d2bc56493",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/6a21eb99c6973357967f6ce3708cd55a6bec6315",
+                "reference": "6a21eb99c6973357967f6ce3708cd55a6bec6315",
                 "shasum": ""
             },
             "require": {
@@ -1689,7 +1689,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.33.0"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.37.0"
             },
             "funding": [
                 {
@@ -1709,20 +1709,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-23T08:48:59+00:00"
+            "time": "2026-04-10T17:25:58+00:00"
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.33.0",
+            "version": "v1.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "0cc9dd0f17f61d8131e7df6b84bd344899fe2608"
+                "reference": "dfb55726c3a76ea3b6459fcfda1ec2d80a682411"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/0cc9dd0f17f61d8131e7df6b84bd344899fe2608",
-                "reference": "0cc9dd0f17f61d8131e7df6b84bd344899fe2608",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/dfb55726c3a76ea3b6459fcfda1ec2d80a682411",
+                "reference": "dfb55726c3a76ea3b6459fcfda1ec2d80a682411",
                 "shasum": ""
             },
             "require": {
@@ -1773,7 +1773,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.33.0"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.37.0"
             },
             "funding": [
                 {
@@ -1793,7 +1793,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-01-02T08:10:11+00:00"
+            "time": "2026-04-10T16:19:22+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -1880,7 +1880,7 @@
             "time": "2025-12-27T19:49:13+00:00"
         },
         {
-            "name": "wpackagist-plugin/better-passwords",
+            "name": "wp-plugin/better-passwords",
             "version": "1.8",
             "source": {
                 "type": "svn",
@@ -1892,13 +1892,25 @@
                 "url": "https://downloads.wordpress.org/plugin/better-passwords.1.8.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/better-passwords/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "bettersecurity"
+                }
+            ],
+            "description": "Stop use of a bad passwords, including those in the Have I Been Pwned? breached password database",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/better-passwords/#developers",
+                "issues": "https://wordpress.org/support/plugin/better-passwords",
+                "source": "https://plugins.svn.wordpress.org/better-passwords"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/disable-emojis",
+            "name": "wp-plugin/disable-emojis",
             "version": "1.8",
             "source": {
                 "type": "svn",
@@ -1910,13 +1922,26 @@
                 "url": "https://downloads.wordpress.org/plugin/disable-emojis.1.8.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/disable-emojis/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Ryan Hellyer"
+                }
+            ],
+            "description": "Disable the WordPress emoji functionality to improve performance and privacy.",
+            "homepage": "https://geek.hellyer.kiwi/plugins/disable-emojis/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/disable-emojis/#developers",
+                "issues": "https://wordpress.org/support/plugin/disable-emojis",
+                "source": "https://plugins.svn.wordpress.org/disable-emojis"
+            },
+            "time": "2026-04-29T21:41:07+00:00"
         },
         {
-            "name": "wpackagist-plugin/fluent-smtp",
+            "name": "wp-plugin/fluent-smtp",
             "version": "2.2.95",
             "source": {
                 "type": "svn",
@@ -1928,13 +1953,26 @@
                 "url": "https://downloads.wordpress.org/plugin/fluent-smtp.2.2.95.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/fluent-smtp/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Shahjahan Jewel"
+                }
+            ],
+            "description": "The Ultimate Forever Free Mail SMTP Plugin for WordPress. Connect with any SMTP, SendGrid, Mailgun, Amazon SES, Brevo, Postmark, Sparkpost, Google...",
+            "homepage": "https://fluentsmtp.com",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/fluent-smtp/#developers",
+                "issues": "https://wordpress.org/support/plugin/fluent-smtp",
+                "source": "https://plugins.svn.wordpress.org/fluent-smtp"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/safe-svg",
+            "name": "wp-plugin/safe-svg",
             "version": "2.4.0",
             "source": {
                 "type": "svn",
@@ -1946,13 +1984,26 @@
                 "url": "https://downloads.wordpress.org/plugin/safe-svg.2.4.0.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/safe-svg/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "10up"
+                }
+            ],
+            "description": "Enable SVG uploads and sanitize them to stop XML/SVG vulnerabilities in your WordPress website.",
+            "homepage": "https://wordpress.org/plugins/safe-svg/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/safe-svg/#developers",
+                "issues": "https://wordpress.org/support/plugin/safe-svg",
+                "source": "https://plugins.svn.wordpress.org/safe-svg"
+            },
+            "time": "2026-04-14T13:36:11+00:00"
         },
         {
-            "name": "wpackagist-plugin/two-factor",
+            "name": "wp-plugin/two-factor",
             "version": "0.16.0",
             "source": {
                 "type": "svn",
@@ -1964,13 +2015,26 @@
                 "url": "https://downloads.wordpress.org/plugin/two-factor.0.16.0.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/two-factor/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "WordPress.org"
+                }
+            ],
+            "description": "Enable Two-Factor Authentication (2FA) using time-based one-time passwords (TOTP), email, and backup verification codes.",
+            "homepage": "https://wordpress.org/plugins/two-factor/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/two-factor/#developers",
+                "issues": "https://wordpress.org/support/plugin/two-factor",
+                "source": "https://plugins.svn.wordpress.org/two-factor"
+            },
+            "time": "2026-03-27T17:26:10+00:00"
         },
         {
-            "name": "wpackagist-plugin/wordpress-seo",
+            "name": "wp-plugin/wordpress-seo",
             "version": "27.5",
             "source": {
                 "type": "svn",
@@ -1982,13 +2046,26 @@
                 "url": "https://downloads.wordpress.org/plugin/wordpress-seo.27.5.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wordpress-seo/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Yoast"
+                }
+            ],
+            "description": "Improve your SEO with real-time feedback, schema, and clear guidance. Upgrade for AI tools, Google Docs integration, and 24/7 support, no hidden fees.",
+            "homepage": "https://yoa.st/1uj",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/wordpress-seo/#developers",
+                "issues": "https://wordpress.org/support/plugin/wordpress-seo",
+                "source": "https://plugins.svn.wordpress.org/wordpress-seo"
+            },
+            "time": "2026-04-29T13:20:51+00:00"
         },
         {
-            "name": "wpackagist-plugin/wp-robots-txt",
+            "name": "wp-plugin/wp-robots-txt",
             "version": "1.3.5",
             "source": {
                 "type": "svn",
@@ -2000,10 +2077,23 @@
                 "url": "https://downloads.wordpress.org/plugin/wp-robots-txt.1.3.5.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wp-robots-txt/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "George Pattichis"
+                }
+            ],
+            "description": "WP Robots Txt Allows you to edit the content of your robots.txt file.",
+            "homepage": "https://github.com/pattihis/wp-robots.txt",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/wp-robots-txt/#developers",
+                "issues": "https://wordpress.org/support/plugin/wp-robots-txt",
+                "source": "https://plugins.svn.wordpress.org/wp-robots-txt"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         }
     ],
     "packages-dev": [
@@ -3137,16 +3227,16 @@
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
-            "version": "v1.33.0",
+            "version": "v1.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-grapheme.git",
-                "reference": "380872130d3a5dd3ace2f4010d95125fde5d5c70"
+                "reference": "4864388bfbd3001ce88e234fab652acd91fdc57e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/380872130d3a5dd3ace2f4010d95125fde5d5c70",
-                "reference": "380872130d3a5dd3ace2f4010d95125fde5d5c70",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/4864388bfbd3001ce88e234fab652acd91fdc57e",
+                "reference": "4864388bfbd3001ce88e234fab652acd91fdc57e",
                 "shasum": ""
             },
             "require": {
@@ -3195,7 +3285,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.33.0"
+                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.37.0"
             },
             "funding": [
                 {
@@ -3215,11 +3305,11 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-06-27T09:58:17+00:00"
+            "time": "2026-04-26T13:13:48+00:00"
         },
         {
             "name": "symfony/polyfill-intl-normalizer",
-            "version": "v1.33.0",
+            "version": "v1.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
@@ -3280,7 +3370,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.33.0"
+                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.37.0"
             },
             "funding": [
                 {
@@ -3545,7 +3635,7 @@
             "time": "2026-03-30T15:14:47+00:00"
         },
         {
-            "name": "wpackagist-plugin/duplicate-post",
+            "name": "wp-plugin/duplicate-post",
             "version": "4.6",
             "source": {
                 "type": "svn",
@@ -3557,13 +3647,26 @@
                 "url": "https://downloads.wordpress.org/plugin/duplicate-post.4.6.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/duplicate-post/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Yoast"
+                }
+            ],
+            "description": "The go-to tool for cloning posts and pages, including the powerful Rewrite & Republish feature.",
+            "homepage": "https://yoast.com/wordpress/plugins/duplicate-post/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/duplicate-post/#developers",
+                "issues": "https://wordpress.org/support/plugin/duplicate-post",
+                "source": "https://plugins.svn.wordpress.org/duplicate-post"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/log-deprecated-notices",
+            "name": "wp-plugin/log-deprecated-notices",
             "version": "0.4.1",
             "source": {
                 "type": "svn",
@@ -3575,13 +3678,26 @@
                 "url": "https://downloads.wordpress.org/plugin/log-deprecated-notices.0.4.1.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/log-deprecated-notices/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Andrew Nacin"
+                }
+            ],
+            "description": "Logs the usage of deprecated files, functions, and function arguments, and identifies where the deprecated functionality is being used.",
+            "homepage": "http://wordpress.org/extend/plugins/log-deprecated-notices/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/log-deprecated-notices/#developers",
+                "issues": "https://wordpress.org/support/plugin/log-deprecated-notices",
+                "source": "https://plugins.svn.wordpress.org/log-deprecated-notices"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/query-monitor",
+            "name": "wp-plugin/query-monitor",
             "version": "4.0.6",
             "source": {
                 "type": "svn",
@@ -3593,13 +3709,26 @@
                 "url": "https://downloads.wordpress.org/plugin/query-monitor.4.0.6.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/query-monitor/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "John Blackbourn"
+                }
+            ],
+            "description": "Query Monitor is the developer tools panel for WordPress and WooCommerce.",
+            "homepage": "https://querymonitor.com/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/query-monitor/#developers",
+                "issues": "https://wordpress.org/support/plugin/query-monitor",
+                "source": "https://plugins.svn.wordpress.org/query-monitor"
+            },
+            "time": "2026-04-11T11:56:17+00:00"
         },
         {
-            "name": "wpackagist-plugin/rewrite-rules-inspector",
+            "name": "wp-plugin/rewrite-rules-inspector",
             "version": "1.6.0",
             "source": {
                 "type": "svn",
@@ -3611,13 +3740,26 @@
                 "url": "https://downloads.wordpress.org/plugin/rewrite-rules-inspector.1.6.0.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/rewrite-rules-inspector/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Automattic"
+                }
+            ],
+            "description": "A simple admin tool for inspecting rewrite rules.",
+            "homepage": "https://wordpress.org/plugins/rewrite-rules-inspector/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/rewrite-rules-inspector/#developers",
+                "issues": "https://wordpress.org/support/plugin/rewrite-rules-inspector",
+                "source": "https://plugins.svn.wordpress.org/rewrite-rules-inspector"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/rewrite-testing",
+            "name": "wp-plugin/rewrite-testing",
             "version": "0.1.1",
             "source": {
                 "type": "svn",
@@ -3629,13 +3771,26 @@
                 "url": "https://downloads.wordpress.org/plugin/rewrite-testing.0.1.1.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/rewrite-testing/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Matthew Boynes"
+                }
+            ],
+            "description": "Unit test your rewrite rules from the WordPress Admin.",
+            "homepage": "https://github.com/alleyinteractive/rewrite-testing",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/rewrite-testing/#developers",
+                "issues": "https://wordpress.org/support/plugin/rewrite-testing",
+                "source": "https://plugins.svn.wordpress.org/rewrite-testing"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/transients-manager",
+            "name": "wp-plugin/transients-manager",
             "version": "2.0.7",
             "source": {
                 "type": "svn",
@@ -3647,13 +3802,26 @@
                 "url": "https://downloads.wordpress.org/plugin/transients-manager.2.0.7.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/transients-manager/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Syed Balkhi"
+                }
+            ],
+            "description": "Provides a familiar interface to view, search, edit, and delete Transients.",
+            "homepage": "https://wordpress.org/plugins/transients-manager/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/transients-manager/#developers",
+                "issues": "https://wordpress.org/support/plugin/transients-manager",
+                "source": "https://plugins.svn.wordpress.org/transients-manager"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/user-switching",
+            "name": "wp-plugin/user-switching",
             "version": "1.11.2",
             "source": {
                 "type": "svn",
@@ -3665,13 +3833,26 @@
                 "url": "https://downloads.wordpress.org/plugin/user-switching.1.11.2.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/user-switching/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "John Blackbourn"
+                }
+            ],
+            "description": "Instant switching between user accounts in WordPress and WooCommerce.",
+            "homepage": "https://wordpress.org/plugins/user-switching/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/user-switching/#developers",
+                "issues": "https://wordpress.org/support/plugin/user-switching",
+                "source": "https://plugins.svn.wordpress.org/user-switching"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/wordpress-beta-tester",
+            "name": "wp-plugin/wordpress-beta-tester",
             "version": "4.0.0",
             "source": {
                 "type": "svn",
@@ -3683,13 +3864,26 @@
                 "url": "https://downloads.wordpress.org/plugin/wordpress-beta-tester.4.0.0.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wordpress-beta-tester/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Andy Fragen"
+                }
+            ],
+            "description": "Allows you to easily upgrade for testing the next versions of WordPress.",
+            "homepage": "https://wordpress.org/plugins/wordpress-beta-tester/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/wordpress-beta-tester/#developers",
+                "issues": "https://wordpress.org/support/plugin/wordpress-beta-tester",
+                "source": "https://plugins.svn.wordpress.org/wordpress-beta-tester"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/wordpress-importer",
+            "name": "wp-plugin/wordpress-importer",
             "version": "0.9.5",
             "source": {
                 "type": "svn",
@@ -3701,13 +3895,26 @@
                 "url": "https://downloads.wordpress.org/plugin/wordpress-importer.0.9.5.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wordpress-importer/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "WordPress.org"
+                }
+            ],
+            "description": "Import posts, pages, comments, custom fields, categories, tags and more from a WordPress export file.",
+            "homepage": "https://wordpress.org/plugins/wordpress-importer/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/wordpress-importer/#developers",
+                "issues": "https://wordpress.org/support/plugin/wordpress-importer",
+                "source": "https://plugins.svn.wordpress.org/wordpress-importer"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/wp-crontrol",
+            "name": "wp-plugin/wp-crontrol",
             "version": "1.21.0",
             "source": {
                 "type": "svn",
@@ -3719,13 +3926,26 @@
                 "url": "https://downloads.wordpress.org/plugin/wp-crontrol.1.21.0.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wp-crontrol/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "John Blackbourn"
+                }
+            ],
+            "description": "WP Crontrol enables you to take control of the cron events on your WordPress website.",
+            "homepage": "https://wp-crontrol.com",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/wp-crontrol/#developers",
+                "issues": "https://wordpress.org/support/plugin/wp-crontrol",
+                "source": "https://plugins.svn.wordpress.org/wp-crontrol"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-theme/twentytwentyfive",
+            "name": "wp-theme/twentytwentyfive",
             "version": "1.4",
             "source": {
                 "type": "svn",
@@ -3737,10 +3957,18 @@
                 "url": "https://downloads.wordpress.org/theme/twentytwentyfive.1.4.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-theme",
-            "homepage": "https://wordpress.org/themes/twentytwentyfive/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "description": "Twenty Twenty-Five emphasizes simplicity and adaptability. It offers flexible design options, supported by a variety of patterns for different page types, such as services and landing pages, making it ideal for building personal blogs, professional portfolios, online magazines, or business websites. Its templates cater to various blog styles, from text-focused to image-heavy layouts. Additionally, it supports international typography and diverse color palettes, ensuring accessibility and customization for users worldwide.",
+            "homepage": "https://wordpress.org/themes/twentytwentyfive/",
+            "support": {
+                "changelog": "https://wordpress.org/themes/twentytwentyfive/#developers",
+                "issues": "https://wordpress.org/support/theme/twentytwentyfive",
+                "source": "https://themes.svn.wordpress.org/twentytwentyfive"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         }
     ],
     "aliases": [],
