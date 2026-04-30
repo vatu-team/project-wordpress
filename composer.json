@@ -25,7 +25,7 @@
         "roots/wp-config": "^1.0.0",
         "vlucas/phpdotenv": "^5.6.3",
         "wpackagist-plugin/better-passwords": "^1.8.0",
-        "wpackagist-plugin/disable-emojis": "^1.7.7",
+        "wpackagist-plugin/disable-emojis": "^1.8",
         "wpackagist-plugin/fluent-smtp": "^2.2.95",
         "wpackagist-plugin/safe-svg": "^2.4.0",
         "wpackagist-plugin/two-factor": "^0.16.0",

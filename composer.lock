@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b07881b2ddf730c19f2c3de8c8a8708b",
+    "content-hash": "d57f3f6add0fe521e50d4b9c4d7de319",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -1899,15 +1899,15 @@
         },
         {
             "name": "wpackagist-plugin/disable-emojis",
-            "version": "1.7.7",
+            "version": "1.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/disable-emojis/",
-                "reference": "tags/1.7.7"
+                "reference": "tags/1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disable-emojis.1.7.7.zip"
+                "url": "https://downloads.wordpress.org/plugin/disable-emojis.1.8.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
