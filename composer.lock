@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a9d3a896f5fdcda1a781223431131bb1",
+    "content-hash": "024a994dd4f6967d288e9d14ed786adf",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -1911,15 +1911,15 @@
         },
         {
             "name": "wp-plugin/disable-emojis",
-            "version": "1.8",
+            "version": "1.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/disable-emojis/",
-                "reference": "tags/1.8"
+                "reference": "tags/1.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disable-emojis.1.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/disable-emojis.1.9.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -1938,7 +1938,7 @@
                 "issues": "https://wordpress.org/support/plugin/disable-emojis",
                 "source": "https://plugins.svn.wordpress.org/disable-emojis"
             },
-            "time": "2026-04-29T21:41:07+00:00"
+            "time": "2026-05-06T20:11:17+00:00"
         },
         {
             "name": "wp-plugin/fluent-smtp",
