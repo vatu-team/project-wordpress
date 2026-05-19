@@ -70,7 +70,7 @@ jobs:
           echo "branch_name=${{ github.event.workflow_run.head_branch }}" >> $GITHUB_ENV
 
       - name: "Sets up PHP with Composer."
-        uses: "shivammathur/setup-php@2.37.0"
+        uses: "shivammathur/setup-php@2.37.1"
         with:
           php-version: '8.4'
           coverage: "none"
