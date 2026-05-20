@@ -19,6 +19,8 @@ updates:
       interval: daily
       time: "01:05"
       timezone: "Europe/London"
+    cooldown:
+      default-days: 7
     open-pull-requests-limit: 1
     versioning-strategy: increase
     commit-message:
@@ -33,6 +35,8 @@ updates:
       interval: daily
       time: "04:05"
       timezone: "Europe/London"
+    cooldown:
+      default-days: 7
     open-pull-requests-limit: 1
     commit-message:
       prefix: "Upgraded"
@@ -47,6 +51,8 @@ updates:
       interval: daily
       time: "01:25"
       timezone: "Europe/London"
+    cooldown:
+      default-days: 7
     open-pull-requests-limit: 1
     versioning-strategy: increase
     commit-message:
@@ -61,6 +67,8 @@ updates:
       interval: daily
       time: "01:10"
       timezone: "Europe/London"
+    cooldown:
+      default-days: 7
     open-pull-requests-limit: 1
     versioning-strategy: increase
     commit-message:
