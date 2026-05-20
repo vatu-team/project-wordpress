@@ -95,3 +95,6 @@ patches.lock.json
 
 ## WPCLI
 wp-cli.local.yml
+
+## Docs
+/docs
