@@ -45,7 +45,7 @@
         "wp-plugin/wordpress-beta-tester": "^4.0.0",
         "wp-plugin/wordpress-importer": "^0.9.5",
         "wp-plugin/wp-crontrol": "^1.21.0",
-        "wp-theme/twentytwentyfive": "^1.4.0"
+        "wp-theme/twentytwentyfive": "^1.5"
     },
     "repositories": [
         {
