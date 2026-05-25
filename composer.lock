@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f1acc6dd46789ba1ad2fd15b3f11f6ff",
+    "content-hash": "a010938f356f6c057609ef0658ae6dce",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -3822,15 +3822,15 @@
         },
         {
             "name": "wp-plugin/user-switching",
-            "version": "1.11.2",
+            "version": "1.12.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/user-switching/",
-                "reference": "tags/1.11.2"
+                "reference": "tags/1.12.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/user-switching.1.11.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/user-switching.1.12.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -3849,7 +3849,7 @@
                 "issues": "https://wordpress.org/support/plugin/user-switching",
                 "source": "https://plugins.svn.wordpress.org/user-switching"
             },
-            "time": "2026-03-23T19:23:21+00:00"
+            "time": "2026-05-24T14:30:59+00:00"
         },
         {
             "name": "wp-plugin/wordpress-beta-tester",
