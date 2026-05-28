@@ -133,7 +133,7 @@
             "./tools/vendor/bin/parallel-lint --exclude */vendor ./public/app/mu-plugins/site-config.php"
         ],
         "test:security": [
-            "composer audit --ansi"
+            "composer audit --locked --ansi"
         ],
         "test:unit": [
             "./tools/vendor/bin/phpunit -c ./phpunit.dist.xml --testsuite unit"

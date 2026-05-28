@@ -54,23 +54,6 @@ jobs:
         run: |
           composer validate --ansi
 
-      - name: 'Get Composer Cache Directory.'
-        id: 'composer-cache'
-        run: |
-          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
-
-      - name: 'Sets up Caching.'
-        uses: 'actions/cache@v5.0.5'
-        with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-php-composer-build-
-
-      - name: 'Install dependencies.'
-        run: |
-          composer install --no-interaction --prefer-dist
-
       - name: 'Logs debug information.'
         run: |
           php --version
