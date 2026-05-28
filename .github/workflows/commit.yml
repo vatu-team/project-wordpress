@@ -225,7 +225,7 @@ jobs:
 
       - name: 'Run PHP Analysis tests.'
         run: |
-          composer run test:analysis -- --memory-limit 8GB
+          composer run test:analysis -- --memory-limit 8G
 
   php-compatibility:
     name: 'PHP Compatiblity'
