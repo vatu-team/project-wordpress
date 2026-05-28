@@ -56,7 +56,16 @@
         {
             "name": "wpsecadv",
             "type": "composer",
-            "url": "https://repo-wpsecadv.typist.tech"
+            "url": "https://repo-wpsecadv.typist.tech",
+            "only": [
+                "wp-plugin/*",
+                "wp-theme/*",
+                "wp-core/*",
+                "johnpbloch/wordpress-core",
+                "gravity/*",
+                "yoast/*",
+                "vatu/*"
+            ]
         }
     ],
     "minimum-stability": "stable",
@@ -68,6 +77,20 @@
             "cweagans/composer-patches": true,
             "ergebnis/composer-normalize": true,
             "johnpbloch/wordpress-core-installer": true
+        },
+        "policy": {
+            "abandoned": {
+                "audit": "report"
+            },
+            "advisories": {
+                "ignore-id": {
+                    "CVE-2017-14990": {"reason": "Issue is only present if attacker has comprimised the database."},
+                    "CVE-2022-3590": {"reason": "False positive."}
+                }
+            },
+            "malware": {
+                "block-scope": "all"
+            }
         },
         "optimize-autoloader": true,
         "preferred-install": "dist",
