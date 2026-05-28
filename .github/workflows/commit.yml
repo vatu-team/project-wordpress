@@ -97,15 +97,16 @@ jobs:
       - name: 'Get Composer Cache Directory.'
         id: 'composer-cache'
         run: |
-          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+          echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
 
-      - name: 'Sets up Caching.'
+      - name: 'Sets up Composer Caching.'
         uses: 'actions/cache@v5.0.5'
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-php-composer-tools-${{ hashFiles('composer.lock') }}
+          key: composer-${{ matrix.php-version }}-${{ hashFiles('composer.lock','tools/composer.lock') }}
           restore-keys: |
-            ${{ runner.os }}-php-composer-tools-
+            composer-${{ matrix.php-version }}-
+            composer-
 
       - name: 'Install dependencies.'
         run: |
@@ -199,14 +200,12 @@ jobs:
         run: |
           echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
 
-      - name: 'Sets up Dev Tool Caching.'
+      - name: 'Sets up Composer Caching.'
         uses: 'actions/cache@v5.0.5'
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: composer-${{ matrix.php-version }}-${{ hashFiles('composer.lock','tools/composer.lock') }}
           restore-keys: |
-            composer-tools-
-            composer-build-
             composer-${{ matrix.php-version }}-
             composer-
 
@@ -265,15 +264,16 @@ jobs:
       - name: 'Get Composer Cache Directory.'
         id: 'composer-cache'
         run: |
-          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+          echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
 
-      - name: "Sets up Caching."
-        uses: "actions/cache@v5.0.5"
+      - name: 'Sets up Composer Caching.'
+        uses: 'actions/cache@v5.0.5'
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-php-composer-tools-${{ hashFiles('tools/composer.lock') }}
+          key: composer-${{ matrix.php-version }}-${{ hashFiles('composer.lock','tools/composer.lock') }}
           restore-keys: |
-            ${{ runner.os }}-php-composer-tools-
+            composer-${{ matrix.php-version }}-
+            composer-
 
       - name: "Install dependencies."
         run: |
@@ -325,23 +325,16 @@ jobs:
       - name: 'Get Composer Cache Directory.'
         id: 'composer-cache'
         run: |
-          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+          echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
 
-      - name: 'Sets up Dev Tool Caching.'
+      - name: 'Sets up Composer Caching.'
         uses: 'actions/cache@v5.0.5'
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-php-composer-tools-${{ hashFiles('tools/composer.lock') }}
+          key: composer-${{ matrix.php-version }}-${{ hashFiles('composer.lock','tools/composer.lock') }}
           restore-keys: |
-            ${{ runner.os }}-php-composer-tools-
-
-      - name: 'Sets up Project Caching.'
-        uses: 'actions/cache@v5.0.5'
-        with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-php-composer-tools-${{ hashFiles('composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-php-composer-build-
+            composer-${{ matrix.php-version }}-
+            composer-
 
       - name: 'Install dependencies.'
         run: |
