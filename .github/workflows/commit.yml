@@ -82,7 +82,7 @@ jobs:
       - name: 'Set up PHP environment.'
         uses: 'shivammathur/setup-php@2.37.1'
         with:
-          coverage: 'xdebug'
+          coverage: 'none'
           ini-values: "memory_limit=-1"
           tools: 'composer'
           ini-file: none
@@ -181,7 +181,7 @@ jobs:
       - name: 'Set up PHP environment.'
         uses: 'shivammathur/setup-php@2.37.1'
         with:
-          coverage: 'xdebug'
+          coverage: 'none'
           ini-values: "memory_limit=-1"
           tools: 'composer'
           ini-file: none
@@ -310,7 +310,7 @@ jobs:
       - name: 'Set up PHP environment.'
         uses: 'shivammathur/setup-php@2.37.1'
         with:
-          coverage: 'xdebug'
+          coverage: 'none'
           ini-values: "memory_limit=-1"
           tools: 'composer'
           ini-file: none
