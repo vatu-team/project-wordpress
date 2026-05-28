@@ -21,7 +21,7 @@ jobs:
 
   php-security:
     name: 'PHP Security Analysis'
-    runs-on: 'ubuntu-24.04'
+    runs-on: 'ubuntu-slim'
 
     strategy:
       fail-fast: true
@@ -65,7 +65,7 @@ jobs:
 
   php-lint:
     name: 'PHP Lint'
-    runs-on: 'ubuntu-24.04'
+    runs-on: 'ubuntu-slim'
 
     strategy:
       fail-fast: true
@@ -125,7 +125,7 @@ jobs:
 
   node-lint:
     name: 'Node Lint'
-    runs-on: 'ubuntu-24.04'
+    runs-on: 'ubuntu-slim'
 
     strategy:
       fail-fast: true
@@ -165,7 +165,7 @@ jobs:
     needs:
       - 'php-security'
       - 'php-lint'
-    runs-on: 'ubuntu-24.04'
+    runs-on: 'ubuntu-slim'
 
     strategy:
       fail-fast: true
@@ -225,14 +225,14 @@ jobs:
 
       - name: 'Run PHP Analysis tests.'
         run: |
-          composer run test:analysis -- --memory-limit 8G
+          composer run test:analysis
 
   php-compatibility:
     name: 'PHP Compatiblity'
     needs:
       - 'php-security'
       - 'php-lint'
-    runs-on: 'ubuntu-24.04'
+    runs-on: 'ubuntu-slim'
 
     strategy:
       fail-fast: false
@@ -285,7 +285,7 @@ jobs:
 
   php-unit:
     name: 'PHP Unit Tests'
-    runs-on: 'ubuntu-24.04'
+    runs-on: 'ubuntu-slim'
     needs:
       - 'php-analysis'
       - 'php-compatibility'
@@ -353,7 +353,7 @@ jobs:
 
   acceptance:
     name: 'Acceptance'
-    runs-on: 'ubuntu-24.04'
+    runs-on: 'ubuntu-slim'
     needs:
      - 'php-unit'
     steps:
@@ -373,7 +373,7 @@ jobs:
      - php-unit
      - acceptance
     if: ${{ always() && contains(needs.*.result, 'failure') }}
-    runs-on: 'ubuntu-24.04'
+    runs-on: 'ubuntu-slim'
     steps:
       - name: "Failure notification."
         id: 'slack'
