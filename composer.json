@@ -52,6 +52,11 @@
             "name": "wp-packages",
             "type": "composer",
             "url": "https://repo.wp-packages.org"
+        },
+        {
+            "name": "wpsecadv",
+            "type": "composer",
+            "url": "https://repo-wpsecadv.typist.tech"
         }
     ],
     "minimum-stability": "stable",
