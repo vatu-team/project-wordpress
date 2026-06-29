@@ -196,6 +196,7 @@ function vatu_content_security_policy_header(): void
 				'site-config.csp.connect-src',
 				[
 					"'self'",
+					'https://challenges.cloudflare.com',
 					'www.googletagmanager.com',
 					'www.google.com',
 					'https://*.google-analytics.com',
