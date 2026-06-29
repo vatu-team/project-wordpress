@@ -35,7 +35,7 @@
     "require-dev": {
         "captainhook/captainhook": "^5.29.2",
         "ergebnis/composer-normalize": "^2.52.0",
-        "wp-plugin/duplicate-post": "^4.6.0",
+        "wp-plugin/duplicate-post": "^4.7",
         "wp-plugin/log-deprecated-notices": "^0.4.1",
         "wp-plugin/query-monitor": "^4.0.7",
         "wp-plugin/rewrite-rules-inspector": "^1.6.0",
