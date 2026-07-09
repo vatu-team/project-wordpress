@@ -20,7 +20,6 @@ declare(strict_types=1);
  */
 if (
 	defined( constant_name: 'WP_ENVIRONMENT_TYPE' )
-	/* @phpstan-ignore function.alreadyNarrowedType */
 	&& in_array( needle: WP_ENVIRONMENT_TYPE, haystack: [ 'local', 'development', 'qa', 'staging' ], strict: true )
 	&& ! \has_filter( hook_name: 'pre_option_blog_public', callback: '__return_zero' )
 ) {

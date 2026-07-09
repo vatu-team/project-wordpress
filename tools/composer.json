@@ -6,24 +6,16 @@
     "require": {
         "php-stubs/wordpress-stubs": "^6.9.4",
         "php-stubs/wp-cli-stubs": "^2.12.0",
-        "phpcompatibility/php-compatibility": "dev-develop as 9.99.99",
-        "phpcompatibility/phpcompatibility-wp": "^2.1.8",
-        "vatu/dev-tools": "^2.0.0",
-        "wp-coding-standards/wpcs": "^2.3",
-        "wptrt/wpthemereview": "^0.2.1"
+        "phpcompatibility/php-compatibility": "10.0.0-alpha1@dev",
+        "phpcompatibility/phpcompatibility-paragonie": "^2.0.0-alpha2@dev",
+        "phpcompatibility/phpcompatibility-wp": "^3.0.0-alpha2@dev",
+        "vatu/dev-tools": "^2.1.0",
+        "wp-coding-standards/wpcs": "^2.3"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.52"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/vatu-team/dev-tools.git",
-            "only": [
-                "vatu/dev-tools"
-            ]
-        }
-    ],
+    "repositories": [],
     "minimum-stability": "stable",
     "config": {
         "allow-plugins": {
