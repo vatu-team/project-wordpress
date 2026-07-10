@@ -41,7 +41,7 @@
         "wp-plugin/rewrite-rules-inspector": "^1.6.0",
         "wp-plugin/rewrite-testing": "^0.1.1",
         "wp-plugin/transients-manager": "^2.0.7",
-        "wp-plugin/user-switching": "^1.12.0",
+        "wp-plugin/user-switching": "^1.12.1",
         "wp-plugin/wordpress-beta-tester": "^4.0.0",
         "wp-plugin/wordpress-importer": "^0.9.5",
         "wp-plugin/wp-crontrol": "^1.21.0",
