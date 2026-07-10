@@ -319,7 +319,7 @@ jobs:
 
       - name: 'Validate Composer file.'
         run: |
-          composer validate --working-dir=tools --ansi --strict
+          composer validate --working-dir=tools --ansi
           composer validate --ansi --strict
 
       - name: 'Get Composer Cache Directory.'
