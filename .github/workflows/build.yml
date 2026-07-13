@@ -151,6 +151,29 @@ jobs:
         run: |
           rsync -azrm --inplace --delete --exclude={'.git','built/'} --exclude-from=.deployignore "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/built/"
 
+      # rsync --exclude-from does not honour gitignore-style ! negations.
+      - name: "Rsync negation rules from .deployignore to built directory."
+        run: |
+          grep -E '^!' .deployignore | sed 's/^!//' | while read -r path; do
+            # Skip empty lines and comments
+            [[ -z "$path" || "$path" =~ ^[[:space:]]*# ]] && continue
+            # Remove leading/trailing whitespace
+            path=$(echo "$path" | xargs)
+            # Remove leading slash if present
+            path="${path#/}"
+            # Skip if path is empty after trimming
+            [[ -z "$path" ]] && continue
+            # Copy file or directory if it exists
+            if [[ -e "${GITHUB_WORKSPACE}/${path}" ]]; then
+              # Replace any stale copy left on the --built branch (rsync
+              # --exclude does not delete excluded receivers; plain cp -r
+              # into an existing dir would nest basename/basename).
+              rm -rf "${GITHUB_WORKSPACE}/built/${path}"
+              mkdir -p "${GITHUB_WORKSPACE}/built/$(dirname "$path")"
+              cp -r "${GITHUB_WORKSPACE}/${path}" "${GITHUB_WORKSPACE}/built/${path}"
+            fi
+          done
+
       - name: "Remove `.gitignore` file."
         run: |
           rm ${GITHUB_WORKSPACE}/built/.gitignore
