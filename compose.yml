@@ -1,0 +1,181 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json
+
+name: project_wordpress
+
+services:
+
+# ============================================================================ #
+# Networks                                                                     #
+# ============================================================================ #
+
+# networks:
+
+# ============================================================================ #
+# Volumes                                                                      #
+# ============================================================================ #
+
+# volumes:
+#   app: {}
+
+# ============================================================================ #
+# Proxy                                                                        #
+# ============================================================================ #
+
+  nginx:
+    container_name: "nginx"
+    build:
+      dockerfile: ./.docker/nginx/Dockerfile
+      context: .
+    depends_on:
+      app:
+        condition: service_started
+    ports:
+      - "${APP_PORT:-8080}:80"
+    volumes:
+      - "./:/var/www/:delegated"
+      - "./.docker/nginx/conf.d/:/etc/nginx/conf.d/:cached"
+
+# ============================================================================ #
+# Applications                                                                 #
+# ============================================================================ #
+
+  app:
+    container_name: "app"
+    build:
+      dockerfile: ./.docker/php/app/Dockerfile
+      context: .
+      args:
+        APP_USER_NAME: ${APP_USER_NAME:-app}
+        APP_GROUP_NAME: ${APP_GROUP_NAME:-app}
+        APP_CODE_PATH: ${PROJECT_DIR:-/var/www}
+        PHP_VERSION: ${PHP_VERSION:-8.5}
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    expose:
+      - 9000
+    restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    working_dir: ${PROJECT_DIR:-/var/www}
+    volumes:
+      - ./:/var/www/:delegated
+    environment:
+      WP_CLI_ALLOW_ROOT: 1
+      SESSION_DRIVER: ${APP_SESSION_DRIVER:-redis}
+      CACHE_DRIVER: ${APP_CACHE_DRIVER:-redis}
+      XDEBUG_CONFIG: "idekey=${XDEBUG_IDEKEY:-DOCKER} start_with_request=trigger client_host=${XDEBUG_CLIENT_HOST:-host.docker.internal}"
+      XDEBUG_MODE: "${XDEBUG_IDEKEY:-off}"
+
+  # php-cli:
+  #   container_name: "php-cli"
+  #   build:
+  #     dockerfile: ./.docker/php/cli/Dockerfile
+  #     context: .
+  #     args:
+  #       USER_ID: ${USER_ID:-10000}
+  #       GROUP_ID: ${GROUP_ID:-10001}
+  #       USER_NAME: cli
+  #       GROUP_NAME: cli
+  #       CODE_PATH: ${PROJECT_DIR:-/var/www}
+  #       PHP_VERSION: ${PHP_VERSION:-8.2}
+  #   user: ${USER_ID:-10000}:${GROUP_ID:-10001}
+  #   environment:
+  #     WP_CLI_ALLOW_ROOT: 1
+  #     SESSION_DRIVER: redis
+  #     CACHE_DRIVER: redis
+  #     XDEBUG_CONFIG: "idekey=${PHP_XDEBUG_IDEKEY:-DOCKER} start_with_request=yes client_host=${PHP_XDEBUG_CLIENT_HOST:-host.docker.internal}"
+  #     XDEBUG_MODE: "coverage,debug,develop"
+  #   working_dir: "${PROJECT_DIR:-/var/www}"
+  #   volumes:
+  #     - "./:/var/www/:delegated"
+  #     - "./.composer:/.composer:cached"
+  #     - "./.npm:/.npm:cached"
+  #     - "./.wp-cli:/.wp-cli:cached"
+  #   networks:
+  #     - public
+  #     - private
+  #   profiles:
+  #     - dev
+
+# ============================================================================ #
+# Database                                                                     #
+# ============================================================================ #
+
+  mariadb:
+    container_name: "mariadb"
+    build:
+      dockerfile: ./.docker/mariadb/Dockerfile
+      context: .
+    restart: unless-stopped
+    volumes:
+      - ./.docker/mariadb/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./.docker/databases/mariadb:/var/lib/mysql:delegated
+      - ./shared/logs/mysql/:/var/log/mysql/:delegated
+    ports:
+      - "${MYSQL_PORT:-3306}:3306"
+    hostname: localhost
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway"
+    #   - "localhost:host-gateway"
+    #   - "host.docker.internal:172.18.0.1"
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD:-root}
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD:-root}
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # redis:
+  #   container_name: "redis"
+  #   build:
+  #     dockerfile: ./.docker/redis/Dockerfile
+  #     context: .
+  #   restart: unless-stopped
+  #   ports:
+  #     - ${PROJECT_REDIS_PORT:-6379}:6379
+  #   command: redis-server # --requirepass ${PROJECT_REDIS_PASSWORD:-root}
+  #   volumes:
+  #     - ./shared/logs/redis/:/usr/local/var/db/redis/:delegated
+  #   depends_on:
+  #     - mysql
+
+# ============================================================================ #
+# Development                                                                  #
+# ============================================================================ #
+
+  # node-cli:
+  #   container_name: "node-cli"
+  #   build:
+  #     dockerfile: ./.docker/node/Dockerfile
+  #     context: .
+  #     args:
+  #       USER_ID: ${USER_ID:-10000}
+  #       GROUP_ID: ${GROUP_ID:-10001}
+  #       NODE_VERSION: ${PROJECT_NODE_VERSION:-22.20}
+  #   environment:
+  #     SHELL: "/bin/bash"
+  #   working_dir: ${PROJECT_DIR:-/var/www}
+  #   volumes:
+  #     - "./:/var/www/:delegated"
+  #     - "./.npm:/root/.npm:delegated"
+  #   profiles:
+  #     - dev
+
+# ============================================================================ #
+# Mail                                                                         #
+# ============================================================================ #
+
+  # mailhog:
+  #   container_name: "mailhog"
+  #   build:
+  #     dockerfile: ./.docker/mailhog/Dockerfile
+  #     context: .
+  #   restart: unless-stopped
+  #   ports:
+  #     - "${MAILHOG_PORT:-8025}:8025"
+  #   networks:
+  #     - public
+  #     - private
