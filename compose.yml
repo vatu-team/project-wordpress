@@ -167,14 +167,18 @@ services:
 # Mail                                                                         #
 # ============================================================================ #
 
-  # mailhog:
-  #   container_name: "mailhog"
-  #   build:
-  #     dockerfile: ./.docker/mailhog/Dockerfile
-  #     context: .
-  #   restart: unless-stopped
-  #   ports:
-  #     - "${MAILHOG_PORT:-8025}:8025"
-  #   networks:
-  #     - public
-  #     - private
+  mail:
+    container_name: "mail"
+    build:
+      dockerfile: ./.docker/mailpit/Dockerfile
+      context: .
+    restart: unless-stopped
+    volumes:
+      - ./.docker/databases/mailpit:/data
+    ports:
+      - ${MAIL_UI_PORT:-8025}:8025
+    environment:
+      MP_MAX_MESSAGES: 5000
+      MP_DATABASE: /data/mailpit.db
+      MP_SMTP_AUTH_ACCEPT_ANY: 1
+      MP_SMTP_AUTH_ALLOW_INSECURE: 1
