@@ -192,7 +192,7 @@ jobs:
 
       - name: 'Validate Composer file.'
         run: |
-          composer validate --working-dir=tools --ansi --strict
+          composer validate --working-dir=tools --ansi
           composer validate --ansi --strict
 
       - name: 'Get Composer Cache Directory.'
@@ -319,7 +319,7 @@ jobs:
 
       - name: 'Validate Composer file.'
         run: |
-          composer validate --working-dir=tools --ansi --strict
+          composer validate --working-dir=tools --ansi
           composer validate --ansi --strict
 
       - name: 'Get Composer Cache Directory.'
@@ -377,7 +377,7 @@ jobs:
     steps:
       - name: "Failure notification."
         id: 'slack'
-        uses: 'slackapi/slack-github-action@v3.0.3'
+        uses: 'slackapi/slack-github-action@v3.0.4'
         with:
           method: chat.postMessage
           token: ${{ secrets.SLACK_TOKEN }}

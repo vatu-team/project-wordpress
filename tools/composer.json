@@ -10,7 +10,7 @@
         "phpcompatibility/phpcompatibility-paragonie": "^2.0.0-alpha2@dev",
         "phpcompatibility/phpcompatibility-wp": "^3.0.0-alpha2@dev",
         "vatu/dev-tools": "^2.1.0",
-        "wp-coding-standards/wpcs": "^2.3"
+        "wp-coding-standards/wpcs": "^3.4"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.52"
