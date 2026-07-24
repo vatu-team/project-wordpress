@@ -128,19 +128,18 @@ services:
       timeout: 5s
       retries: 5
 
-  # redis:
-  #   container_name: "redis"
-  #   build:
-  #     dockerfile: ./.docker/redis/Dockerfile
-  #     context: .
-  #   restart: unless-stopped
-  #   ports:
-  #     - ${PROJECT_REDIS_PORT:-6379}:6379
-  #   command: redis-server # --requirepass ${PROJECT_REDIS_PASSWORD:-root}
-  #   volumes:
-  #     - ./shared/logs/redis/:/usr/local/var/db/redis/:delegated
-  #   depends_on:
-  #     - mysql
+  redis:
+    container_name: "redis"
+    build:
+      dockerfile: ./.docker/redis/Dockerfile
+      context: .
+    restart: unless-stopped
+    ports:
+      - ${REDIS_PORT:-6379}:6379
+    command: redis-server
+    volumes:
+      - ./.docker/databases/redis:/data:delegated
+      - ./shared/logs/redis/:/usr/local/var/db/redis/:delegated
 
 # ============================================================================ #
 # Development                                                                  #
