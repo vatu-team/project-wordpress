@@ -177,7 +177,7 @@ jobs:
       - name: "Failure notification."
         if: ${{ always() && contains(needs.*.result, 'failure') }}
         id: 'slack'
-        uses: 'slackapi/slack-github-action@v3.0.4'
+        uses: 'slackapi/slack-github-action@v4.0.0'
         with:
           method: chat.postMessage
           token: ${{ secrets.SLACK_TOKEN }}
