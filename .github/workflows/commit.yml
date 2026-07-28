@@ -377,7 +377,7 @@ jobs:
     steps:
       - name: "Failure notification."
         id: 'slack'
-        uses: 'slackapi/slack-github-action@v3.0.4'
+        uses: 'slackapi/slack-github-action@v4.0.0'
         with:
           method: chat.postMessage
           token: ${{ secrets.SLACK_TOKEN }}
