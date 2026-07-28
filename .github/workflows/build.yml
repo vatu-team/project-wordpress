@@ -134,7 +134,7 @@ jobs:
           echo "ls_remote=$( git ls-remote --heads "https://${{ secrets.VATU_GITHUB_TOKEN }}:x-oauth-basic@github.com/${GITHUB_REPOSITORY}.git" ${{ env.branch_name }}--built | wc -l )" >> $GITHUB_ENV
 
       - name: "Checkout copy of repository."
-        uses: "actions/checkout@v7.0.0"
+        uses: "actions/checkout@v7.0.1"
         with:
           path: ./built
         if: ${{ env.ls_remote == 0 }}
@@ -147,7 +147,7 @@ jobs:
           git rm --cached -r .
 
       - name: "Using existing `--built` branch."
-        uses: "actions/checkout@v7.0.0"
+        uses: "actions/checkout@v7.0.1"
         with:
           ref: ${{ env.branch_name }}--built
           path: ./built
