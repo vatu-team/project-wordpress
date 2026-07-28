@@ -62,12 +62,18 @@ jobs:
           private-key: "${{ secrets.VATU_BOT_KEY }}"
           owner: ${{ github.repository_owner }}
 
-      - name: 'Checks out the repository.'
-        uses: 'actions/checkout@v7.0.0'
-
       - name: 'Get current branch name.'
-        run : |
+        run: |
           echo "branch_name=${{ github.event.workflow_run.head_branch }}" >> $GITHUB_ENV
+
+      - name: 'Checks out the repository.'
+        uses: 'actions/checkout@v7.0.1'
+        with:
+          ref: ${{ env.branch_name }}
+
+      - name: 'Check built branch exists.'
+        run: |
+          echo "ls_remote=$( git ls-remote --heads origin refs/heads/${{ env.branch_name }}--built | wc -l )" >> $GITHUB_ENV
 
       - name: "Sets up PHP with Composer."
         uses: "shivammathur/setup-php@2.37.2"
@@ -166,7 +172,7 @@ jobs:
           git add -A
           MESSAGE=$( printf 'Build changes from %s\n\n%s' "${GITHUB_SHA}" "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" )
           git commit --author="${{ github.event.pusher.name || github.actor }} <${{ github.event.pusher.email || 'team@vatu.dev' }}>" -m "${MESSAGE}"
-          git push origin ${{ env.branch_name }}--built
+          git push origin ${{ env.branch_name }}--built --quiet
 
       - name: "Failure notification."
         if: ${{ always() && contains(needs.*.result, 'failure') }}
