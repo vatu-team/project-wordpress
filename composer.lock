@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d8aebaeb087d9dc686b0c2b4fc05f407",
+    "content-hash": "f5bd32fe04cadc49084d74b5473e6fee",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -2011,6 +2011,37 @@
                 "source": "https://plugins.svn.wordpress.org/safe-svg"
             },
             "time": "2026-04-14T13:36:11+00:00"
+        },
+        {
+            "name": "wp-plugin/stream",
+            "version": "4.3.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/stream/",
+                "reference": "tags/4.3.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/stream.4.3.0.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "XWP"
+                }
+            ],
+            "description": "Real-time activity log and audit log for WordPress. Track every user action — logins, edits, plugin & settings changes — and get alerts.",
+            "homepage": "https://xwp.co/work/stream/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/stream/#developers",
+                "issues": "https://wordpress.org/support/plugin/stream",
+                "source": "https://plugins.svn.wordpress.org/stream"
+            },
+            "time": "2026-07-22T05:05:54+00:00"
         },
         {
             "name": "wp-plugin/two-factor",
