@@ -145,23 +145,22 @@ services:
 # Development                                                                  #
 # ============================================================================ #
 
-  # node-cli:
-  #   container_name: "node-cli"
-  #   build:
-  #     dockerfile: ./.docker/node/Dockerfile
-  #     context: .
-  #     args:
-  #       USER_ID: ${USER_ID:-10000}
-  #       GROUP_ID: ${GROUP_ID:-10001}
-  #       NODE_VERSION: ${PROJECT_NODE_VERSION:-22.20}
-  #   environment:
-  #     SHELL: "/bin/bash"
-  #   working_dir: ${PROJECT_DIR:-/var/www}
-  #   volumes:
-  #     - "./:/var/www/:delegated"
-  #     - "./.npm:/root/.npm:delegated"
-  #   profiles:
-  #     - dev
+  node-cli:
+    container_name: "node-cli"
+    build:
+      dockerfile: ./.docker/node/Dockerfile
+      context: .
+      args:
+        USER_ID: ${USER_ID:-10000}
+        GROUP_ID: ${GROUP_ID:-10001}
+        NODE_VERSION: ${PROJECT_NODE_VERSION:-24}
+    environment:
+      SHELL: "/bin/bash"
+    working_dir: ${PROJECT_DIR:-/var/www}
+    volumes:
+      - "./:/var/www/:delegated"
+    profiles:
+      - dev
 
 # ============================================================================ #
 # Mail                                                                         #
