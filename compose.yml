@@ -108,25 +108,21 @@ services:
       dockerfile: ./.docker/mariadb/Dockerfile
       context: .
     restart: unless-stopped
+    environment:
+      - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD:-root}
+      - MARIADB_AUTO_UPGRADE=1
+    ports:
+      - "${MYSQL_PORT:-3306}:3306"
     volumes:
       - ./.docker/mariadb/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
       - ./.docker/databases/mariadb:/var/lib/mysql:delegated
       - ./shared/logs/mysql/:/var/log/mysql/:delegated
-    ports:
-      - "${MYSQL_PORT:-3306}:3306"
-    hostname: localhost
-    # extra_hosts:
-    #   - "host.docker.internal:host-gateway"
-    #   - "localhost:host-gateway"
-    #   - "host.docker.internal:172.18.0.1"
-    environment:
-      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD:-root}
-      MARIADB_PASSWORD: ${MARIADB_PASSWORD:-root}
     healthcheck:
       test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 10s
       interval: 10s
       timeout: 5s
-      retries: 5
+      retries: 3
 
   redis:
     container_name: "redis"
