@@ -93,6 +93,9 @@ patches.lock.json
 /public/app/plugins/runcloud-hub/
 /public/app/rcwp-redis-config.php
 
+### Patchstack
+/public/app/mu-plugins/_patchstack.php
+
 ## WPCLI
 wp-cli.local.yml
 
