@@ -237,7 +237,7 @@ jobs:
           COMPOSER_KEY: ${{ secrets.COMPOSER_VATU_KEY }}
         if: ${{ $COMPOSER_KEY != '' }}
         run: |
-          composer config http-basic.satispress.vatu.dev "$COMPOSER_KEY" "$COMPOSER_KEY"
+          composer config http-basic.satispress.vatu.dev "${COMPOSER_KEY}" "${COMPOSER_KEY}"
 
       - name: 'Get Composer Cache Directory.'
         id: 'composer-cache'
