@@ -45,7 +45,7 @@ RUN install-php-extensions \
     redis \
 ;
 
-COPY --from=composer/composer:2.10-bin /composer /usr/bin/composer;
+COPY --from=composer/composer:2.10-bin /composer /usr/bin/composer
 
 # WP-CLI - https://hub.docker.com/_/wordpress/tags?page=1&name=cli
 COPY --from=wordpress:cli-php8.5 /usr/local/bin/wp /usr/local/bin/wp
