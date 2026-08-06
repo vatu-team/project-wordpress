@@ -3,4 +3,5 @@
 ## Environment and local configuration files
 /.env
 
+## Volumes
 /databases
