@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "217522d742b3ae27b5182b8e283568f9",
+    "content-hash": "f1f67d7cd2ac9adc4d96ffee30876a52",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -1952,15 +1952,15 @@
         },
         {
             "name": "wp-plugin/fluent-smtp",
-            "version": "2.2.95",
+            "version": "2.3.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/fluent-smtp/",
-                "reference": "tags/2.2.95"
+                "reference": "tags/2.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/fluent-smtp.2.2.95.zip"
+                "url": "https://downloads.wordpress.org/plugin/fluent-smtp.2.3.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -1969,17 +1969,17 @@
             "notification-url": "https://wp-packages.org/downloads",
             "authors": [
                 {
-                    "name": "Shahjahan Jewel"
+                    "name": "WPManageNinja"
                 }
             ],
-            "description": "The Ultimate Forever Free Mail SMTP Plugin for WordPress. Connect with any SMTP, SendGrid, Mailgun, Amazon SES, Brevo, Postmark, Sparkpost, Google...",
+            "description": "Free WP Mail SMTP plugin - fix WordPress email deliverability with Gmail, Amazon SES, SendGrid, Mailgun, Cloudflare, Postmark, Brevo and any SMTP.",
             "homepage": "https://fluentsmtp.com",
             "support": {
                 "changelog": "https://wordpress.org/plugins/fluent-smtp/#developers",
                 "issues": "https://wordpress.org/support/plugin/fluent-smtp",
                 "source": "https://plugins.svn.wordpress.org/fluent-smtp"
             },
-            "time": "2026-03-23T19:23:21+00:00"
+            "time": "2026-08-05T09:25:51+00:00"
         },
         {
             "name": "wp-plugin/safe-svg",
