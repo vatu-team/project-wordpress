@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f1f67d7cd2ac9adc4d96ffee30876a52",
+    "content-hash": "9dcb0fef36cfc1c476f5ae4298eb3933",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -1980,6 +1980,37 @@
                 "source": "https://plugins.svn.wordpress.org/fluent-smtp"
             },
             "time": "2026-08-05T09:25:51+00:00"
+        },
+        {
+            "name": "wp-plugin/patchstack",
+            "version": "2.3.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/patchstack/",
+                "reference": "tags/2.3.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/patchstack.2.3.7.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Patchstack"
+                }
+            ],
+            "description": "Patchstack automatically identifies and mitigates security vulnerabilities in WordPress plugins, themes, and core.",
+            "homepage": "https://patchstack.com/?utm_medium=wp&utm_source=dashboard&utm_campaign=patchstack%20plugin",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/patchstack/#developers",
+                "issues": "https://wordpress.org/support/plugin/patchstack",
+                "source": "https://plugins.svn.wordpress.org/patchstack"
+            },
+            "time": "2026-07-28T07:56:08+00:00"
         },
         {
             "name": "wp-plugin/safe-svg",

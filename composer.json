@@ -27,6 +27,7 @@
         "wp-plugin/better-passwords": "^1.8.0",
         "wp-plugin/disable-emojis": "^1.9",
         "wp-plugin/fluent-smtp": "^2.3.0",
+        "wp-plugin/patchstack": "^2.3",
         "wp-plugin/safe-svg": "^2.4.0",
         "wp-plugin/two-factor": "^0.16.0",
         "wp-plugin/wordpress-seo": "^28.1",
