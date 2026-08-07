@@ -1,0 +1,353 @@
+# Copyright (C) 2026 Patchstack
+# This file is distributed under the GPLv3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Patchstack Security 2.3.7\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/patchstack\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-07-27T12:47:22+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: patchstack\n"
+
+#. Plugin Name of the plugin
+#: patchstack.php
+msgid "Patchstack Security"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: patchstack.php
+msgid "https://patchstack.com/?utm_medium=wp&utm_source=dashboard&utm_campaign=patchstack%20plugin"
+msgstr ""
+
+#. Description of the plugin
+#: patchstack.php
+msgid "Patchstack identifies security vulnerabilities in WordPress plugins, themes, and core."
+msgstr ""
+
+#. Author of the plugin
+#: patchstack.php
+msgid "Patchstack"
+msgstr ""
+
+#: includes/activation.php:139
+msgid "Patchstack could not be activated due to a conflict. See below for information regarding the conflict.<br />"
+msgstr ""
+
+#: includes/admin/ajax.php:44
+msgid "An invalid API key was provided."
+msgstr ""
+
+#: includes/admin/general.php:70
+msgid "The following file/folder could not be written to:<br />"
+msgstr ""
+
+#: includes/admin/menu.php:52
+#: includes/admin/menu.php:119
+msgid "Settings"
+msgstr ""
+
+#: includes/admin/menu.php:106
+msgid "Sorry, there was a problem processing your request."
+msgstr ""
+
+#: includes/api.php:102
+msgid "API keys missing! Unable to obtain an access token."
+msgstr ""
+
+#: includes/api.php:137
+msgid "Unexpected error! Unable to obtain an access token. Error code: "
+msgstr ""
+
+#: includes/api.php:163
+msgid "Unexpected error! Unable to obtain an access token."
+msgstr ""
+
+#: includes/core.php:230
+msgid "Never"
+msgstr ""
+
+#: includes/core.php:235
+msgid "Just now"
+msgstr ""
+
+#. translators: %d: number of minutes since the last sync.
+#: includes/core.php:239
+#, php-format
+msgid "%dm ago"
+msgstr ""
+
+#. translators: %d: number of hours since the last sync.
+#: includes/core.php:243
+#, php-format
+msgid "%dh ago"
+msgstr ""
+
+#. translators: %d: number of days since the last sync.
+#: includes/core.php:246
+#, php-format
+msgid "%dd ago"
+msgstr ""
+
+#: includes/events/posts.php:36
+msgid "(no title)"
+msgstr ""
+
+#: includes/login.php:115
+msgid "Please enter the 2FA authentication code that is generated on your device."
+msgstr ""
+
+#: includes/login.php:122
+#: includes/login.php:180
+msgid "The 2FA authentication code you entered is invalid."
+msgstr ""
+
+#: includes/login.php:368
+#: includes/login.php:407
+#: includes/login.php:433
+msgid "You have entered an incorrect reCAPTCHA value."
+msgstr ""
+
+#: includes/views/2fa-login-form-woocommerce.php:9
+#: includes/views/2fa-login-form.php:8
+msgid "2FA Code"
+msgstr ""
+
+#: includes/views/2fa-login-form.php:9
+msgid "leave empty if no 2FA setup"
+msgstr ""
+
+#: includes/views/2fa-profile-configuration-admin.php:12
+#: includes/views/2fa-profile-configuration-admin.php:15
+#: includes/views/2fa-profile-configuration-woocommerce.php:12
+#: includes/views/2fa-profile-configuration.php:11
+#: includes/views/2fa-profile-configuration.php:14
+msgid "Enable 2FA"
+msgstr ""
+
+#: includes/views/2fa-profile-configuration-admin.php:16
+msgid "Enable 2FA on this account"
+msgstr ""
+
+#: includes/views/2fa-profile-configuration-woocommerce.php:9
+#: includes/views/2fa-profile-configuration.php:7
+msgid "Two Factor Authentication Configuration"
+msgstr ""
+
+#: includes/views/2fa-profile-configuration-woocommerce.php:17
+#: includes/views/2fa-profile-configuration.php:20
+#: includes/views/2fa-profile-configuration.php:23
+msgid "Secret Key"
+msgstr ""
+
+#: includes/views/2fa-profile-configuration-woocommerce.php:22
+#: includes/views/2fa-profile-configuration.php:29
+#: includes/views/2fa-profile-configuration.php:32
+msgid "QR Code Image"
+msgstr ""
+
+#: includes/views/2fa-profile-configuration-woocommerce.php:22
+msgid "Scan this image with your 2FA app"
+msgstr ""
+
+#: includes/views/2fa-profile-configuration-woocommerce.php:45
+msgid "Enter code from 2FA app to verify"
+msgstr ""
+
+#: includes/views/2fa-profile-configuration.php:15
+msgid "Enable 2FA on your account."
+msgstr ""
+
+#: includes/views/2fa-profile-configuration.php:34
+msgid "Scan this image with your 2FA app."
+msgstr ""
+
+#: includes/views/access-denied-login.php:16
+#: includes/views/access-denied-login.php:22
+msgid "Login Page Access Denied"
+msgstr ""
+
+#: includes/views/access-denied-login.php:29
+msgid "This request has been blocked by Patchstack because you are not authorized to access the login page. If you are a legitimate user, contact the site administrator in order to request access to the login page."
+msgstr ""
+
+#: includes/views/access-denied-login.php:36
+#: includes/views/access-denied-login.php:49
+#: includes/views/access-denied.php:40
+#: includes/views/access-denied.php:53
+msgid "Return to homepage"
+msgstr ""
+
+#: includes/views/access-denied-login.php:39
+#: includes/views/access-denied-login.php:52
+#: includes/views/access-denied.php:43
+#: includes/views/access-denied.php:56
+msgid "This website is secured by"
+msgstr ""
+
+#: includes/views/access-denied.php:16
+#: includes/views/access-denied.php:22
+msgid "Access Denied"
+msgstr ""
+
+#: includes/views/access-denied.php:29
+msgid "Error Code"
+msgstr ""
+
+#: includes/views/access-denied.php:33
+msgid "This request has been blocked by Patchstack. If this message persists and you are a legitimate user, contact the site administrator with the above code."
+msgstr ""
+
+#: includes/views/pages/license.php:28
+msgid "Checking sync status"
+msgstr ""
+
+#: includes/views/pages/license.php:37
+msgid "The connection with Patchstack was lost, this can happen when your WordPress salts change or after a migration. Please re-enter your API key."
+msgstr ""
+
+#: includes/views/pages/license.php:39
+msgid "This plugin is only a connector. Add this website to the Patchstack dashboard to sync your unique API key."
+msgstr ""
+
+#: includes/views/pages/license.php:48
+msgid "Paste API key for manual sync"
+msgstr ""
+
+#: includes/views/pages/license.php:49
+#: includes/views/pages/license.php:184
+msgid "Unique API key"
+msgstr ""
+
+#: includes/views/pages/license.php:50
+msgid "Sync"
+msgstr ""
+
+#: includes/views/pages/license.php:63
+msgid "Log in to dashboard"
+msgstr ""
+
+#: includes/views/pages/license.php:70
+msgid "Log in to our dashboard to access vulnerability data, to manage protection modules and remote settings."
+msgstr ""
+
+#: includes/views/pages/license.php:72
+msgid "Log in to our dashboard to access vulnerability data, to manage protection modules and remote "
+msgstr ""
+
+#: includes/views/pages/license.php:82
+msgid "There is not a proper connection to Patchstack"
+msgstr ""
+
+#: includes/views/pages/license.php:82
+msgid "Actively monitoring for new vulnerabilities"
+msgstr ""
+
+#: includes/views/pages/license.php:83
+msgid "Connection status"
+msgstr ""
+
+#: includes/views/pages/license.php:85
+msgid "Retry"
+msgstr ""
+
+#: includes/views/pages/license.php:96
+msgid "Protection"
+msgstr ""
+
+#: includes/views/pages/license.php:100
+msgid "Disabled"
+msgstr ""
+
+#: includes/views/pages/license.php:100
+msgid "Enabled"
+msgstr ""
+
+#: includes/views/pages/license.php:106
+msgid "Vulnerabilities present"
+msgstr ""
+
+#: includes/views/pages/license.php:115
+msgid "The number of vulnerabilities which have a fix available through an update."
+msgstr ""
+
+#: includes/views/pages/license.php:116
+msgid "Fixes available"
+msgstr ""
+
+#: includes/views/pages/license.php:127
+msgid "The number of vulnerability specific vPatches. This is 0 when no severe vulnerabilities are present."
+msgstr ""
+
+#: includes/views/pages/license.php:128
+msgid "vPatches present"
+msgstr ""
+
+#: includes/views/pages/license.php:138
+msgid "The number of firewall rules. These are not vulnerability specific."
+msgstr ""
+
+#: includes/views/pages/license.php:139
+msgid "Firewall rules present"
+msgstr ""
+
+#: includes/views/pages/license.php:150
+msgid "Attacks blocked last 30 days"
+msgstr ""
+
+#: includes/views/pages/license.php:160
+msgid "Attacks blocked in total"
+msgstr ""
+
+#: includes/views/pages/license.php:173
+msgid "Log in to view details"
+msgstr ""
+
+#: includes/views/pages/license.php:182
+msgid "API key"
+msgstr ""
+
+#: includes/views/pages/license.php:189
+msgid "To use this plugin, login and add it to the App dashboard and sync using the API key provided there."
+msgstr ""
+
+#: includes/views/pages/license.php:194
+msgid "Re-sync with App"
+msgstr ""
+
+#: includes/views/pages/license.php:194
+msgid "Activate"
+msgstr ""
+
+#: includes/views/pages/license.php:203
+msgid "The plugin is connected and synchronized."
+msgstr ""
+
+#: includes/views/pages/license.php:211
+msgid "Attempting to auto-activate the plugin, this will take a moment..."
+msgstr ""
+
+#: includes/views/pages/license.php:220
+msgid "Protect this site for $5/mo"
+msgstr ""
+
+#: includes/views/pages/license.php:225
+msgid "Change API key"
+msgstr ""
+
+#: includes/views/pages/license.php:227
+msgid "Back to overview"
+msgstr ""
+
+#: patchstack.php:298
+msgid "The Patchstack plugin is currently connected to the API."
+msgstr ""
+
+#: patchstack.php:300
+msgid "The Patchstack plugin is not connected to the API."
+msgstr ""

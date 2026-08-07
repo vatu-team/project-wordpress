@@ -1,0 +1,115 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * Script run when Composer creates a project.
+ */
+$script_root = getcwd();
+$project_root = dirname( path: __FILE__, levels: 2 );
+
+$config = [
+	'project_vendor' => null,
+	'project_name' => null,
+	'project_repo' => null,
+	'project_homepage' => null,
+	'project_description' => null,
+];
+
+function ask( string $question, bool $required = false, string $answer = '' ): string {
+	print_r( "{$question}\n" );
+	$handle = fopen('php://stdin', 'r');
+	$answer = str_replace( [ "\n", "\r" ], '', fgets( $handle ) );
+	fclose($handle);
+
+	if( $required && $answer === '' ) {
+		throw new Exception( "Invalid answer." );
+	}
+
+	return $answer;
+}
+
+function updateComposerConfig( array $config ): void
+{
+	$vendor = strtolower( $config['project_vendor'] );
+	$name   = strtolower( $config['project_name'] );
+
+	$command_list = [
+		"composer config name '{$vendor}/{$name}'",
+		"composer config description '{$config['project_description']}'",
+		"composer require captainhook/hook-installer --dev  --no-interaction ",
+	];
+
+	foreach ( $command_list as $command ) {
+		exec( $command );
+	}
+}
+
+function renameFiles(): void {
+	global $script_root;
+
+	$files_to_rename = [
+		'readme.md' => 'readme.md.bk',
+		'readme-template.md' => 'readme.md',
+	];
+
+	if ( file_exists( filename: "{$script_root}/readme-template.md" ) ) {
+		foreach( $files_to_rename as $old => $new ) {
+			rename(
+				from: "{$script_root}/{$old}",
+				to: "{$script_root}/{$new}"
+			);
+		}
+	}
+}
+
+function deleteFiles(): void {
+	global $script_root;
+
+	$files_to_delete = [
+		'readme.md.bk',
+		'bin/post-create-project-cmd',
+	];
+
+	foreach( $files_to_delete as $file ) {
+		deleteFile( filename: "{$script_root}/{$file}" );
+	}
+}
+
+function findReplace() {
+
+}
+
+$find_and_replace = [
+	[
+		'example.md' => [
+			'find' => 'text-old',
+			'replace' => 'text-new',
+		]
+	]
+];
+
+function deleteFile( string $filename ): bool
+{
+	if( ! file_exists( filename: $filename ) ) {
+		throw new Exception( "Not Found: {$filename}" );
+	}
+	echo "Deleted `{$filename}`." . "\r\n";
+	return unlink( filename: $filename );
+}
+
+try {
+
+	exec( 'git init --initial-branch=main' ); // Init git so we can install Captain Hook.
+	$config['project_vendor'] = ask( question: "Choose a Vendor. Eg, Vatu", required: true );
+	$config['project_name']   = ask( question: "Choose a Project Name. Eg, Website", required: true );
+
+	updateComposerConfig( config: $config );
+	renameFiles();
+	exec( 'ls -la' ); // Added debug command.
+	deleteFiles();
+
+} catch ( \Exception $exception ) {
+	echo $exception->getMessage() . "\r\n";
+}
+
+exit();

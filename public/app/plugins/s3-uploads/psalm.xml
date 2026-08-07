@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<psalm
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+    errorLevel="2"
+    ensureArrayStringOffsetsExist="true"
+>
+    <projectFiles>
+        <directory name="./"/>
+         <ignoreFiles>
+            <directory name="vendor"/>
+            <directory name="psalm"/>
+            <directory name="tests"/>
+        </ignoreFiles>
+    </projectFiles>
+    <stubs>
+        <file name="psalm/stubs/imagick.php"/>
+        <file name="psalm/stubs/constants.php"/>
+    </stubs>
+    <globals>
+        <var name="wp_version" type="string"/>
+    </globals>
+    <issueHandlers>
+        <MissingFile>
+            <errorLevel type="suppress">
+                <file name="inc/class-plugin.php"/>
+            </errorLevel>
+        </MissingFile>
+    </issueHandlers>
+    <plugins>
+        <pluginClass class="PsalmWordPress\Plugin"/>
+    </plugins>
+</psalm>
