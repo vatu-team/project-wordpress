@@ -120,10 +120,17 @@ function vatu_content_security_policy_header(): void
 					"'unsafe-eval'",
 					'blob:',
 					'data:',
+					'https://*.googletagmanager.com',
 					'https://www.googletagmanager.com',
 					'https://tagmanager.google.com',
-					'https://*.googletagmanager.com',
+					'https://*.cloudflareinsights.com',
+					'https://static.cloudflareinsights.com',
+					'https://cdn-cookieyes.com',
 					'https://challenges.cloudflare.com',
+					'https://www.google.com/recaptcha/',
+					'https://www.gstatic.com/recaptcha/',
+					'https://connect.facebook.net/',
+					'https://snap.licdn.com',
 				]
 			),
 			'style-src'                 => apply_filters(
@@ -135,6 +142,10 @@ function vatu_content_security_policy_header(): void
 					'data:',
 					'https://googletagmanager.com',
 					'https://tagmanager.google.com',
+					'https://fonts.googleapis.com',
+					'https://use.typekit.net',
+					'https://p.typekit.net',
+					'https://maxcdn.bootstrapcdn.com',
 				]
 			),
 			'img-src'                   => apply_filters(
@@ -143,6 +154,8 @@ function vatu_content_security_policy_header(): void
 					"'self'",
 					'data:',
 					'https://patterns.olliewp.com',
+					'https://cdn.XXXXXXXXXXXX.com',
+					'https://XXXXXXXXXXXX.cloudfront.net',
 					'https://secure.gravatar.com',
 					'www.googletagmanager.com',
 					'https://googletagmanager.com',
@@ -150,6 +163,14 @@ function vatu_content_security_policy_header(): void
 					'https://www.gstatic.com',
 					'https://*.google-analytics.com',
 					'https://*.googletagmanager.com',
+					'https://s.w.org',
+					'https://i.ytimg.com',
+					'https://*.ytimg.com',
+					'https://*.tumblr.com',
+					'https://cdn-cookieyes.com',
+					'https://*.linkedin.com',
+					'https://*.facebook.com',
+					'https://*.googlesyndication.com',
 				]
 			),
 			'manifest-src'              => apply_filters(
@@ -189,6 +210,12 @@ function vatu_content_security_policy_header(): void
 				[
 					"'self'",
 					'https://challenges.cloudflare.com',
+					'https://www.google.com/recaptcha/',
+					'https://www.google.com/maps/',
+					'https://recaptcha.google.com/recaptcha/',
+					'https://www.youtube.com',
+					'https://youtube.com',
+					'https://www.youtube-nocookie.com',
 				]
 			),
 			'connect-src'               => apply_filters(
@@ -201,6 +228,12 @@ function vatu_content_security_policy_header(): void
 					'https://*.google-analytics.com',
 					'https://*.analytics.google.com',
 					'https://*.googletagmanager.com',
+					'https://www.google.com/recaptcha/',
+					'https://*.cookieyes.com',
+					'cdn-cookieyes.com',
+					'https://px.ads.linkedin.com',
+					'https://*.contentsquare.net',
+					'https://*.googlesyndication.com',
 				]
 			),
 			'frame-ancestors'           => apply_filters(
