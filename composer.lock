@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ab53af1291da5dfecb2138e097899ce5",
+    "content-hash": "eba4b9ca3f54ae5811ea80ede3f6e286",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -873,154 +873,6 @@
             "time": "2026-02-25T17:57:09+00:00"
         },
         {
-            "name": "johnpbloch/wordpress",
-            "version": "7.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "c98fe6866cfe00796c22609b260e01568d35f14a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/c98fe6866cfe00796c22609b260e01568d35f14a",
-                "reference": "c98fe6866cfe00796c22609b260e01568d35f14a",
-                "shasum": ""
-            },
-            "require": {
-                "johnpbloch/wordpress-core": "7.0.2",
-                "johnpbloch/wordpress-core-installer": "^1.0 || ^2.0",
-                "php": ">=7.0.0"
-            },
-            "type": "package",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "WordPress Community",
-                    "homepage": "https://wordpress.org/about/"
-                }
-            ],
-            "description": "WordPress is open source software you can use to create a beautiful website, blog, or app.",
-            "homepage": "https://wordpress.org/",
-            "keywords": [
-                "blog",
-                "cms",
-                "wordpress"
-            ],
-            "support": {
-                "docs": "https://developer.wordpress.org/",
-                "forum": "https://wordpress.org/support/",
-                "irc": "irc://irc.freenode.net/wordpress",
-                "issues": "https://core.trac.wordpress.org/",
-                "source": "https://core.trac.wordpress.org/browser"
-            },
-            "time": "2026-07-17T18:48:31+00:00"
-        },
-        {
-            "name": "johnpbloch/wordpress-core",
-            "version": "7.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "7c0153862c16407dce737ccc87a64a25953b687b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/7c0153862c16407dce737ccc87a64a25953b687b",
-                "reference": "7c0153862c16407dce737ccc87a64a25953b687b",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": ">=7.4"
-            },
-            "provide": {
-                "wordpress/core-implementation": "7.0.2"
-            },
-            "type": "wordpress-core",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "WordPress Community",
-                    "homepage": "https://wordpress.org/about/"
-                }
-            ],
-            "description": "WordPress is open source software you can use to create a beautiful website, blog, or app.",
-            "homepage": "https://wordpress.org/",
-            "keywords": [
-                "blog",
-                "cms",
-                "wordpress"
-            ],
-            "support": {
-                "forum": "https://wordpress.org/support/",
-                "irc": "irc://irc.freenode.net/wordpress",
-                "issues": "https://core.trac.wordpress.org/",
-                "source": "https://core.trac.wordpress.org/browser",
-                "wiki": "https://codex.wordpress.org/"
-            },
-            "time": "2026-07-17T18:48:27+00:00"
-        },
-        {
-            "name": "johnpbloch/wordpress-core-installer",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/johnpbloch/wordpress-core-installer.git",
-                "reference": "237faae9a60a4a2e1d45dce1a5836ffa616de63e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/237faae9a60a4a2e1d45dce1a5836ffa616de63e",
-                "reference": "237faae9a60a4a2e1d45dce1a5836ffa616de63e",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0 || ^2.0",
-                "php": ">=5.6.0"
-            },
-            "conflict": {
-                "composer/installers": "<1.0.6"
-            },
-            "require-dev": {
-                "composer/composer": "^1.0 || ^2.0",
-                "phpunit/phpunit": ">=5.7.27"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "johnpbloch\\Composer\\WordPressCorePlugin"
-            },
-            "autoload": {
-                "psr-0": {
-                    "johnpbloch\\Composer\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "John P. Bloch",
-                    "email": "me@johnpbloch.com"
-                }
-            ],
-            "description": "A custom installer to handle deploying WordPress with composer",
-            "keywords": [
-                "wordpress"
-            ],
-            "support": {
-                "issues": "https://github.com/johnpbloch/wordpress-core-installer/issues",
-                "source": "https://github.com/johnpbloch/wordpress-core-installer/tree/master"
-            },
-            "time": "2020-04-16T21:44:57+00:00"
-        },
-        {
             "name": "mtdowling/jmespath.php",
             "version": "2.9.2",
             "source": {
@@ -1364,6 +1216,187 @@
                 "source": "https://github.com/ralouphie/getallheaders/tree/develop"
             },
             "time": "2019-03-08T08:55:37+00:00"
+        },
+        {
+            "name": "roots/wordpress",
+            "version": "7.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roots/wordpress.git",
+                "reference": "eb3d108f216618a858dcaed691e00e68f0ccff9f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/roots/wordpress/zipball/eb3d108f216618a858dcaed691e00e68f0ccff9f",
+                "reference": "eb3d108f216618a858dcaed691e00e68f0ccff9f",
+                "shasum": ""
+            },
+            "require": {
+                "roots/wordpress-core-installer": "^4.0",
+                "roots/wordpress-no-content": "self.version"
+            },
+            "type": "metapackage",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT",
+                "GPL-2.0-or-later"
+            ],
+            "description": "WordPress is open source software you can use to create a beautiful website, blog, or app.",
+            "homepage": "https://wordpress.org/",
+            "keywords": [
+                "blog",
+                "cms",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/roots/wordpress/issues",
+                "source": "https://github.com/roots/wordpress/tree/7.0.4"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/roots",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-03-22T13:26:54+00:00"
+        },
+        {
+            "name": "roots/wordpress-core-installer",
+            "version": "v4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roots/wordpress-core-installer.git",
+                "reference": "85d3589252eb93eee836facf33b54ce30c565bea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/roots/wordpress-core-installer/zipball/85d3589252eb93eee836facf33b54ce30c565bea",
+                "reference": "85d3589252eb93eee836facf33b54ce30c565bea",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^2.0",
+                "php": ">=7.2.24"
+            },
+            "conflict": {
+                "composer/installers": "<1.0.6"
+            },
+            "replace": {
+                "johnpbloch/wordpress-core-installer": "*"
+            },
+            "require-dev": {
+                "composer/composer": "^2.0",
+                "phpunit/phpunit": "^8.5"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Roots\\Composer\\WordPressCorePlugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Roots\\Composer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "John P. Bloch",
+                    "email": "me@johnpbloch.com"
+                },
+                {
+                    "name": "Roots",
+                    "email": "team@roots.io"
+                }
+            ],
+            "description": "A Composer custom installer to handle installing WordPress as a dependency",
+            "keywords": [
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/roots/wordpress-core-installer/issues",
+                "source": "https://github.com/roots/wordpress-core-installer/tree/v4.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/roots",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-03-22T03:17:23+00:00"
+        },
+        {
+            "name": "roots/wordpress-no-content",
+            "version": "7.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WordPress/WordPress.git",
+                "reference": "7.0.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.w.org/release/wordpress-7.0.4-no-content.zip",
+                "reference": "7.0.4",
+                "shasum": "c43ba63174abfef77d00fbc6041db0d801869e09"
+            },
+            "require": {
+                "php": ">= 7.4"
+            },
+            "provide": {
+                "wordpress/core-implementation": "7.0.4"
+            },
+            "suggest": {
+                "ext-curl": "Performs remote request operations.",
+                "ext-dom": "Used to validate Text Widget content and to automatically configuring IIS7+.",
+                "ext-exif": "Works with metadata stored in images.",
+                "ext-fileinfo": "Used to detect mimetype of file uploads.",
+                "ext-hash": "Used for hashing, including passwords and update packages.",
+                "ext-imagick": "Provides better image quality for media uploads.",
+                "ext-json": "Used for communications with other servers.",
+                "ext-libsodium": "Validates Signatures and provides securely random bytes.",
+                "ext-mbstring": "Used to properly handle UTF8 text.",
+                "ext-mysqli": "Connects to MySQL for database interactions.",
+                "ext-openssl": "Permits SSL-based connections to other hosts.",
+                "ext-pcre": "Increases performance of pattern matching in code searches.",
+                "ext-xml": "Used for XML parsing, such as from a third-party site.",
+                "ext-zip": "Used for decompressing Plugins, Themes, and WordPress update packages."
+            },
+            "type": "wordpress-core",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "WordPress Community",
+                    "homepage": "https://wordpress.org/about/"
+                }
+            ],
+            "description": "WordPress is open source software you can use to create a beautiful website, blog, or app.",
+            "homepage": "https://wordpress.org/",
+            "keywords": [
+                "blog",
+                "cms",
+                "wordpress"
+            ],
+            "support": {
+                "docs": "https://developer.wordpress.org/",
+                "forum": "https://wordpress.org/support/",
+                "irc": "irc://irc.freenode.net/wordpress",
+                "issues": "https://core.trac.wordpress.org/",
+                "rss": "https://wordpress.org/news/feed/",
+                "source": "https://core.trac.wordpress.org/browser",
+                "wiki": "https://codex.wordpress.org/"
+            },
+            "funding": [
+                {
+                    "url": "https://wordpressfoundation.org/donate/",
+                    "type": "other"
+                }
+            ],
+            "time": "2026-08-12T14:47:33+00:00"
         },
         {
             "name": "roots/wp-config",
