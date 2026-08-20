@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5137b4bf3c73a9087d2b01d29371b5a0",
+    "content-hash": "63f2246b187ac472f2f6838f9e995e91",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -1985,15 +1985,15 @@
         },
         {
             "name": "wp-plugin/fluent-smtp",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/fluent-smtp/",
-                "reference": "tags/2.3.0"
+                "reference": "tags/2.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/fluent-smtp.2.3.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/fluent-smtp.2.3.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2012,7 +2012,7 @@
                 "issues": "https://wordpress.org/support/plugin/fluent-smtp",
                 "source": "https://plugins.svn.wordpress.org/fluent-smtp"
             },
-            "time": "2026-08-05T09:25:51+00:00"
+            "time": "2026-08-12T20:36:39+00:00"
         },
         {
             "name": "wp-plugin/safe-svg",
