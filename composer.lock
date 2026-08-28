@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b7d455aec9806ecfad85fc99506c2050",
+    "content-hash": "456fd3d0ed1acfd9bd79b7234ef92f12",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -3927,15 +3927,15 @@
         },
         {
             "name": "wp-plugin/wordpress-importer",
-            "version": "0.9.5",
+            "version": "0.9.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-importer/",
-                "reference": "tags/0.9.5"
+                "reference": "tags/0.9.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-importer.0.9.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-importer.0.9.6.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -3954,7 +3954,7 @@
                 "issues": "https://wordpress.org/support/plugin/wordpress-importer",
                 "source": "https://plugins.svn.wordpress.org/wordpress-importer"
             },
-            "time": "2026-03-23T19:23:21+00:00"
+            "time": "2026-08-27T11:41:30+00:00"
         },
         {
             "name": "wp-plugin/wp-crontrol",
