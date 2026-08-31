@@ -44,7 +44,7 @@
         "wp-plugin/user-switching": "^1.12.1",
         "wp-plugin/wordpress-beta-tester": "^4.0.1",
         "wp-plugin/wordpress-importer": "^0.9.6",
-        "wp-plugin/wp-crontrol": "^1.21.1",
+        "wp-plugin/wp-crontrol": "^1.21.2",
         "wp-theme/twentytwentyfive": "^1.5"
     },
     "repositories": [
