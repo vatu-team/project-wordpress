@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a197e482eff67e17bcdb3eb1b4c1d0e",
+    "content-hash": "90af16fe2265ba13d2d6cc3597116fcb",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -2016,15 +2016,15 @@
         },
         {
             "name": "wp-plugin/safe-svg",
-            "version": "2.4.0",
+            "version": "2.5.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/safe-svg/",
-                "reference": "tags/2.4.0"
+                "reference": "tags/2.5.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/safe-svg.2.4.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/safe-svg.2.5.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2043,7 +2043,7 @@
                 "issues": "https://wordpress.org/support/plugin/safe-svg",
                 "source": "https://plugins.svn.wordpress.org/safe-svg"
             },
-            "time": "2026-04-14T13:36:11+00:00"
+            "time": "2026-09-06T22:06:23+00:00"
         },
         {
             "name": "wp-plugin/two-factor",
