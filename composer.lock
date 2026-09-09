@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "90af16fe2265ba13d2d6cc3597116fcb",
+    "content-hash": "3ddc5237b207d01fd1474b43dff97a86",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -1985,15 +1985,15 @@
         },
         {
             "name": "wp-plugin/fluent-smtp",
-            "version": "2.3.1",
+            "version": "2.4.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/fluent-smtp/",
-                "reference": "tags/2.3.1"
+                "reference": "tags/2.4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/fluent-smtp.2.3.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/fluent-smtp.2.4.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2005,14 +2005,14 @@
                     "name": "WPManageNinja"
                 }
             ],
-            "description": "Free WP Mail SMTP plugin - fix WordPress email deliverability with Gmail, Amazon SES, SendGrid, Mailgun, Cloudflare, Postmark, Brevo and any SMTP.",
+            "description": "Free WP Mail SMTP plugin. Fix WordPress email deliverability with Gmail, Amazon SES, SendGrid, Mailgun, Postmark, Cloudflare, Brevo or any SMTP.",
             "homepage": "https://fluentsmtp.com",
             "support": {
                 "changelog": "https://wordpress.org/plugins/fluent-smtp/#developers",
                 "issues": "https://wordpress.org/support/plugin/fluent-smtp",
                 "source": "https://plugins.svn.wordpress.org/fluent-smtp"
             },
-            "time": "2026-08-12T20:36:39+00:00"
+            "time": "2026-09-08T15:26:00+00:00"
         },
         {
             "name": "wp-plugin/safe-svg",
