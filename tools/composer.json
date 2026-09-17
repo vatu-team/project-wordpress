@@ -13,7 +13,7 @@
         "wp-coding-standards/wpcs": "^3.4"
     },
     "require-dev": {
-        "ergebnis/composer-normalize": "^2.52"
+        "ergebnis/composer-normalize": "^2.53"
     },
     "repositories": [],
     "minimum-stability": "stable",
