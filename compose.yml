@@ -31,6 +31,8 @@ services:
         condition: service_started
     ports:
       - "${APP_PORT:-8080}:80"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
       - "./:/var/www/:delegated"
       - "./.docker/nginx/conf.d/:/etc/nginx/conf.d/:cached"
@@ -65,7 +67,7 @@ services:
       SESSION_DRIVER: ${APP_SESSION_DRIVER:-redis}
       CACHE_DRIVER: ${APP_CACHE_DRIVER:-redis}
       XDEBUG_CONFIG: "idekey=${XDEBUG_IDEKEY:-DOCKER} start_with_request=trigger client_host=${XDEBUG_CLIENT_HOST:-host.docker.internal}"
-      XDEBUG_MODE: "${XDEBUG_IDEKEY:-off}"
+      XDEBUG_MODE: "${XDEBUG_MODE:-off}"
 
   # php-cli:
   #   container_name: "php-cli"
@@ -78,7 +80,7 @@ services:
   #       USER_NAME: cli
   #       GROUP_NAME: cli
   #       CODE_PATH: ${PROJECT_DIR:-/var/www}
-  #       PHP_VERSION: ${PHP_VERSION:-8.2}
+  #       PHP_VERSION: ${PHP_VERSION:-8.5}
   #   user: ${USER_ID:-10000}:${GROUP_ID:-10001}
   #   environment:
   #     WP_CLI_ALLOW_ROOT: 1
