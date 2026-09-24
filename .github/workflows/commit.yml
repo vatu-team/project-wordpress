@@ -46,10 +46,6 @@ jobs:
         env:
           COMPOSER_TOKEN: ${{ secrets.github-token }}
 
-      - name: "Add Composer config."
-        run: |
-          composer config http-basic.satispress.vatu.dev ${{ secrets.COMPOSER_VATU_USERNAME }} ${{ secrets.COMPOSER_VATU_KEY }}
-
       - name: 'Validate Composer file.'
         run: |
           composer validate --ansi
@@ -62,6 +58,42 @@ jobs:
       - name: 'Run security test.'
         run: |
           composer test:security
+
+  node-security:
+    name: 'NPM Security Analysis'
+    runs-on: 'ubuntu-24.04'
+
+    strategy:
+      fail-fast: true
+      max-parallel: 1
+      matrix:
+        node-version:
+          - '24'
+
+    steps:
+
+      - name: 'Check out the repository.'
+        uses: 'actions/checkout@v7.0.1'
+
+      - name: 'Set up Node environment.'
+        uses: 'actions/setup-node@v7.0.0'
+        with:
+          node-version: "${{ matrix.node-version }}"
+          token: ${{ secrets.github-token }}
+          cache: 'npm'
+
+      - name: 'Logs debug information.'
+        run: |
+          node --version
+          npm --version
+
+      - name: 'Install dependencies.'
+        run: |
+          npm install
+
+      - name: 'Run security test.'
+        run: |
+          npm audit --omit=dev
 
   php-lint:
     name: 'PHP Lint'
@@ -195,6 +227,14 @@ jobs:
           composer validate --working-dir=tools --ansi
           composer validate --ansi --strict
 
+      - name: "Add Composer config."
+        env:
+          COMPOSER_USERNAME: ${{ secrets.COMPOSER_VATU_USERNAME }}
+          COMPOSER_KEY: ${{ secrets.COMPOSER_VATU_KEY }}
+        if: ${{ env.COMPOSER_KEY != '' }}
+        run: |
+          composer config http-basic.satispress.vatu.dev "${COMPOSER_KEY}" "${COMPOSER_KEY}"
+
       - name: 'Get Composer Cache Directory.'
         id: 'composer-cache'
         run: |
@@ -261,6 +301,14 @@ jobs:
           php --version
           composer --version
 
+      - name: "Add Composer config."
+        env:
+          COMPOSER_USERNAME: ${{ secrets.COMPOSER_VATU_USERNAME }}
+          COMPOSER_KEY: ${{ secrets.COMPOSER_VATU_KEY }}
+        if: ${{ env.COMPOSER_KEY != '' }}
+        run: |
+          composer config http-basic.satispress.vatu.dev "${COMPOSER_KEY}" "${COMPOSER_KEY}"
+
       - name: 'Get Composer Cache Directory.'
         id: 'composer-cache'
         run: |
@@ -313,9 +361,13 @@ jobs:
         env:
           COMPOSER_TOKEN: ${{ secrets.github-token }}
 
-      # - name: "Add Composer config."
-      #   run: |
-      #     composer config http-basic.satispress.vatu.dev ${{ secrets.COMPOSER_VATU_USERNAME }} ${{ secrets.COMPOSER_VATU_KEY }}
+      - name: "Add Composer config."
+        env:
+          COMPOSER_USERNAME: ${{ secrets.COMPOSER_VATU_USERNAME }}
+          COMPOSER_KEY: ${{ secrets.COMPOSER_VATU_KEY }}
+        if: ${{ env.COMPOSER_KEY != '' }}
+        run: |
+          composer config http-basic.satispress.vatu.dev "${COMPOSER_KEY}" "${COMPOSER_KEY}"
 
       - name: 'Validate Composer file.'
         run: |
