@@ -28,7 +28,7 @@
         "wp-plugin/disable-emojis": "^1.9",
         "wp-plugin/fluent-smtp": "^2.4.1",
         "wp-plugin/safe-svg": "^2.5.1",
-        "wp-plugin/two-factor": "^0.16.0",
+        "wp-plugin/two-factor": "^0.17.0",
         "wp-plugin/wordpress-seo": "^28.5",
         "wp-plugin/wp-robots-txt": "^1.3.6"
     },
