@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b80d5f167aa3fb7662eb6eecea7a5d26",
+    "content-hash": "bd7ceea847bed05480c1a80dd7b54b36",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -2047,15 +2047,15 @@
         },
         {
             "name": "wp-plugin/two-factor",
-            "version": "0.16.0",
+            "version": "0.17.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/two-factor/",
-                "reference": "tags/0.16.0"
+                "reference": "tags/0.17.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/two-factor.0.16.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/two-factor.0.17.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2074,7 +2074,7 @@
                 "issues": "https://wordpress.org/support/plugin/two-factor",
                 "source": "https://plugins.svn.wordpress.org/two-factor"
             },
-            "time": "2026-03-27T17:26:10+00:00"
+            "time": "2026-09-28T05:01:58+00:00"
         },
         {
             "name": "wp-plugin/wordpress-seo",
