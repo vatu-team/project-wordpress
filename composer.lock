@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd7ceea847bed05480c1a80dd7b54b36",
+    "content-hash": "08a6c2bcb121c2b6f5f3f51c714f3918",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -2078,15 +2078,15 @@
         },
         {
             "name": "wp-plugin/wordpress-seo",
-            "version": "28.5",
+            "version": "28.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/28.5"
+                "reference": "tags/28.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.28.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.28.6.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2105,7 +2105,7 @@
                 "issues": "https://wordpress.org/support/plugin/wordpress-seo",
                 "source": "https://plugins.svn.wordpress.org/wordpress-seo"
             },
-            "time": "2026-09-15T14:56:06+00:00"
+            "time": "2026-09-29T09:36:43+00:00"
         },
         {
             "name": "wp-plugin/wp-robots-txt",
