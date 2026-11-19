@@ -17,11 +17,11 @@
         "issues": "https://github.com/vatu-team/project-wordpress/issues"
     },
     "require": {
-        "php": "~8.4.1",
+        "php": "~8.5.0",
         "composer/installers": "^2.3.0",
         "cweagans/composer-patches": "^2.0.0",
         "humanmade/s3-uploads": "^3.0.13",
-        "roots/wordpress": "^7.1",
+        "roots/wordpress": "^7.1.5",
         "roots/wp-config": "^1.0.0",
         "vlucas/phpdotenv": "^5.7.0",
         "wp-plugin/better-passwords": "^1.8.0",
@@ -52,20 +52,6 @@
             "name": "wp-packages",
             "type": "composer",
             "url": "https://repo.wp-packages.org"
-        },
-        {
-            "name": "wpsecadv",
-            "type": "composer",
-            "url": "https://repo-wpsecadv.typist.tech",
-            "only": [
-                "wp-plugin/*",
-                "wp-theme/*",
-                "wp-core/*",
-                "roots/*",
-                "gravity/*",
-                "yoast/*",
-                "vatu/*"
-            ]
         }
     ],
     "minimum-stability": "stable",
