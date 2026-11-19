@@ -28,7 +28,7 @@ jobs:
       max-parallel: 1
       matrix:
         php-version:
-          - '8.4'
+          - '8.5'
 
     steps:
 
@@ -46,14 +46,14 @@ jobs:
         env:
           COMPOSER_TOKEN: ${{ secrets.github-token }}
 
-      - name: 'Validate Composer file.'
-        run: |
-          composer validate --ansi
-
       - name: 'Logs debug information.'
         run: |
           php --version
           composer --version
+
+      - name: 'Validate Composer file.'
+        run: |
+          composer validate --ansi
 
       - name: 'Run security test.'
         run: |
@@ -104,7 +104,7 @@ jobs:
       max-parallel: 1
       matrix:
         php-version:
-          - '8.4'
+          - '8.5'
 
     steps:
 
@@ -121,6 +121,13 @@ jobs:
           php-version: "${{ matrix.php-version }}"
         env:
           COMPOSER_TOKEN: ${{ secrets.github-token }}
+
+      - name: 'Logs debug information.'
+        run: |
+          php --version
+          composer --version
+          php ./tools/vendor/bin/parallel-lint --version
+          php ./tools/vendor/bin/phpcs --version
 
       - name: 'Validate Composer file.'
         run: |
@@ -143,13 +150,6 @@ jobs:
       - name: 'Install dependencies.'
         run: |
           composer install --working-dir=tools --no-interaction --prefer-dist
-
-      - name: 'Logs debug information.'
-        run: |
-          php --version
-          composer --version
-          php ./tools/vendor/bin/parallel-lint --version
-          php ./tools/vendor/bin/phpcs --version
 
       - name: 'Run PHP Lint tests.'
         run: |
@@ -204,7 +204,7 @@ jobs:
       max-parallel: 1
       matrix:
         php-version:
-          - '8.4'
+          - '8.5'
 
     steps:
 
@@ -221,6 +221,12 @@ jobs:
           php-version: "${{ matrix.php-version }}"
         env:
           COMPOSER_TOKEN: ${{ secrets.github-token }}
+
+      - name: 'Logs debug information.'
+        run: |
+          php --version
+          composer --version
+          php ./tools/vendor/bin/phpstan --version
 
       - name: 'Validate Composer file.'
         run: |
@@ -257,12 +263,6 @@ jobs:
         run: |
           composer install --working-dir=tools --no-interaction --prefer-dist
 
-      - name: 'Logs debug information.'
-        run: |
-          php --version
-          composer --version
-          php ./tools/vendor/bin/phpstan --version
-
       - name: 'Run PHP Analysis tests.'
         run: |
           composer run test:analysis -- --memory-limit 8G
@@ -278,7 +278,7 @@ jobs:
       fail-fast: false
       matrix:
         php-version:
-          - '8.4'
+          - '8.5'
 
     steps:
 
@@ -343,7 +343,7 @@ jobs:
       max-parallel: 1
       matrix:
         php-version:
-          - '8.4'
+          - '8.5'
 
     steps:
 
@@ -360,6 +360,12 @@ jobs:
           php-version: "${{ matrix.php-version }}"
         env:
           COMPOSER_TOKEN: ${{ secrets.github-token }}
+
+      - name: 'Logs debug information.'
+        run: |
+          php --version
+          composer --version
+          php ./tools/vendor/bin/phpunit --version
 
       - name: "Add Composer config."
         env:
@@ -391,12 +397,6 @@ jobs:
       - name: 'Install dependencies.'
         run: |
           composer install --no-interaction --prefer-dist --optimize-autoloader
-
-      - name: 'Logs debug information.'
-        run: |
-          php --version
-          composer --version
-          php ./tools/vendor/bin/phpunit --version
 
       - name: 'Run PHP Unit tests.'
         run: |
