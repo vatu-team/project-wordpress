@@ -126,8 +126,6 @@ jobs:
         run: |
           php --version
           composer --version
-          php ./tools/vendor/bin/parallel-lint --version
-          php ./tools/vendor/bin/phpcs --version
 
       - name: 'Validate Composer file.'
         run: |
@@ -150,6 +148,11 @@ jobs:
       - name: 'Install dependencies.'
         run: |
           composer install --working-dir=tools --no-interaction --prefer-dist
+
+      - name: 'Logs tool versions.'
+        run: |
+          php ./tools/vendor/bin/parallel-lint --version
+          php ./tools/vendor/bin/phpcs --version
 
       - name: 'Run PHP Lint tests.'
         run: |
@@ -226,7 +229,6 @@ jobs:
         run: |
           php --version
           composer --version
-          php ./tools/vendor/bin/phpstan --version
 
       - name: 'Validate Composer file.'
         run: |
@@ -254,6 +256,10 @@ jobs:
           restore-keys: |
             composer-${{ matrix.php-version }}-
             composer-
+
+      - name: 'Logs tool versions'
+        run: |
+          php ./tools/vendor/bin/phpstan --version
 
       - name: "Build site."
         run: |
@@ -365,7 +371,6 @@ jobs:
         run: |
           php --version
           composer --version
-          php ./tools/vendor/bin/phpunit --version
 
       - name: "Add Composer config."
         env:
@@ -397,6 +402,10 @@ jobs:
       - name: 'Install dependencies.'
         run: |
           composer install --no-interaction --prefer-dist --optimize-autoloader
+
+      - name: 'Logs tool version'
+        run: |
+          php ./tools/vendor/bin/phpunit --version
 
       - name: 'Run PHP Unit tests.'
         run: |
