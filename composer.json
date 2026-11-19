@@ -134,8 +134,12 @@
         "test:compatibility": [
             "./tools/vendor/bin/phpcs --colors --report-width=120 --standard=PHPCompatibility --extensions=php --ignore=vendor/* --ignore=tools/* ./config ./public/app/mu-plugins/site-config.php"
         ],
+        "test:validate": [
+            "@composer validate --ansi --no-check-publish",
+            "@composer validate --ansi --no-check-publish --no-check-all --working-dir=tools"
+        ],
         "test:lint": [
-            "@composer validate --ansi --strict",
+            "@composer test:validate",
             "@composer test:lint:syntax",
             "@composer test:lint:standards"
         ],
